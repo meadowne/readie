@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<body>
+<!-- HEADER FIX TRÊN ĐẦU TRANG -->
+<header class="navbar">
+    <!-- Thư viện Icon FontAwesome (dùng cho kính lúp, mặt trời/mặt trăng) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Liên kết tệp style.css của bạn -->
+    <link rel="stylesheet" href="style.css">
+    <div class="nav-container">
+        <!-- Logo (Bấm vào quay về trang chủ) -->
+        <a href="trangchu.html" class="logo">
+            <img src="assets/logo.png" alt="readie logo">
+        </a>
+
+        <!-- Các nút điều hướng -->
+        <nav class="nav-links">
+            <a href="tintuc.html">Tin tức</a>
+            <a href="reviewphantich.html">Review & Phân tích</a>
+            <a href="bxh.html">Bảng xếp hạng</a>
+            <a href="tacgianoibat.html">Tác giả nổi bật</a>
+            <a href="bantruyen.html">Bàn truyện</a>
+        </nav>
+
+        <!-- Nút Kính lúp & Nút Chế độ Sáng/Tối -->
+<div class="nav-actions">
+    <!-- Bọc nút kính lúp và popup search box vào chung 1 div -->
+    <div class="search-wrapper">
+        <button id="search-btn" class="icon-btn" title="Tìm kiếm">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!-- Hộp tìm kiếm đặt ngay bên trong wrapper này -->
+        <div id="search-box" class="search-box">
+            <div class="search-input-wrapper">
+                <input type="text" placeholder="Nhập từ khóa">
+                <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <button id="theme-btn" class="icon-btn" title="Đổi giao diện">
+        <i class="fa-regular fa-sun" id="theme-icon"></i>
+    </button>
+</div>
+    </div>
+
+    <!-- Hộp tìm kiếm thả xuống (Ban đầu ẩn) -->
+    <div id="search-box" class="search-box">
+        <div class="search-input-wrapper">
+            <input type="text" placeholder="Nhập từ khóa">
+            <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+</header>
+<script src="script.js"></script>
+
+<!-- BANNER HERO SECTION -->
+<section class="hero-banner">
+    <img src="assets/hero-banner.png" alt="Readie Banner" class="hero-img">
+</section>
+
+<!-- THANH BÀI VIẾT NỔI BẬT (CHỮ CHẠY TỰ ĐỘNG) -->
+<div class="ticker-bar">
+    <div class="ticker-track">
+        <!-- Bài 1: "TOUGEN ANKI 2 trở lại với..." -> tougen-anki-2-tro-lai.html -->
+        <a href="tougen-anki-2-tro-lai.html" class="ticker-item">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</a>
+        <span class="ticker-dots">•</span>
+
+        <!-- Bài 2: "Truyện tranh Việt sắp góp..." -> truyen-tranh-viet-sap-gop.html -->
+        <a href="truyen-tranh-viet-sap-gop.html" class="ticker-item">Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới</a>
+        <span class="ticker-dots">•</span>
+
+        <!-- Bài 3: "Hành trình từ cậu bé..." -> hanh-trinh-tu-cau-be.html -->
+        <a href="hanh-trinh-tu-cau-be.html" class="ticker-item">Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece</a>
+        <span class="ticker-dots">•</span>
+
+        <!-- Bài 4: "Kim Dokja biết trước tương..." -> kim-dokja-biet-truoc-tuong.html -->
+        <a href="kim-dokja-biet-truoc-tuong.html" class="ticker-item">Kim Dokja biết trước tương lai, nhưng có thật sự hiểu câu chuyện?</a>
+        <span class="ticker-dots">•</span>
+
+        <!-- Cụm lặp lại để tạo hiệu ứng chạy nối đuôi mượt mà -->
+        <a href="tougen-anki-2-tro-lai.html" class="ticker-item">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</a>
+        <span class="ticker-dots">•</span>
+        <a href="truyen-tranh-viet-sap-gop.html" class="ticker-item">Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới</a>
+        <span class="ticker-dots">•</span>
+        <a href="hanh-trinh-tu-cau-be.html" class="ticker-item">Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece</a>
+        <span class="ticker-dots">•</span>
+        <a href="kim-dokja-biet-truoc-tuong.html" class="ticker-item">Kim Dokja biết trước tương lai, nhưng có thật sự hiểu câu chuyện?</a>
+        <span class="ticker-dots">•</span>
+    </div>
+</div>
+
+<!-- CHUYÊN MỤC TIN TỨC -->
+<section id="tintuc" class="news-section">
+    <h2 class="news-title">Tin tức</h2>
+
+    <!-- Khung chứa danh sách bài viết (Hiển thị 3 bài qua JS) -->
+    <div id="news-container" class="news-grid"></div>
+
+    <!-- Thanh phân trang / chuyển bài -->
+    <div class="news-pagination">
+        <button id="news-prev-btn" class="page-btn"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="page-numbers">
+            <span id="page-curr">01</span>
+            <span class="page-line"></span>
+            <span id="page-next">02</span>
+        </div>
+        <button id="news-next-btn" class="page-btn"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+</section>
+
+<!-- CHUYÊN MỤC REVIEW & PHÂN TÍCH -->
+<section id="review-phantich" class="review-section">
+    <h2 class="review-title">Review & Phân tích</h2>
+
+    <!-- Lưới hiển thị 4 bài viết / trang -->
+    <div id="review-container" class="review-grid"></div>
+
+    <!-- Thanh phân trang -->
+    <div class="review-pagination">
+        <button id="review-prev-btn" class="page-btn"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="page-numbers">
+            <span id="review-page-curr">01</span>
+            <span class="page-line"></span>
+            <span id="review-page-next">02</span>
+        </div>
+        <button id="review-next-btn" class="page-btn"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+</section>
+
+</body>
+</html>
