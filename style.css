@@ -524,3 +524,781 @@ html, body {
     align-items: center;
     gap: 20px;
 }
+
+/* SECTION BẢNG XẾP HẠNG (NỀN XÁM NHẠT) */
+.bxh-section {
+    padding: 60px 8%;
+    background-color: #e3e3e3;
+    border-top: 2px solid #000;
+}
+
+/* TIÊU ĐỀ DÙNG FONT CUCHO */
+.bxh-title {
+    font-family: 'Cucho', 'Montserrat', sans-serif;
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+/* NÚT LINK BÌNH CHỌN */
+.bxh-btn-wrapper {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.bxh-vote-btn {
+    display: inline-block;
+    background-color: #f5d450;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 30px;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0 #000;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.bxh-vote-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 #000;
+}
+
+/* KHUNG LAYOUT 2 BOX */
+.bxh-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.bxh-box {
+    background-color: #ffffff;
+    border: 2px solid #000;
+    border-radius: 20px;
+    box-shadow: 6px 6px 0 #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* BOX LEFT - TOP 5 TRUYỆN YÊU THÍCH */
+.bxh-box-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 2px solid #000;
+    margin: 0;
+}
+
+.bxh-content-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex: 1;
+}
+
+/* VÙNG CHỨA CANVAS 5 HÌNH TRÒN CÓ VIỀN PHẢI NỐI DANH SÁCH */
+.bxh-canvas-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    position: relative;
+    border-right: 2px solid #000;
+}
+
+#bxh-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* DANH SÁCH XẾP HẠNG TOP 1-5 */
+.bxh-rank-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.bxh-rank-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 18px;
+    border-bottom: 2px solid #000;
+    flex: 1;
+}
+
+.bxh-rank-item:last-child {
+    border-bottom: none;
+}
+
+.rank-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #e65a3b;
+    min-width: 20px;
+}
+
+.rank-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.3;
+}
+
+/* BOX RIGHT - BÀI VIẾT CÓ THANH CUỘN */
+.bxh-box-right {
+    padding: 20px 15px 20px 20px;
+    max-height: 440px;
+}
+
+.bxh-article-scroll {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* TÙY CHỈNH THANH CUỘN MƯỢT VÀ ĐẸP */
+.bxh-article-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.bxh-article-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.bxh-article-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.bxh-article-scroll::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* THẺ BÀI VIẾT NẰM TRONG BOX CÓ CUỘN */
+.bxh-article-card {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.bxh-article-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.bxh-article-link {
+    display: flex;
+    gap: 15px;
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
+}
+
+.bxh-art-thumb {
+    width: 130px;
+    height: 85px;
+    flex-shrink: 0;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0 #000;
+    overflow: hidden;
+}
+
+.bxh-art-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bxh-art-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.bxh-art-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.bxh-article-link:hover .bxh-art-title {
+    color: #e65a3b;
+    text-decoration: underline;
+}
+
+.bxh-art-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #666;
+}
+
+/* SECTION TÁC GIẢ NỔI BẬT */
+.author-section {
+    padding: 60px 8%;
+    background-color: #e0835c;
+    border-top: 2px solid #000;
+}
+
+.author-title {
+    font-family: 'Cucho', 'Montserrat', sans-serif;
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+.author-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* THẺ TÁC GIẢ */
+.author-card {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 10px; /* Tạo không gian cho 2 đường kẻ thò ra ngoài */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.author-card:hover {
+    transform: scale(1.03); /* Phóng to nhẹ khi hover */
+}
+
+/* SVG KHUNG NỀN */
+.author-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* NỘI DUNG THẺ (XẾP CHUẨN KHÔNG BAO GIỜ BỊ ĐÈ CHỮ) */
+.author-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 35px 30px 25px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* AVATAR TRÒN */
+.author-avatar-box {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    overflow: hidden;
+    margin-bottom: 25px;
+    background-color: #d9d9d9;
+    flex-shrink: 0;
+}
+
+.author-avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* TIÊU ĐỀ & NGÀY ĐĂNG CĂN TRÁI CHUẨN MẪU */
+.author-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #000;
+    margin: 0 0 15px 0;
+    line-height: 1.45;
+    text-align: left;
+    width: 100%;
+    min-height: 65px;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.author-card-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+    width: 100%;
+}
+
+/* THANH PHÂN TRANG */
+.author-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* BACKGROUND CARO XANH LÁ BÀN TRUYỆN */
+.discussion-section {
+    padding: 60px 8%;
+    background-color: #f7fbf7;
+    background-image: 
+        linear-gradient(to right, rgba(162, 217, 185, 0.4) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(162, 217, 185, 0.4) 1px, transparent 1px);
+    background-size: 24px 24px;
+    border-top: 2px solid #000;
+}
+
+.discussion-title {
+    font-family: 'Cucho', 'Montserrat', sans-serif;
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+/* PHẦN 1: BÀI VIẾT BÀN TRUYỆN */
+.discussion-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.discussion-card {
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 6px 6px 0px #000;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.discussion-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px #000;
+}
+
+.discussion-card-img {
+    width: 100%;
+    height: 220px;
+    border-bottom: 2px solid #000;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.discussion-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.discussion-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.discussion-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #000;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.discussion-card-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+}
+
+.discussion-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+/* PHẦN 2: KHUNG BÌNH CHỌN TRUYỆN */
+.poll-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.poll-container {
+    background: #ffffff;
+    border: 2.5px solid #000000;
+    border-radius: 28px;
+    box-shadow: 6px 6px 0px #000000;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+}
+
+.poll-nav-btn {
+    width: 42px;
+    height: 42px;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0px #000;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: all 0.15s ease;
+}
+
+.poll-nav-btn:hover:not(:disabled) {
+    background: #f0f0f0;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px #000;
+}
+
+.poll-nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.poll-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    flex-grow: 1;
+}
+
+/* CARD MỖI TRUYỆN BÌNH CHỌN */
+.manga-poll-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.3s ease, filter 0.3s ease, transform 0.2s ease;
+}
+
+.manga-cover-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border: 2px solid #000;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background-color: #e2e2e2;
+    box-shadow: 3px 3px 0px #000;
+}
+
+.manga-cover-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ô CHECKBOX VÙNG GÓC TRÊN PHẢI */
+.manga-checkbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    z-index: 2;
+    transition: background-color 0.2s ease;
+}
+
+.manga-poll-card.selected .manga-checkbox {
+    background: #ffd600; /* Đổi màu vàng khi tick */
+}
+
+.manga-poll-card.selected .manga-checkbox::after {
+    content: '✓';
+}
+
+/* TRẠNG THÁI BỊ KHÓA KHI CHỌN ĐỦ 3 TRUYỆN */
+.manga-poll-card.disabled {
+    opacity: 0.45;
+    filter: grayscale(100%);
+    cursor: not-allowed;
+}
+
+.manga-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    color: #000;
+    margin: 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* NÚT BÌNH CHỌN MÀU VÀNG */
+.vote-submit-btn {
+    background-color: #ffd600;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 12px 60px;
+    border: 2.5px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.vote-submit-btn:hover {
+    background-color: #ffea00;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000;
+}
+
+.vote-submit-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0px #000;
+}
+
+/* --- SITE FOOTER --- */
+.site-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 60px 8% 40px;
+    border-top: 2px solid #000000;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+/* CỘT 1: LOGO & SOCIALS */
+.footer-col-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    flex: 1.2;
+}
+
+.footer-logo-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* LOGO KÍCH THƯỚC LỚN + HIỆU ỨNG LÒ XO */
+.footer-logo-img {
+    height: 150px; /* Tăng kích thước logo lên 110px */
+    width: auto;
+    display: block;
+    animation: springBounce 3s infinite ease-in-out;
+    transform-origin: center bottom;
+}
+
+@keyframes springBounce {
+    0%, 100% {
+        transform: translateY(0) scale(1, 1);
+    }
+    10% {
+        transform: translateY(-8px) scale(0.96, 1.05);
+    }
+    20% {
+        transform: translateY(2px) scale(1.03, 0.95);
+    }
+    30% {
+        transform: translateY(-3px) scale(0.98, 1.02);
+    }
+    40% {
+        transform: translateY(0) scale(1, 1);
+    }
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.footer-socials a {
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-socials a:hover {
+    opacity: 0.8;
+    transform: translateY(-3px);
+}
+
+/* CỘT 2: MENUS CHUYÊN MỤC */
+.footer-col-nav {
+    flex: 1.5;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.footer-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 35px;
+    max-width: 480px;
+}
+
+.footer-nav-list li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.footer-nav-list li a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* CỘT 3: NEWSLETTER & COPYRIGHT */
+.footer-col-right {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 30px;
+}
+
+.newsletter-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+}
+
+.newsletter-desc {
+    font-size: 13.5px;
+    margin: 0 0 16px 0;
+    color: #e0e0e0;
+}
+
+.newsletter-input {
+    width: 280px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 1.5px solid #cccccc;
+    background-color: #dcdcdc;
+    color: #000000;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.newsletter-input::placeholder {
+    color: #777777;
+}
+
+.newsletter-input:focus {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.footer-copyright {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.footer-copyright p {
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-col-left,
+    .footer-col-right {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-nav-list {
+        justify-content: center;
+    }
+}

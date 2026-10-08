@@ -130,5 +130,251 @@
     </div>
 </section>
 
+<!-- CHUYÊN MỤC BẢNG XẾP HẠNG -->
+<section id="bangxephang" class="bxh-section">
+    <h2 class="bxh-title">Bảng xếp hạng</h2>
+    
+    <div class="bxh-btn-wrapper">
+        <a href="vote.html" class="bxh-vote-btn">Link bình chọn</a>
+    </div>
+
+    <div class="bxh-grid">
+        <!-- BOX BÊN TRÁI: TOP 5 TRUYỆN YÊU THÍCH + BÓNG CHẠY NẢY -->
+        <div class="bxh-box bxh-box-left">
+            <h3 class="bxh-box-header">Truyện được yêu thích nhất tuần trước</h3>
+            <div class="bxh-content-left">
+                <!-- Vùng Canvas chứa 5 ảnh bóng nảy va đập -->
+                <div class="bxh-canvas-wrapper" id="canvas-container">
+                    <canvas id="bxh-canvas"></canvas>
+                </div>
+
+                <!-- Danh sách tên Top 1 - 5 -->
+                <div class="bxh-rank-list">
+                    <div class="bxh-rank-item">
+                        <span class="rank-num rank-1">1</span>
+                        <span class="rank-name">JoJo's Bizarre Adventure: Part 7—Steel Ball Run</span>
+                    </div>
+                    <div class="bxh-rank-item">
+                        <span class="rank-num rank-2">2</span>
+                        <span class="rank-name">Berserk</span>
+                    </div>
+                    <div class="bxh-rank-item">
+                        <span class="rank-num rank-3">3</span>
+                        <span class="rank-name">One Piece</span>
+                    </div>
+                    <div class="bxh-rank-item">
+                        <span class="rank-num rank-4">4</span>
+                        <span class="rank-name">Fullmetal Alchemist: Brotherhood</span>
+                    </div>
+                    <div class="bxh-rank-item">
+                        <span class="rank-num rank-5">5</span>
+                        <span class="rank-name">Grand Blue Dreaming</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOX BÊN PHẢI: DANH SÁCH BÀI VIẾT BXH (CÓ THANH CUỘN) -->
+        <div class="bxh-box bxh-box-right">
+            <div class="bxh-article-scroll">
+                <!-- Bài 1 -->
+                <article class="bxh-article-card">
+                    <a href="top-5-truyen-tranh-viet.html" class="bxh-article-link">
+                        <div class="bxh-art-thumb">
+                            <img src="assets/anh-top-5-truyen-tranh-viet.jpg" alt="Top 5 truyện tranh Việt Nam">
+                        </div>
+                        <div class="bxh-art-info">
+                            <h4 class="bxh-art-title">Top 5 truyện tranh Việt Nam đang được độc giả chú ý</h4>
+                            <span class="bxh-art-date">22/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Bài 2 -->
+                <article class="bxh-article-card">
+                    <a href="top-5-manga-dang-duoc.html" class="bxh-article-link">
+                        <div class="bxh-art-thumb">
+                            <img src="assets/anh-top-5-manga-dang-duoc.jpg" alt="Top 5 manga Bilibili">
+                        </div>
+                        <div class="bxh-art-info">
+                            <h4 class="bxh-art-title">Top 5 manga đang được săn đón trên Bilibili Manga</h4>
+                            <span class="bxh-art-date">20/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Bài 3 -->
+                <article class="bxh-article-card">
+                    <a href="top-5-manhua-trung-quoc.html" class="bxh-article-link">
+                        <div class="bxh-art-thumb">
+                            <img src="assets/anh-top-5-manhua-trung-quoc.jpg" alt="Top 5 manhua Bilibili">
+                        </div>
+                        <div class="bxh-art-info">
+                            <h4 class="bxh-art-title">Top 5 manhua Trung Quốc đang được yêu thích trên Bilibili Manga</h4>
+                            <span class="bxh-art-date">17/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Bài 4 -->
+                <article class="bxh-article-card">
+                    <a href="top-5-webtoon-han-quoc.html" class="bxh-article-link">
+                        <div class="bxh-art-thumb">
+                            <img src="assets/anh-top-5-webtoon-han-quoc.jpg" alt="Top 5 webtoon Hàn Quốc">
+                        </div>
+                        <div class="bxh-art-info">
+                            <h4 class="bxh-art-title">Top 5 webtoon Hàn Quốc đang nổi bật trên WEBTOON</h4>
+                            <span class="bxh-art-date">12/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Bài 5 -->
+                <article class="bxh-article-card">
+                    <a href="10-bo-truyen-tranh-duoi.html" class="bxh-article-link">
+                        <div class="bxh-art-thumb">
+                            <img src="assets/anh-10-bo-truyen-tranh-duoi.jpg" alt="10 bộ truyện tranh nên đọc">
+                        </div>
+                        <div class="bxh-art-info">
+                            <h4 class="bxh-art-title">10 bộ truyện tranh dưới 18 tuổi nên đọc ít nhất một lần</h4>
+                            <span class="bxh-art-date">05/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CHUYÊN MỤC TÁC GIẢ NỔI BẬT -->
+<section id="tacgianoibat" class="author-section">
+    <h2 class="author-title">Tác giả nổi bật</h2>
+
+    <!-- LƯỚI 3 CỘT THẺ TÁC GIẢ -->
+    <div class="author-grid" id="author-grid">
+        <!-- JavaScript sẽ render dữ liệu vào đây -->
+    </div>
+
+    <!-- THANH CHUYỂN TRANG ĐỒNG BỘ CẤU TRÚC PHẦN TRÊN -->
+    <div class="author-pagination">
+        <button id="author-prev-btn" class="page-btn" aria-label="Trang trước">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <div class="page-numbers">
+            <span id="author-page-curr">01</span>
+            <span class="page-line"></span>
+            <span id="author-page-next">02</span>
+        </div>
+        <button id="author-next-btn" class="page-btn" aria-label="Trang sau">
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+</section>
+
+<!-- SECTION BÀN TRUYỆN -->
+<section id="ban-truyen-section" class="discussion-section">
+    <h2 class="discussion-title">Bàn truyện</h2>
+
+    <!-- PHẦN 1: BÀI VIẾT NỔI BẬT (3 CỘT + PHÂN TRANG) -->
+    <div class="discussion-grid" id="discussion-grid">
+        <!-- JavaScript sẽ render danh sách 6 bài viết vào đây -->
+    </div>
+
+    <!-- THANH PHÂN TRANG BÀI VIẾT -->
+    <div class="discussion-pagination">
+        <button id="discussion-prev-btn" class="page-btn" aria-label="Trang trước">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <div class="page-numbers">
+            <span id="discussion-page-curr">01</span>
+            <span class="page-line"></span>
+            <span id="discussion-page-next">02</span>
+        </div>
+        <button id="discussion-next-btn" class="page-btn" aria-label="Trang sau">
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <!-- PHẦN 2: KHUNG BÌNH CHỌN TRUYỆN YÊU THÍCH -->
+    <div class="poll-wrapper">
+        <div class="poll-container">
+            <!-- NÚT QUA TRANG CAROUSEL BÌNH CHỌN -->
+            <button id="poll-prev-btn" class="poll-nav-btn" aria-label="Truyện trước">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <!-- LƯỚI TRUYỆN BÌNH CHỌN (4 TRUYỆN / TRANG) -->
+            <div class="poll-grid" id="poll-grid">
+                <!-- JavaScript sẽ render các card truyện có checkbox vào đây -->
+            </div>
+
+            <button id="poll-next-btn" class="poll-nav-btn" aria-label="Truyện sau">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- NÚT BÌNH CHỌN MÀU VÀNG -->
+        <button id="submit-vote-btn" class="vote-submit-btn">Bình chọn</button>
+    </div>
+</section>
+
+<!-- BỔ SUNG LINK NÀY VÀO THẺ <head> CỦA WEBSITE ĐỂ HIỆN DỦ ICON -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- BỔ SUNG LINK NÀY VÀO THẺ <head> CỦA WEBSITE ĐỂ HIỆN DỦ ICON -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- FOOTER CHÂN TRANG -->
+<footer class="site-footer">
+    <div class="footer-container">
+        
+        <!-- CỘT 1: LOGO TRẮNG + MẠNG XÃ HỘI -->
+        <div class="footer-col footer-col-left">
+            <a href="#" class="footer-logo-link">
+                <!-- Đã đổi sang file logo_trang.png -->
+                <img src="assets/logo_trang.png" alt="Readie Logo" class="footer-logo-img">
+            </a>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/tung.tung.978310" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/tf.tnguyen/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@lbppp" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+    <i class="fa-brands fa-tiktok"></i>
+</a>
+            </div>
+        </div>
+
+        <!-- CỘT 2: THANH ĐIỀU HƯỚNG CHUYÊN MỤC -->
+        <div class="footer-col footer-col-nav">
+            <ul class="footer-nav-list">
+                <li><a href="tintuc.html">Tin tức</a></li>
+                <li><a href="review.html">Review & Phân tích</a></li>
+                <li><a href="bxh.html">Bảng xếp hạng</a></li>
+                <li><a href="tacgianoibat.html">Tác giả nổi bật</a></li>
+                <li><a href="bantruyen.html">Bàn truyện</a></li>
+            </ul>
+        </div>
+
+        <!-- CỘT 3: CÙNG CẬP NHẬT + BẢN QUYỀN -->
+        <div class="footer-col footer-col-right">
+            <div class="footer-newsletter">
+                <h3 class="newsletter-title">Cùng cập nhật</h3>
+                <p class="newsletter-desc">Đăng ký nhận những thông tin mới nhất.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Your Email" required class="newsletter-input" id="newsletter-email">
+                </form>
+            </div>
+            <div class="footer-copyright">
+                <p>Readie Comic, Inc.</p>
+                <p>2023 - 2026 by Magazine house., ltd. (Ha Noi)</p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
 </body>
 </html>
