@@ -199,12 +199,12 @@ html, body {
     z-index: 9999;
 }
 
-/* HERO BANNER - ĐÃ BỎ LỆCH VÀ KHÔNG BỊ CHE */
+/* HERO BANNER - ĐÃ TÁCH TEXT VÀ LOGO NỔI */
 .hero-banner {
+    position: relative;
     width: 100%;
     margin-top: 60px; /* Đẩy banner xuống đúng bằng chiều cao navbar */
     padding: 0;
-    line-height: 0;
     overflow: hidden;
 }
 
@@ -213,6 +213,78 @@ html, body {
     height: auto;
     display: block;
     object-fit: cover;
+}
+
+/* ĐẨY TOÀN BỘ CỤM NẰM CAO HẲN LÊN VÙNG TRỜI XANH */
+.hero-content {
+    position: absolute;
+    top: 17%; /* Giảm từ 20% xuống 17% để nhấc cả cụm lên cao */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    pointer-events: none;
+    width: 90%;
+    max-width: 900px;
+}
+
+/* LOGO VỚI HIỆU ỨNG NHÚN NHẢY NHẸ */
+.hero-logo {
+    width: 400px;
+    max-width: 80%;
+    height: auto;
+    filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4));
+    margin-bottom: 0;
+    
+    /* Gán animation nhún nhảy lặp vô hạn */
+    animation: gentleBounce 2.6s ease-in-out infinite;
+}
+
+/* ĐỊNH NGHĨA CHUYỂN ĐỘNG NHÚN NHẢY NHẸ NHÀNG */
+@keyframes gentleBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-9px); /* Nhấc nhẹ lên 9px tạo cảm giác bồng bềnh */
+    }
+}
+
+.hero-slogan {
+    font-family: 'Cucho', 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: -50px 0 0 0; /* Kéo dòng chữ áp sát ngay dưới chân logo */
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65), 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* RESPONSIVE CHO MÀN HÌNH NHỎ HƠN */
+@media (max-width: 768px) {
+    .hero-content {
+        top: 22%;
+    }
+    .hero-logo {
+        width: 260px;
+    }
+    .hero-slogan {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        top: 24%;
+    }
+    .hero-logo {
+        width: 190px;
+    }
+    .hero-slogan {
+        font-size: 12px;
+    }
 }
 
 /* THANH BÀI VIẾT NỔI BẬT (TICKER BAR) */
@@ -1117,7 +1189,7 @@ html, body {
 .site-footer {
     background-color: #000000;
     color: #ffffff;
-    padding: 60px 8% 40px;
+    padding: 50px 8% 25px;
     border-top: 2px solid #000000;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
@@ -1127,9 +1199,10 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 1300px;
+    max-width: 1350px;
     margin: 0 auto;
-    gap: 40px;
+    gap: 30px;
+    padding-bottom: 40px;
 }
 
 /* CỘT 1: LOGO & SOCIALS */
@@ -1137,8 +1210,8 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
-    flex: 1.2;
+    gap: 20px;
+    flex: 1;
 }
 
 .footer-logo-link {
@@ -1146,9 +1219,9 @@ html, body {
     text-decoration: none;
 }
 
-/* LOGO KÍCH THƯỚC LỚN + HIỆU ỨNG LÒ XO */
+/* HIỆU ỨNG NẢY LÒ XO LOGO (GIỮ NGUYÊN) */
 .footer-logo-img {
-    height: 150px; /* Tăng kích thước logo lên 110px */
+    height: 120px;
     width: auto;
     display: block;
     animation: springBounce 3s infinite ease-in-out;
@@ -1181,7 +1254,7 @@ html, body {
 
 .footer-socials a {
     color: #ffffff;
-    font-size: 24px;
+    font-size: 22px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -1194,12 +1267,10 @@ html, body {
     transform: translateY(-3px);
 }
 
-/* CỘT 2: MENUS CHUYÊN MỤC */
+/* CỘT 2: DANH SÁCH CHUYÊN MỤC DỌC */
 .footer-col-nav {
-    flex: 1.5;
-    display: flex;
-    justify-content: center;
-    padding-top: 25px;
+    flex: 0.9;
+    padding-top: 15px;
 }
 
 .footer-nav-list {
@@ -1207,17 +1278,15 @@ html, body {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px 35px;
-    max-width: 480px;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .footer-nav-list li a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 15px;
     transition: opacity 0.2s ease;
     white-space: nowrap;
 }
@@ -1227,14 +1296,50 @@ html, body {
     text-decoration: underline;
 }
 
-/* CỘT 3: NEWSLETTER & COPYRIGHT */
-.footer-col-right {
+/* CỘT 3: CHÍNH SÁCH & HỖ TRỢ */
+.footer-col-policy {
     flex: 1.2;
+    padding-top: 15px;
+}
+
+.policy-title {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin: 0 0 12px 0;
+    color: #ffffff;
+}
+
+.policy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-    gap: 30px;
+    gap: 10px;
+}
+
+.policy-list li a,
+.policy-list li span {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14.5px;
+    white-space: nowrap;
+}
+
+.policy-list li a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* CỘT 4: FORM ĐĂNG KÝ EMAIL CÓ NÚT MŨI TÊN TRÒN */
+.footer-col-right {
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 15px;
 }
 
 .newsletter-title {
@@ -1247,58 +1352,94 @@ html, body {
 .newsletter-desc {
     font-size: 13.5px;
     margin: 0 0 16px 0;
-    color: #e0e0e0;
+    color: #d0d0d0;
+}
+
+.newsletter-input-box {
+    position: relative;
+    width: 290px;
+    background-color: #dcdcdc;
+    border-radius: 30px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .newsletter-input {
-    width: 280px;
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: 1.5px solid #cccccc;
-    background-color: #dcdcdc;
+    width: 100%;
+    padding: 10px 48px 10px 18px;
+    border-radius: 30px;
+    border: none;
+    background: transparent;
     color: #000000;
     font-family: inherit;
     font-size: 14px;
-    font-weight: 500;
     outline: none;
-    box-sizing: border-box;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .newsletter-input::placeholder {
     color: #777777;
 }
 
-.newsletter-input:focus {
-    background-color: #ffffff;
-    border-color: #ffffff;
+.newsletter-submit-btn {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.footer-copyright {
-    font-size: 13px;
-    line-height: 1.6;
-    color: #cccccc;
+.newsletter-submit-btn:hover {
+    background-color: #222;
+    transform: translateY(-50%) scale(1.05);
 }
 
-.footer-copyright p {
+/* ĐƯỜNG KẺ NGANG VÀ BẢN QUYỀN FULL-WIDTH DƯỚI CÙNG */
+.footer-bottom-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    text-align: left;
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+.footer-bottom-bar p {
     margin: 0;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 400;
 }
 
-@media (max-width: 900px) {
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .footer-container {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 40px;
     }
-
-    .footer-col-left,
     .footer-col-right {
         align-items: center;
-        text-align: center;
     }
-
-    .footer-nav-list {
-        justify-content: center;
+    .footer-bottom-bar {
+        text-align: center;
     }
 }

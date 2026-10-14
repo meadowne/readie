@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review & Phân tích - Readie</title>
+    <!-- Thư viện FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- File CSS chung của toàn trang -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Tái sử dụng trực tiếp file CSS chuyên mục tin tức -->
+    <link rel="stylesheet" href="tintuc.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+    <!-- PHẦN 1: HEADER CỐ ĐỊNH (IN ĐẬM TAB REVIEW & PHÂN TÍCH) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="readie logo">
+            </a>
+            <nav class="nav-links">
+                <a href="tintuc.html">Tin tức</a>
+                <a href="reviewphantich.html" class="active">Review & Phân tích</a>
+                <a href="bxh.html">Bảng xếp hạng</a>
+                <a href="tacgianoibat.html">Tác giả nổi bật</a>
+                <a href="bantruyen.html">Bàn truyện</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-wrapper">
+                    <button id="search-btn" class="icon-btn" title="Tìm kiếm">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <div id="search-box" class="search-box">
+                        <div class="search-input-wrapper">
+                            <input type="text" placeholder="Nhập từ khóa">
+                            <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <button id="theme-btn" class="icon-btn" title="Đổi giao diện">
+                    <i class="fa-regular fa-sun" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- TICKER BAR DẢI CHỮ CHẠY TỰ ĐỘNG -->
+    <div class="ticker-bar page-ticker">
+        <div class="ticker-track">
+            <a href="tougen-anki-2-tro-lai.html" class="ticker-item">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</a>
+            <span class="ticker-dots">•</span>
+            <a href="truyen-tranh-viet-sap-gop.html" class="ticker-item">Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới</a>
+            <span class="ticker-dots">•</span>
+            <a href="hanh-trinh-tu-cau-be.html" class="ticker-item">Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece</a>
+            <span class="ticker-dots">•</span>
+            <a href="kim-dokja-biet-truoc-tuong.html" class="ticker-item">Kim Dokja biết trước tương lai, nhưng có thật sự hiểu câu chuyện?</a>
+            <span class="ticker-dots">•</span>
+            <a href="tougen-anki-2-tro-lai.html" class="ticker-item">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</a>
+            <span class="ticker-dots">•</span>
+            <a href="truyen-tranh-viet-sap-gop.html" class="ticker-item">Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới</a>
+            <span class="ticker-dots">•</span>
+            <a href="hanh-trinh-tu-cau-be.html" class="ticker-item">Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece</a>
+            <span class="ticker-dots">•</span>
+            <a href="kim-dokja-biet-truoc-tuong.html" class="ticker-item">Kim Dokja biết trước tương lai, nhưng có thật sự hiểu câu chuyện?</a>
+            <span class="ticker-dots">•</span>
+        </div>
+    </div>
+
+    <!-- MAIN CONTAINER REVIEW & PHÂN TÍCH -->
+    <main class="tintuc-main-container">
+        <h1 class="tintuc-heading-title">Review & Phân tích</h1>
+
+        <div class="tintuc-content-layout">
+            
+            <!-- CỘT TRÁI: DANH SÁCH BÀI VIẾT REVIEW & PHÂN TÍCH -->
+            <div class="tintuc-article-list">
+                
+                <!-- === TIỂU MỤC: REVIEW === -->
+                
+                <!-- BÀI 1 (21/10) -->
+                <article class="tintuc-card">
+                    <a href="long-than-tuong-ke-lich.html" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/anh-long-than-tuong-ke-lich.jpg" alt="Long Thần Tướng">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">REVIEW</span>
+                            <h2 class="tintuc-card-title">Long Thần Tướng kể lịch sử Việt Nam bằng ngôn ngữ truyện tranh</h2>
+                            <span class="tintuc-card-date">21/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 2 (20/10) -->
+                <article class="tintuc-card">
+                    <a href="the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.html" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/review/the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.png" alt="Yotsuba">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">REVIEW</span>
+                            <h2 class="tintuc-card-title">Thế giới rộng lớn qua đôi mắt cô bé 5 tuổi Yotsuba</h2>
+                            <span class="tintuc-card-date">20/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 3 (19/10) -->
+                <article class="tintuc-card">
+                    <a href="co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.html" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/review/co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.png" alt="Cô đi mà lấy chồng tôi">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">REVIEW</span>
+                            <h2 class="tintuc-card-title">Cô đi mà lấy chồng tôi: Khi cơ hội thứ hai trở thành cuộc trả thù</h2>
+                            <span class="tintuc-card-date">19/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 4 (17/10) -->
+                <article class="tintuc-card">
+                    <a href="frieren-beyond-journeys-end-va.html" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/anh-frieren-beyond-journeys-end-va.jpg" alt="Frieren">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">REVIEW</span>
+                            <h2 class="tintuc-card-title">Frieren: Beyond Journey’s End và hành trình giả tưởng chậm rãi nhưng đầy cảm xúc</h2>
+                            <span class="tintuc-card-date">17/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 5 (14/10) -->
+                <article class="tintuc-card">
+                    <a href="https://bai4tieumucreview.my.canva.site/" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/review/hanh_trinh_tro_thanh_nguoi_manh_nhat_cua_solo_leveling.png" alt="Solo Leveling">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">REVIEW</span>
+                            <h2 class="tintuc-card-title">Hành trình trở thành người mạnh nhất của Solo Leveling</h2>
+                            <span class="tintuc-card-date">14/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 6 (11/10) -->
+                <article class="tintuc-card">
+                    <a href="https://bai4tieumucreview.my.canva.site/bai6" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/review/haikyuu_hanh_trinh_truong_thanh_sau_moi_tran_dau.webp" alt="Haikyuu!!">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">REVIEW</span>
+                            <h2 class="tintuc-card-title">Haikyuu!! - Hành trình trưởng thành sau mỗi trận đấu</h2>
+                            <span class="tintuc-card-date">11/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 7 (05/10) -->
+                <article class="tintuc-card">
+                    <a href="https://bai4tieumucreview.my.canva.site/b-i-7-ti-u-m-c-review" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/review/tu_doremon_den_doraemon_hanh_trinh_hon_30_nam_cua_chu_meo_may_tai_viet_nam.jpg" alt="Doraemon">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">REVIEW</span>
+                            <h2 class="tintuc-card-title">Từ Đôrêmon đến Doraemon: Hành trình hơn 30 năm của chú mèo máy tại Việt Nam</h2>
+                            <span class="tintuc-card-date">05/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- ĐƯỜNG KẺ NGĂN CÁCH 2 TIỂU MỤC -->
+                <div class="tintuc-divider"></div>
+
+                <!-- === TIỂU MỤC: PHÂN TÍCH === -->
+
+                <!-- BÀI 8 (22/10) -->
+                <article class="tintuc-card">
+                    <a href="nhat_nhan_chi_ha_khi_van_hoa_truyen_thong_tro_thanh_chat_lieu_xay_dung_the_gioi_truyen.html" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/phantich/nhat_nhan_chi_ha_khi_van_hoa_truyen_thong_tro_thanh_chat_lieu_xay_dung_the_gioi_truyen.jpg" alt="Nhất Nhân Chi Hạ">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">PHÂN TÍCH</span>
+                            <h2 class="tintuc-card-title">Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện</h2>
+                            <span class="tintuc-card-date">22/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 9 (18/10) -->
+                <article class="tintuc-card">
+                    <a href="https://preview.canva.site/393b154f-8c79-47a5-8910-6fa76db1c211/readie.com/" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/phantich/conan_va_nghe_thuat_tao_nen_mot_vu_an_trinh_tham.jpg" alt="Conan">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">PHÂN TÍCH</span>
+                            <h2 class="tintuc-card-title">Conan và nghệ thuật tạo nên một vụ án trinh thám</h2>
+                            <span class="tintuc-card-date">18/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 10 (15/10) -->
+                <article class="tintuc-card">
+                    <a href="https://bai4tieumucreview.my.canva.site/naruto" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/anh-naruto-va-hanh-trinh-tu.jpg" alt="Naruto">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">PHÂN TÍCH</span>
+                            <h2 class="tintuc-card-title">Naruto và hành trình từ đứa trẻ bị lãng quên đến người được công nhận</h2>
+                            <span class="tintuc-card-date">15/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 11 (13/10) -->
+                <article class="tintuc-card">
+                    <a href="https://bai4tieumucreview.my.canva.site/theboxer" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/anh-the-boxer-va-cau-chuyen.jpg" alt="The Boxer">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">PHÂN TÍCH</span>
+                            <h2 class="tintuc-card-title">The Boxer và câu chuyện về con người được kể qua những trận đấu</h2>
+                            <span class="tintuc-card-date">13/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 12 (12/10) -->
+                <article class="tintuc-card">
+                    <a href="https://preview.canva.site/231c67ed-8746-4e41-89c0-ba5cdf2fd15e/readie.com/luffy" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/anh-luffy-va-quan-niem-ve.jpg" alt="Luffy">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">PHÂN TÍCH</span>
+                            <h2 class="tintuc-card-title">Luffy và quan niệm về tự do trong One Piece</h2>
+                            <span class="tintuc-card-date">12/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 13 (07/10) -->
+                <article class="tintuc-card">
+                    <a href="death-note-va-ranh-gioi.html" class="tintuc-card-link">
+                        <div class="tintuc-card-thumb">
+                            <img src="assets/anh-death-note-va-ranh-gioi.jpg" alt="Death Note">
+                        </div>
+                        <div class="tintuc-card-info">
+                            <span class="tintuc-badge">PHÂN TÍCH</span>
+                            <h2 class="tintuc-card-title">Death Note và ranh giới mong manh giữa công lý với quyền lực</h2>
+                            <span class="tintuc-card-date">07/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+            </div>
+
+            <!-- CỘT PHẢI (SIDEBAR) -->
+            <aside class="tintuc-sidebar">
+                <!-- BOX TOP TRUYỆN YÊU THÍCH -->
+                <div class="tintuc-fav-box">
+                    <h3 class="tintuc-fav-title">Top truyện yêu thích</h3>
+                    <ul class="tintuc-fav-list">
+                        <li class="tintuc-fav-item">
+                            <img src="assets/jojo_part7.png" alt="JoJo's Bizarre Adventure">
+                            <span>JoJo's Bizarre Adventure: Part 7—Steel Ball Run</span>
+                        </li>
+                        <li class="tintuc-fav-item">
+                            <img src="assets/berserk.jpg" alt="Berserk">
+                            <span>Berserk</span>
+                        </li>
+                        <li class="tintuc-fav-item">
+                            <img src="assets/one_piece.jpg" alt="One Piece">
+                            <span>One Piece</span>
+                        </li>
+                        <li class="tintuc-fav-item">
+                            <img src="assets/fullmetal_alchemist.jpg" alt="Fullmetal Alchemist: Brotherhood">
+                            <span>Fullmetal Alchemist: Brotherhood</span>
+                        </li>
+                        <li class="tintuc-fav-item">
+                            <img src="assets/grand_blue_dreaming.jpg" alt="Grand Blue Dreaming">
+                            <span>Grand Blue Dreaming</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- NÚT LINK BÌNH CHỌN -->
+                <a href="bantruyen.html" class="tintuc-vote-btn">Link bình chọn</a>
+
+                <!-- BANNER QUẢNG CÁO -->
+                <div class="tintuc-sidebar-banner">
+                    <img src="assets/quang_cao_one_piece_card.jpg" alt="Quảng cáo thẻ bài One Piece">
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- PHẦN 4: CÓ THỂ BẠN MUỐN ĐỌC -->
+        <section class="more-read-section">
+            <h2 class="more-read-title">Có thể bạn muốn đọc</h2>
+            <div class="more-read-grid">
+                
+                <!-- BÀI GỢI Ý 1 (TIN TỨC) -->
+                <article class="more-read-card">
+                    <a href="5-anime-he-2026-de-lai.html" class="more-read-link">
+                        <div class="more-read-thumb">
+                            <img src="assets/tintuc/bia_5_anime_he_2026_de_lai_dau_an_o_nhung_tap_cuoi.png" alt="5 anime hè 2026">
+                        </div>
+                        <div class="more-read-meta">
+                            <span class="more-read-cat">| Tin tức</span>
+                            <span class="more-read-date">22/10/2026</span>
+                        </div>
+                        <h3 class="more-read-card-title">5 anime hè 2026 để lại dấu ấn ở những tập cuối</h3>
+                    </a>
+                </article>
+
+                <!-- BÀI GỢI Ý 2 (TÁC GIẢ NỔI BẬT) -->
+                <article class="more-read-card">
+                    <a href="eiichiro-oda-hanh-trinh.html" class="more-read-link">
+                        <div class="more-read-thumb">
+                            <img src="assets/tac_gia_oda.jpg" alt="Eiichiro Oda">
+                        </div>
+                        <div class="more-read-meta">
+                            <span class="more-read-cat">| Tác giả nổi bật</span>
+                            <span class="more-read-date">22/10/2026</span>
+                        </div>
+                        <h3 class="more-read-card-title">Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece</h3>
+                    </a>
+                </article>
+
+                <!-- BÀI GỢI Ý 3 (BÀN TRUYỆN) -->
+                <article class="more-read-card">
+                    <a href="loid-yor-cam-xuc-that.html" class="more-read-link">
+                        <div class="more-read-thumb">
+                            <img src="assets/ban_truyen_1.jpg" alt="Loid x Yor">
+                        </div>
+                        <div class="more-read-meta">
+                            <span class="more-read-cat">| Bàn truyện</span>
+                            <span class="more-read-date">22/10/2026</span>
+                        </div>
+                        <h3 class="more-read-card-title">Loid × Yor: Khi “vợ chồng giả” bắt đầu có những cảm xúc thật</h3>
+                    </a>
+                </article>
+
+            </div>
+
+            <!-- THANH PHÂN TRANG GỢI Ý -->
+            <div class="news-pagination more-read-pagination">
+                <button class="page-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                <div class="page-numbers">
+                    <span>01</span>
+                    <span class="page-line"></span>
+                    <span>02</span>
+                </div>
+                <button class="page-btn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+                        <!-- 5. KHU VỰC ĐỌC NHIỀU -->
+        <section class="most-read-section">
+            <h3 class="most-read-heading">Đọc nhiều</h3>
+            
+            <div class="most-read-list">
+                <!-- BÀI 1: BÀN TRUYỆN -->
+                <article class="most-read-item">
+                    <a href="loid_x_yor_khi_vo_chong_gia_bat_dau_co_nhung_cam_xuc_that.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/bantruyen/soihint/manh_ghep_hoan_hao_cua_gia_dinh_forger.jpg" alt="Loid × Yor">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">BÀN TRUYỆN</span>
+                            <h4 class="most-read-title">Loid × Yor: Khi “vợ chồng giả” bắt đầu có những cảm xúc thật</h4>
+                            <span class="most-read-date">22/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 2: TIN TỨC -->
+                <article class="most-read-item">
+                    <a href="tougen_anki_2_tro_lai_voi_arc_thac_kegon_cuoc_chien_oni_va_momotaro_tiep_tuc_len_song.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/tintuc/truyenlensong/poster-anime.png" alt="TOUGEN ANKI 2">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">TIN TỨC</span>
+                            <h4 class="most-read-title">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</h4>
+                            <span class="most-read-date">22/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 3: REVIEW & PHÂN TÍCH -->
+                <article class="most-read-item">
+                    <a href="nhat_nhan_chi_ha_khi_van_hoa_truyen_thong_tro_thanh_chat_lieu_xay_dung_the_gioi_truyen.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/phantich/nhat_nhan_chi_ha_xay_dung_the_gioi_di_nhan_tu_nhieu_lop_chat_lieu_van_hoa_truyen_thong_trung_hoa.jpg" alt="Nhất Nhân Chi Hạ">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">REVIEW & PHÂN TÍCH</span>
+                            <h4 class="most-read-title">Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện</h4>
+                            <span class="most-read-date">20/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 4: BẢNG XẾP HẠNG -->
+                <article class="most-read-item">
+                    <a href="top_5_truyen_tranh_viet_nam_dang_duoc_doc_gia_chu_y.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="top_5_truyen_tranh_viet_nam_dang_duoc_doc_gia_chu_y.png" alt="Top 5 truyện tranh Việt Nam">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">BẢNG XẾP HẠNG</span>
+                            <h4 class="most-read-title">Top 5 truyện tranh Việt Nam đang được độc giả chú ý</h4>
+                            <span class="most-read-date">15/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 5: TÁC GIẢ NỔI BẬT -->
+                <article class="most-read-item">
+                    <a href="nguyen_thanh_phong_cung_hanh_trinh_dua_chat_lieu_viet_vao_truyen_tranh.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="nguyen_thanh_phong.jpg" alt="Nguyễn Thành Phong">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">TÁC GIẢ NỔI BẬT</span>
+                            <h4 class="most-read-title">Nguyễn Thành Phong cùng hành trình đưa chất liệu Việt vào truyện tranh</h4>
+                            <span class="most-read-date">14/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 6: REVIEW & PHÂN TÍCH -->
+                <article class="most-read-item">
+                    <a href="the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/review/yotsuba_kham_pha_the_gioi_bang_su_to_mo_va_goc_nhin_trong_treo_cua_mot_dua_tre.JPG" alt="Yotsuba">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">REVIEW & PHÂN TÍCH</span>
+                            <h4 class="most-read-title">Thế giới rộng lớn qua đôi mắt cô bé 5 tuổi Yotsuba</h4>
+                            <span class="most-read-date">09/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PHẦN 5: CHÂN TRANG FOOTER (ĐỒNG BỘ NGUYÊN BẢN) -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <!-- CỘT 1: LOGO TRẮNG + MẠNG XÃ HỘI -->
+            <div class="footer-col footer-col-left">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="assets/logo_trang.png" alt="Readie Logo" class="footer-logo-img">
+                </a>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/tung.tung.978310" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tf.tnguyen/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@lbppp" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CỘT 2: ĐIỀU HƯỚNG CHUYÊN MỤC -->
+            <div class="footer-col footer-col-nav">
+                <ul class="footer-nav-list">
+                    <li><a href="tintuc.html">Tin tức</a></li>
+                    <li><a href="reviewphantich.html">Review & Phân tích</a></li>
+                    <li><a href="bxh.html">Bảng xếp hạng</a></li>
+                    <li><a href="tacgianoibat.html">Tác giả nổi bật</a></li>
+                    <li><a href="bantruyen.html">Bàn truyện</a></li>
+                </ul>
+            </div>
+
+            <!-- CỘT 3: CHÍNH SÁCH & HỖ TRỢ -->
+            <div class="footer-col footer-col-policy">
+                <h4 class="policy-title">CHÍNH SÁCH & HỖ TRỢ</h4>
+                <ul class="policy-list">
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Bản quyền & DMCA</a></li>
+                    <li><span>Liên hệ: contact@readie.com</span></li>
+                </ul>
+            </div>
+
+            <!-- CỘT 4: CÙNG CẬP NHẬT -->
+            <div class="footer-col footer-col-right">
+                <div class="footer-newsletter">
+                    <h3 class="newsletter-title">Cùng cập nhật</h3>
+                    <p class="newsletter-desc">Đăng ký nhận những thông tin mới nhất.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="newsletter-input-box">
+                            <input type="email" placeholder="Your Email" required class="newsletter-input" id="newsletter-email">
+                            <button type="submit" class="newsletter-submit-btn" aria-label="Gửi">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>© 2023 - 2026 Readie Comic, Inc. by Magazine House, Ltd. (Ha Nội). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- FILE SCRIPT CHUNG -->
+    <script src="script.js"></script>
+</body>
+</html>

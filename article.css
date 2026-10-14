@@ -1,0 +1,384 @@
+/* --- HERO COVER SECTION (1920 x 900 px) --- */
+.article-hero {
+    position: relative;
+    width: 100%;
+    height: 620px; /* Tỉ lệ hiển thị chuẩn cho ảnh 1920x900 */
+    margin-top: 60px; /* Khớp navbar fixed */
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.article-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center left;
+    display: block;
+}
+
+/* THẺ THÔNG TIN NỔI TRÊN ẢNH BÌA (FLOATING CARD) */
+.article-floating-card {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    width: 440px;
+    background-color: #ffffff;
+    border: 2.5px solid #000000;
+    box-shadow: 8px 8px 0 #000000;
+    padding: 35px 30px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.article-card-badge {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #555555;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.article-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.35;
+    color: #000000;
+    margin: 0 0 16px 0;
+}
+
+.article-card-sapo {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333333;
+    margin: 0 0 25px 0;
+}
+
+.article-card-meta {
+    border-top: 1.5px solid #eeeeee;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.article-card-author {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.article-card-date {
+    font-size: 13px;
+    color: #666666;
+}
+
+/* --- VÙNG NỘI DUNG CHÍNH (ARTICLE BODY) --- */
+.article-main-wrapper {
+    max-width: 800px;
+    margin: 60px auto 100px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* KHUNG SAPO NỀN XÁM NỔI BẬT */
+.article-lead-box {
+    background-color: #ededed;
+    border: 2px solid #000000;
+    box-shadow: 4px 4px 0 #000000;
+    padding: 22px 26px;
+    margin-bottom: 45px;
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 600;
+    font-style: italic;
+    color: #111111;
+}
+
+/* NỘI DUNG VĂN BẢN */
+.article-content {
+    font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+    font-size: 15.5px;
+    line-height: 1.85;
+}
+
+.article-content h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000000;
+    margin: 45px 0 18px 0;
+    line-height: 1.4;
+}
+
+.article-content p {
+    margin-bottom: 22px;
+}
+
+/* HÌNH ẢNH MINH HỌA TRONG BÀI */
+.article-figure {
+    margin: 35px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article-figure-img-box {
+    max-width: 100%;
+    border: 2px solid #000000;
+    box-shadow: 5px 5px 0 #000000;
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+.article-figure-img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-figure figcaption {
+    font-size: 13.5px;
+    color: #555555;
+    font-style: italic;
+    margin-top: 12px;
+    text-align: center;
+    line-height: 1.5;
+    max-width: 90%;
+}
+
+/* CHỮ KÝ TÁC GIẢ CUỐI BÀI */
+.article-signoff {
+    text-align: right;
+    font-weight: 800;
+    font-size: 16px;
+    margin-top: 40px;
+    color: #000000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .article-hero {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .article-hero-img {
+        height: 380px;
+    }
+    .article-floating-card {
+        position: static;
+        transform: none;
+        width: 92%;
+        margin: -40px auto 30px;
+    }
+}
+
+/* --- PHẦN BÀI LIÊN QUAN TRONG TRANG BÀI VIẾT --- */
+.related-posts-section {
+    margin-top: 80px;
+    border-top: 2px solid #000000;
+    padding-top: 50px;
+}
+
+.related-posts-title {
+    font-family: 'Cucho', 'Montserrat', sans-serif;
+    font-size: 38px;
+    margin-bottom: 35px;
+    color: #000000;
+}
+
+.related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.related-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.related-card-thumb {
+    width: 100%;
+    height: 180px;
+    border: 2px solid #000000;
+    box-shadow: 4px 4px 0 #000000;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background-color: #f0f0f0;
+    transition: transform 0.25s ease;
+}
+
+.related-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.related-card-link:hover .related-card-thumb {
+    transform: rotate(-2deg) scale(1.02);
+}
+
+.related-card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+.related-cat {
+    font-weight: 700;
+}
+
+.related-date {
+    font-weight: 500;
+}
+
+.related-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #000000;
+    margin: 0;
+}
+
+.related-card-link:hover .related-card-title {
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.related-pagination {
+    margin-top: 40px;
+}
+
+@media (max-width: 800px) {
+    .related-posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* IN ĐẬM VÀ ĐỔI MÀU CHO TRANG / CHUYÊN MỤC ĐANG ĐƯỢC CHỌN */
+.nav-links a.active {
+    font-weight: 800 !important;
+    color: #020202 !important; /* Màu cam nổi bật giống hiệu ứng hover */
+    padding-bottom: 4px;
+}
+
+/* --- PHẦN ĐỌC NHIỀU (DƯỚI CÙNG BÀI VIẾT) --- */
+.most-read-section {
+    margin-top: 70px;
+    padding-top: 50px;
+    border-top: 2px solid #000000;
+}
+
+.most-read-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.most-read-list {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.most-read-item {
+    width: 100%;
+}
+
+.most-read-link {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.most-read-thumb {
+    width: 200px;
+    height: 125px;
+    flex-shrink: 0;
+    border: 2px solid #000000;
+    box-shadow: 4px 4px 0 #000000;
+    overflow: hidden;
+    background-color: #eee;
+    transition: transform 0.2s ease;
+}
+
+.most-read-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.most-read-link:hover .most-read-thumb {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #000000;
+}
+
+.most-read-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* BADGE MÀU VÀNG VIỀN ĐEN NEO-BRUTALISM */
+.most-read-badge {
+    display: inline-block;
+    background-color: #f7d047;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border: 1.5px solid #000000;
+    box-shadow: 2px 2px 0 #000000;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.most-read-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #000000;
+    margin: 0 0 8px 0;
+    transition: color 0.2s ease;
+}
+
+.most-read-link:hover .most-read-title {
+    color: #e65100;
+}
+
+.most-read-date {
+    font-size: 13px;
+    color: #444444;
+    font-weight: 500;
+}
+
+@media (max-width: 650px) {
+    .most-read-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+    .most-read-thumb {
+        width: 100%;
+        height: 190px;
+    }
+}

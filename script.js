@@ -17,56 +17,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// DANH SÁCH DỮ LIỆU CÁC BÀI VIẾT TIN TỨC
+// DANH SÁCH DỮ LIỆU CÁC BÀI VIẾT TIN TỨC (SẮP XẾP THEO THỜI GIAN MỚI NHẤT GIẢM DẦN)
 const newsArticles = [
     {
-        title: "5 anime hè 2026 để lại dấu ấn ở những tập cuối",
-        category: "COMIC BUZZ - TIN NÓNG",
+        title: "TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!",
+        category: "TRUYỆN LÊN SÓNG",
         date: "22/10/2026",
-        slug: "5-anime-he-2026-de-lai.html",
-        img: "assets/anh-5-anime-he-2026-de-lai.png"
+        slug: "tougen_anki_2_tro_lai_voi_arc_thac_kegon_cuoc_chien_oni_va_momotaro_tiep_tuc_len_song.html",
+        img: "assets/tintuc/truyenlensong/poster-anime.png"
+    },
+    {
+        title: "Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới",
+        category: "COMIC BUZZ - TIN NÓNG",
+        date: "21/10/2026",
+        slug: "truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.html",
+        img: "assets/tintuc/comicbuzz/truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.jpg"
+    },
+    {
+        title: "Từ webtoon đến màn ảnh rộng: “Guardians of the Video Game” mở đường cho phim hoạt hình Hàn Quốc",
+        category: "TRUYỆN LÊN SÓNG",
+        date: "19/10/2026",
+        slug: "tu_webtoon_den_man_anh_rong_guardians_of_the_video_game_mo_duong_cho_phim_hoat_hinh_han_quoc.html",
+        img: "assets/anh-tu-webtoon-den-man-anh-rong.jpg"
     },
     {
         title: "Đọc manga bằng 100 ngôn ngữ? Shueisha mở rộng thế giới truyện tranh với MANGA MILLION!",
         category: "COMIC BUZZ - TIN NÓNG",
-        date: "20/10/2026",
-        slug: "doc-manga-bang-100-ngon-ngu.html",
+        date: "17/10/2026",
+        slug: "https://hoaiphuongnguyenportfolio.my.canva.site/c-manga-b-ng-100-ng-n-ng-shueisha-m-r-ng-th-gi-i-truy-n-tranh-v-i-manga-million",
         img: "assets/anh-doc-manga-bang-100-ngon-ngu.png"
-    },
-    {
-        title: "TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!",
-        category: "TRUYỆN LÊN SÓNG",
-        date: "18/10/2026",
-        slug: "tougen-anki-2-tro-lai.html",
-        img: "assets/anh-tougen-anki-2-tro-lai.jpg"
     },
     {
         title: "Không cần là mangaka chuyên nghiệp: Cánh cửa xuất bản manga đang mở rộng cho nhà sáng tạo mới",
         category: "COMIC BUZZ - TIN NÓNG",
         date: "15/10/2026",
-        slug: "khong-can-la-mangaka-chuyen-nghiep.html",
+        slug: "https://hoaiphuongnguyenportfolio.my.canva.site/kh-ng-c-n-l-mangaka-chuy-n-nghi-p-c-nh-c-a-xu-t-b-n-manga-ang-m-r-ng-cho-nh-s-ng-t-o-m-i",
         img: "assets/anh-khong-can-la-mangaka-chuyen-nghiep.jpg"
-    },
-    {
-        title: "Từ webtoon đến màn ảnh rộng: “Guardians of the Video Game” mở đường cho phim hoạt hình Hàn Quốc",
-        category: "TRUYỆN LÊN SÓNG",
-        date: "11/10/2026",
-        slug: "tu-webtoon-den-man-anh-rong.html",
-        img: "assets/anh-tu-webtoon-den-man-anh-rong.jpg"
-    },
-    {
-        title: "Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới",
-        category: "COMIC BUZZ - TIN NÓNG",
-        date: "06/10/2026",
-        slug: "truyen-tranh-viet-sap-gop.html",
-        img: "assets/anh-truyen-tranh-viet-sap-gop.jpg"
     },
     {
         title: "“Here U Are” chính thức được chuyển thể anime: Chuyện tình thanh xuân khiến fan manhua mong chờ",
         category: "TRUYỆN LÊN SÓNG",
-        date: "01/10/2026",
-        slug: "here-u-are-chinh-thuc.html",
+        date: "08/10/2026",
+        slug: "https://hoaiphuongnguyenportfolio.my.canva.site/here-u-are-ch-nh-th-c-c-chuy-n-th-anime-chuy-n-t-nh-thanh-xu-n-khi-n-fan-manhua-mong-ch",
         img: "assets/anh-here-u-are-chinh-thuc.jpg"
+    },
+    {
+        title: "5 anime hè 2026 để lại dấu ấn ở những tập cuối",
+        category: "COMIC BUZZ - TIN NÓNG",
+        date: "01/10/2026",
+        slug: "https://hoaiphuongnguyenportfolio.my.canva.site/5-anime-h-2026-l-i-d-u-n-nh-ng-t-p-cu-i",
+        img: "assets/anh-5-anime-he-2026-de-lai.png"
     }
 ];
 
@@ -132,103 +132,105 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// DANH SÁCH BÀI VIẾT XẾP XEN KẼ REVIEW & PHÂN TÍCH THEO MỐC THỜI GIAN GIẢM DẦN
+// DANH SÁCH BÀI VIẾT REVIEW & PHÂN TÍCH SẮP XẾP THEO MỐC THỜI GIAN MỚI NHẤT GIẢM DẦN
 const reviewArticles = [
     // Trang 1: (22/10 - 19/10)
     {
+        title: "Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện",
+        category: "Phân tích",
+        date: "22/10/2026",
+        slug: "nhat_nhan_chi_ha_khi_van_hoa_truyen_thong_tro_thanh_chat_lieu_xay_dung_the_gioi_truyen.html",
+        img: "assets/phantich/tin_nguong_dan_gian_buoc_vao_the_gioi_di_nhan.jpg"
+    },
+    {
         title: "Long Thần Tướng kể lịch sử Việt Nam bằng ngôn ngữ truyện tranh",
         category: "Review",
-        date: "22/10/2026",
-        slug: "long-than-tuong-ke-lich.html",
-        img: "assets/anh-long-than-tuong-ke-lich.jpg"
-    },
-    {
-        title: "Từ Đôrêmon đến Doraemon: Hành trình hơn 30 năm của chú mèo máy tại Việt Nam",
-        category: "Review",
         date: "21/10/2026",
-        slug: "tu-doremon-den-doraemon-hanh.html",
-        img: "assets/anh-tu-doremon-den-doraemon-hanh.jpg"
+        slug: "long-than-tuong-ke-lich.html",
+        img: "assets/anh-long-than-tuong-ke-lich.webp"
     },
     {
-        title: "Death Note và ranh giới mong manh giữa công lý với quyền lực",
-        category: "Phân tích",
+        title: "Thế giới rộng lớn qua đôi mắt cô bé 5 tuổi Yotsuba",
+        category: "Review",
         date: "20/10/2026",
-        slug: "death-note-va-ranh-gioi.html",
-        img: "assets/anh-death-note-va-ranh-gioi.jpg"
+        slug: "the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.html",
+        img: "assets/review/the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.png"
     },
     {
         title: "Cô đi mà lấy chồng tôi: Khi cơ hội thứ hai trở thành cuộc trả thù",
         category: "Review",
         date: "19/10/2026",
-        slug: "co-di-ma-lay-chong.html",
-        img: "assets/anh-co-di-ma-lay-chong.jpg"
+        slug: "co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.html",
+        img: "assets/review/co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.png"
     },
 
-    // Trang 2: (18/10 - 12/10)
+    // Trang 2: (18/10 - 14/10)
     {
         title: "Conan và nghệ thuật tạo nên một vụ án trinh thám",
         category: "Phân tích",
         date: "18/10/2026",
-        slug: "conan-va-nghe-thuat-tao.html",
-        img: "assets/anh-conan-va-nghe-thuat-tao.jpg"
+        slug: "https://preview.canva.site/393b154f-8c79-47a5-8910-6fa76db1c211/readie.com/",
+        img: "assets/phantich/conan_va_nghe_thuat_tao_nen_mot_vu_an_trinh_tham.jpg"
     },
     {
         title: "Frieren: Beyond Journey’s End và hành trình giả tưởng chậm rãi nhưng đầy cảm xúc",
         category: "Review",
         date: "17/10/2026",
-        slug: "frieren-beyond-journeys-end-va.html",
+        slug: "https://preview.canva.site/c1aee036-32a5-40e1-830b-39e1f8046995/readie.com/frieren",
         img: "assets/anh-frieren-beyond-journeys-end-va.jpg"
     },
     {
         title: "Naruto và hành trình từ đứa trẻ bị lãng quên đến người được công nhận",
         category: "Phân tích",
         date: "15/10/2026",
-        slug: "naruto-va-hanh-trinh-tu.html",
+        slug: "https://bai4tieumucreview.my.canva.site/naruto",
         img: "assets/anh-naruto-va-hanh-trinh-tu.jpg"
     },
     {
         title: "Hành trình trở thành người mạnh nhất của Solo Leveling",
         category: "Review",
         date: "14/10/2026",
-        slug: "hanh-trinh-tro-thanh-nguoi.html",
-        img: "assets/anh-hanh-trinh-tro-thanh-nguoi.jpg"
+        slug: "https://bai4tieumucreview.my.canva.site/",
+        img: "assets/review/hanh_trinh_tro_thanh_nguoi_manh_nhat_cua_solo_leveling.png",
     },
 
-    // Trang 3: (12/10 - 01/10)
+    // Trang 3: (13/10 - 11/10)
+    {
+        title: "The Boxer và câu chuyện về con người được kể qua những trận đấu",
+        category: "Phân tích",
+        date: "13/10/2026",
+        slug: "the-boxer-va-cau-chuyen.html",
+        img: "assets/anh-the-boxer-va-cau-chuyen.jpg"
+    },
     {
         title: "Luffy và quan niệm về tự do trong One Piece",
         category: "Phân tích",
         date: "12/10/2026",
-        slug: "luffy-va-quan-niem-ve.html",
+        slug: "https://preview.canva.site/231c67ed-8746-4e41-89c0-ba5cdf2fd15e/readie.com/luffy",
         img: "assets/anh-luffy-va-quan-niem-ve.jpg"
     },
     {
         title: "Haikyuu!! - Hành trình trưởng thành sau mỗi trận đấu",
         category: "Review",
         date: "11/10/2026",
-        slug: "haikyuu-hanh-trinh-truong-thanh.html",
-        img: "assets/anh-haikyuu-hanh-trinh-truong-thanh.jpg"
+        slug: "https://bai4tieumucreview.my.canva.site/bai6",
+        img: "assets/review/haikyuu_hanh_trinh_truong_thanh_sau_moi_tran_dau.webp"
     },
     {
-        title: "Thế giới rộng lớn qua đôi mắt cô bé 5 tuổi Yotsuba",
+        title: "Death Note và ranh giới mong manh giữa công lý với quyền lực",
+        category: "Phân tích",
+        date: "07/10/2026",
+        slug: "https://preview.canva.site/17248440-ae6a-4a40-bd87-4318533eb237/readie.com/deathnote",
+        img: "assets/anh-death-note-va-ranh-gioi.jpg"
+    },
+
+    // Trang 4: (05/10)
+    {
+        title: "Từ Đôrêmon đến Doraemon: Hành trình hơn 30 năm của chú mèo máy tại Việt Nam",
         category: "Review",
-        date: "08/10/2026",
-        slug: "the-gioi-rong-lon-qua.html",
-        img: "assets/anh-the-gioi-rong-lon-qua.jpg"
-    },
-    {
-        title: "Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện",
-        category: "Phân tích",
         date: "05/10/2026",
-        slug: "nhat-nhan-chi-ha-khi.html",
-        img: "assets/anh-nhat-nhan-chi-ha-khi.jpg"
-    },
-    {
-        title: "The Boxer và câu chuyện về con người được kể qua những trận đấu",
-        category: "Phân tích",
-        date: "01/10/2026",
-        slug: "the-boxer-va-cau-chuyen.html",
-        img: "assets/anh-the-boxer-va-cau-chuyen.jpg"
+        slug: "https://bai4tieumucreview.my.canva.site/b-i-7-ti-u-m-c-review",
+        img: "assets/review/tu_doremon_den_doraemon_hanh_trinh_hon_30_nam_cua_chu_meo_may_tai_viet_nam.jpg"
     }
 ];
 
@@ -314,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Bán kính bóng đã được tăng kích thước chung:
     // Top 1: 52px (to nhất) -> Top 5: 30px (nhỏ nhất)
     const mangaData = [
-        { name: 'JoJo Part 7', src: 'assets/jojo_part7.jpg', radius: 52 },          // Top 1 (To nhất)
+        { name: 'JoJo Part 7', src: 'assets/jojo_part7.png', radius: 52 },          // Top 1 (To nhất)
         { name: 'Berserk', src: 'assets/berserk.jpg', radius: 45 },                 // Top 2
         { name: 'One Piece', src: 'assets/one_piece.jpg', radius: 39 },             // Top 3
         { name: 'Fullmetal Alchemist', src: 'assets/fullmetal_alchemist.jpg', radius: 34 }, // Top 4
@@ -463,19 +465,19 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece",
             date: "22/10/2026",
             slug: "eiichiro-oda-hanh-trinh.html",
-            img: "assets/tac_gia_oda.jpg"
+            img: "assets/tac_gia_oda.webp"
         },
         {
             title: "Naoki Urasawa và những câu chuyện manga đi sâu vào tâm lý con người",
             date: "20/10/2026",
             slug: "naoki-urasawa-tam-ly.html",
-            img: "assets/tac_gia_urasawa.jpg"
+            img: "assets/tac_gia_urasawa.webp"
         },
         {
             title: "Nguyễn Thành Phong cùng hành trình đưa chất liệu Việt vào truyện tranh",
             date: "18/10/2026",
             slug: "nguyen-thanh-phong-chat-lieu-viet.html",
-            img: "assets/tac_gia_thanh_phong.jpg"
+            img: "assets/tac_gia_thanh_phong.png"
         },
         {
             title: "SIU và thế giới khổng lồ được kiến tạo trong Tower of God",
@@ -487,13 +489,13 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Carnby Kim cùng hành trình tạo nên hiện tượng Sweet Home từ những câu chuyện kinh dị",
             date: "12/10/2026",
             slug: "carnby-kim-sweet-home.html",
-            img: "assets/tac_gia_carnby_kim.jpg"
+            img: "assets/tac_gia_carnby_kim.jfif"
         },
         {
             title: "ONE từ webcomic nét vẽ đơn giản đến những tác phẩm vươn ra toàn cầu",
             date: "10/10/2026",
             slug: "one-tu-webcomic.html",
-            img: "assets/tac_gia_one.jpg"
+            img: "assets/tac_gia_one.webp"
         }
     ];
 
@@ -570,7 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     // 1. DANH SÁCH BÀI VIẾT BÀN TRUYỆN
     const discussionArticles = [
-        { title: "Loid × Yor: Khi “vợ chồng giả” bắt đầu có những cảm xúc thật", date: "22/10/2026", img: "assets/ban_truyen_1.jpg", slug: "loid-yor-cam-xuc-that.html" },
+        { title: "Loid × Yor: Khi “vợ chồng giả” bắt đầu có những cảm xúc thật", date: "22/10/2026", img: "assets/bantruyen/soihint/manh_ghep_hoan_hao_cua_gia_dinh_forger.jpg", slug: "loid_x_yor_khi_vo_chong_gia_bat_dau_co_nhung_cam_xuc_that.html" },
         { title: "Kim Dokja biết trước tương lai, nhưng có thật sự hiểu câu chuyện?", date: "20/10/2026", img: "assets/ban_truyen_2.jpg", slug: "kim-dokja-tuong-lai.html" },
         { title: "Long Thần Tướng: Khi khung tranh kể nhiều hơn lời thoại", date: "18/10/2026", img: "assets/ban_truyen_3.jpg", slug: "long-than-tuong-khung-tranh.html" },
         { title: "Maomao không chỉ giải án bằng kiến thức: Hãy nhìn vào thứ mọi người bỏ qua", date: "15/10/2026", img: "assets/ban_truyen_4.jpg", slug: "maomao-giai-an.html" },
@@ -733,15 +735,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. HIỆU ỨNG NẢY LÒ XO KHI HOVER VÀO LOGO TRẮNG
+    // 1. HIỆU ỨNG NẢY LÒ XO KHI HOVER VÀO LOGO
     const logoImg = document.querySelector('.footer-logo-img');
-
     if (logoImg) {
         logoImg.addEventListener('mouseenter', () => {
             logoImg.style.animation = 'none';
             logoImg.style.transition = 'transform 0.12s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             logoImg.style.transform = 'translateY(-12px) scale(0.95, 1.1)';
-
             setTimeout(() => {
                 logoImg.style.transform = 'translateY(4px) scale(1.04, 0.92)';
                 setTimeout(() => {
@@ -757,19 +757,259 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. XỬ LÝ NÚT ĐĂNG KÝ EMAIL
+// 2. XỬ LÝ NÚT ĐĂNG KÝ EMAIL
     const newsletterForm = document.getElementById('newsletter-form');
     const newsletterEmail = document.getElementById('newsletter-email');
-
     if (newsletterForm && newsletterEmail) {
         newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const emailValue = newsletterEmail.value.trim();
-
             if (emailValue) {
                 alert(`Cảm ơn bạn đã đăng ký! Thông tin mới nhất sẽ được gửi đến email: ${emailValue}`);
                 newsletterEmail.value = '';
             }
         });
     }
+});
+
+// --- XỬ LÝ PHÂN TRANG BÀI LIÊN QUAN TRONG TRANG BÀI VIẾT (3 BÀI / TRANG) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const relatedContainer = document.getElementById('related-posts-grid');
+    const prevBtn = document.getElementById('related-prev-btn');
+    const nextBtn = document.getElementById('related-next-btn');
+    const currPageElem = document.getElementById('related-page-curr');
+    const nextPageElem = document.getElementById('related-page-next');
+
+    if (!relatedContainer || !prevBtn || !nextBtn) return;
+
+    // Danh sách 6 bài còn lại trong chuyên mục Tin tức
+    const relatedArticles = [
+        // Trang 1
+        {
+            title: "TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!",
+            category: "Truyện lên sóng",
+            date: "22/10/2026",
+            slug: "tougen-anki-2-tro-lai.html",
+            img: "assets/anh-tougen-anki-2-tro-lai.jpg"
+        },
+        {
+            title: "5 anime hè 2026 để lại dấu ấn ở những tập cuối",
+            category: "Comic Buzz - Tin nóng",
+            date: "16/10/2026",
+            slug: "5-anime-he-2026-de-lai.html",
+            img: "assets/anh-5-anime-he-2026-de-lai.png"
+        },
+        {
+            title: "Từ webtoon đến màn ảnh rộng: “Guardians of the Video Game” mở đường cho phim hoạt hình Hàn Quốc",
+            category: "Truyện lên sóng",
+            date: "12/10/2026",
+            slug: "tu-webtoon-den-man-anh-rong.html",
+            img: "assets/anh-tu-webtoon-den-man-anh-rong.jpg"
+        },
+        // Trang 2
+        {
+            title: "Đọc manga bằng 100 ngôn ngữ? Shueisha mở rộng thế giới truyện tranh với MANGA MILLION!",
+            category: "Comic Buzz - Tin nóng",
+            date: "07/10/2026",
+            slug: "doc-manga-bang-100-ngon-ngu.html",
+            img: "assets/anh-doc-manga-bang-100-ngon-ngu.png"
+        },
+        {
+            title: "Không cần là mangaka chuyên nghiệp: Cánh cửa xuất bản manga đang mở rộng cho nhà sáng tạo mới",
+            category: "Comic Buzz - Tin nóng",
+            date: "30/09/2026",
+            slug: "khong-can-la-mangaka-chuyen-nghiep.html",
+            img: "assets/anh-khong-can-la-mangaka-chuyen-nghiep.jpg"
+        },
+        {
+            title: "“Here U Are” chính thức được chuyển thể anime: Chuyện tình thanh xuân khiến fan manhua mong chờ",
+            category: "Truyện lên sóng",
+            date: "14/09/2026",
+            slug: "here-u-are-chinh-thuc.html",
+            img: "assets/anh-here-u-are-chinh-thuc.jpg"
+        }
+    ];
+
+    let currentRelatedPage = 1;
+    const itemsPerPage = 3;
+    const totalRelatedPages = Math.ceil(relatedArticles.length / itemsPerPage);
+
+    function renderRelatedPage(page) {
+        relatedContainer.innerHTML = '';
+        const start = (page - 1) * itemsPerPage;
+        const pageItems = relatedArticles.slice(start, start + itemsPerPage);
+
+        pageItems.forEach(item => {
+            const cardHTML = `
+                <article class="related-card">
+                    <a href="${item.slug}" class="related-card-link">
+                        <div class="related-card-thumb">
+                            <img src="${item.img}" alt="${item.title}">
+                        </div>
+                        <div class="related-card-meta">
+                            <span class="related-cat">| ${item.category}</span>
+                            <span class="related-date">${item.date}</span>
+                        </div>
+                        <h4 class="related-card-title">${item.title}</h4>
+                    </a>
+                </article>
+            `;
+            relatedContainer.insertAdjacentHTML('beforeend', cardHTML);
+        });
+
+        // Cập nhật số hiển thị (01 - 02 -> 02 - 03)
+        const currStr = String(page).padStart(2, '0');
+        const nextStr = String(page + 1).padStart(2, '0');
+
+        if (currPageElem) currPageElem.textContent = currStr;
+        if (nextPageElem) nextPageElem.textContent = nextStr;
+
+        // Vô hiệu hóa nút khi ở trang đầu hoặc trang cuối
+        prevBtn.disabled = (page === 1);
+        nextBtn.disabled = (page === totalRelatedPages);
+        prevBtn.style.opacity = page === 1 ? '0.4' : '1';
+        nextBtn.style.opacity = page === totalRelatedPages ? '0.4' : '1';
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (currentRelatedPage > 1) {
+            currentRelatedPage--;
+            renderRelatedPage(currentRelatedPage);
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentRelatedPage < totalRelatedPages) {
+            currentRelatedPage++;
+            renderRelatedPage(currentRelatedPage);
+        }
+    });
+
+    // Chạy render trang đầu tiên
+    renderRelatedPage(currentRelatedPage);
+});
+
+// --- XỬ LÝ PHÂN TRANG BÀI LIÊN QUAN TRONG TRANG BÀI VIẾT (TỰ LOẠI TRỪ BÀI HIỆN TẠI) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const relatedContainer = document.getElementById('related-posts-grid');
+    const prevBtn = document.getElementById('related-prev-btn');
+    const nextBtn = document.getElementById('related-next-btn');
+    const currPageElem = document.getElementById('related-page-curr');
+    const nextPageElem = document.getElementById('related-page-next');
+
+    if (!relatedContainer || !prevBtn || !nextBtn) return;
+
+    // Danh sách toàn bộ 7 bài viết của chuyên mục Tin tức
+    const allNewsArticles = [
+        {
+            title: "TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!",
+            category: "Truyện lên sóng",
+            date: "22/10/2026",
+            slug: "tougen-anki-2-tro-lai.html",
+            img: "assets/anh-tougen-anki-2-tro-lai.jpg"
+        },
+        {
+            title: "5 anime hè 2026 để lại dấu ấn ở những tập cuối",
+            category: "Comic Buzz - Tin nóng",
+            date: "16/10/2026",
+            slug: "5-anime-he-2026-de-lai.html",
+            img: "assets/anh-5-anime-he-2026-de-lai.png"
+        },
+        {
+            title: "Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới",
+            category: "Comic Buzz - Tin nóng",
+            date: "15/10/2026",
+            slug: "truyen-tranh-viet-sap-gop.html",
+            img: "assets/tintuc/comicbuzz/truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.jpg"
+        },
+        {
+            title: "Từ webtoon đến màn ảnh rộng: “Guardians of the Video Game” mở đường cho phim hoạt hình Hàn Quốc",
+            category: "Truyện lên sóng",
+            date: "12/10/2026",
+            slug: "tu-webtoon-den-man-anh-rong.html",
+            img: "assets/tintuc/truyenlensong/tu_webtoon_den_man_anh_rong_guardians_of_the_video_game_mo_duong_cho_phim_hoat_hinh_han_quoc.png"
+        },
+        {
+            title: "Đọc manga bằng 100 ngôn ngữ? Shueisha mở rộng thế giới truyện tranh với MANGA MILLION!",
+            category: "Comic Buzz - Tin nóng",
+            date: "07/10/2026",
+            slug: "doc-manga-bang-100-ngon-ngu.html",
+            img: "assets/anh-doc-manga-bang-100-ngon-ngu.png"
+        },
+        {
+            title: "Không cần là mangaka chuyên nghiệp: Cánh cửa xuất bản manga đang mở rộng cho nhà sáng tạo mới",
+            category: "Comic Buzz - Tin nóng",
+            date: "30/09/2026",
+            slug: "khong-can-la-mangaka-chuyen-nghiep.html",
+            img: "assets/anh-khong-can-la-mangaka-chuyen-nghiep.jpg"
+        },
+        {
+            title: "“Here U Are” chính thức được chuyển thể anime: Chuyện tình thanh xuân khiến fan manhua mong chờ",
+            category: "Truyện lên sóng",
+            date: "14/09/2026",
+            slug: "here-u-are-chinh-thuc.html",
+            img: "assets/anh-here-u-are-chinh-thuc.jpg"
+        }
+    ];
+
+    // Lấy tên file HTML đang mở trên trình duyệt (ví dụ: "tu-webtoon-den-man-anh-rong.html")
+    const currentPath = window.location.pathname.split('/').pop() || '';
+    
+    // Tự lọc bỏ bài viết hiện tại, chỉ giữ 6 bài còn lại
+    const relatedArticles = allNewsArticles.filter(art => art.slug !== currentPath);
+
+    let currentRelatedPage = 1;
+    const itemsPerPage = 3;
+    const totalRelatedPages = Math.ceil(relatedArticles.length / itemsPerPage);
+
+    function renderRelatedPage(page) {
+        relatedContainer.innerHTML = '';
+        const start = (page - 1) * itemsPerPage;
+        const pageItems = relatedArticles.slice(start, start + itemsPerPage);
+
+        pageItems.forEach(item => {
+            const cardHTML = `
+                <article class="related-card">
+                    <a href="${item.slug}" class="related-card-link">
+                        <div class="related-card-thumb">
+                            <img src="${item.img}" alt="${item.title}">
+                        </div>
+                        <div class="related-card-meta">
+                            <span class="related-cat">| ${item.category}</span>
+                            <span class="related-date">${item.date}</span>
+                        </div>
+                        <h4 class="related-card-title">${item.title}</h4>
+                    </a>
+                </article>
+            `;
+            relatedContainer.insertAdjacentHTML('beforeend', cardHTML);
+        });
+
+        const currStr = String(page).padStart(2, '0');
+        const nextStr = String(page + 1).padStart(2, '0');
+
+        if (currPageElem) currPageElem.textContent = currStr;
+        if (nextPageElem) nextPageElem.textContent = nextStr;
+
+        prevBtn.disabled = (page === 1);
+        nextBtn.disabled = (page === totalRelatedPages);
+        prevBtn.style.opacity = page === 1 ? '0.4' : '1';
+        nextBtn.style.opacity = page === totalRelatedPages ? '0.4' : '1';
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (currentRelatedPage > 1) {
+            currentRelatedPage--;
+            renderRelatedPage(currentRelatedPage);
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentRelatedPage < totalRelatedPages) {
+            currentRelatedPage++;
+            renderRelatedPage(currentRelatedPage);
+        }
+    });
+
+    renderRelatedPage(currentRelatedPage);
 });

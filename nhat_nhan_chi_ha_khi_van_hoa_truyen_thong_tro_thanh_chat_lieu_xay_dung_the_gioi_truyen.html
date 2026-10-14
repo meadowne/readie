@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện - Readie</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CSS dùng chung & CSS bài viết -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="article.css">
+
+    <!-- CSS TÙY CHỈNH CHO BÌA 1920x1100 VÀ KHUNG ẢNH NỘI DUNG -->
+    <style>
+        /* 1. KHUNG COVER TIÊU CHUẨN 1920 x 1100 px */
+        .article-hero {
+            height: 720px !important;
+        }
+
+        /* 2. KHUNG ẢNH MINH HỌA ÔM SÁT VỪA KHÍT NÉT NỀN */
+        .article-figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .article-figure-img-box {
+            display: inline-block;
+            width: fit-content;
+            max-width: 760px !important; /* Độ rộng hiển thị thoáng rộng, sắc nét */
+            border: 2.5px solid #000000;
+            box-shadow: 6px 6px 0 #000000;
+            overflow: hidden;
+            line-height: 0;
+            background: transparent !important;
+        }
+
+        .article-figure-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        @media (max-width: 900px) {
+            .article-hero {
+                height: auto !important;
+            }
+            .article-figure-img-box {
+                max-width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER (TAB REVIEW & PHÂN TÍCH IN ĐẬM) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="readie logo">
+            </a>
+            <nav class="nav-links">
+                <a href="tintuc.html">Tin tức</a>
+                <a href="reviewphantich.html" class="active">Review & Phân tích</a>
+                <a href="bxh.html">Bảng xếp hạng</a>
+                <a href="tacgianoibat.html">Tác giả nổi bật</a>
+                <a href="bantruyen.html">Bàn truyện</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-wrapper">
+                    <button id="search-btn" class="icon-btn" title="Tìm kiếm">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <div id="search-box" class="search-box">
+                        <div class="search-input-wrapper">
+                            <input type="text" placeholder="Nhập từ khóa">
+                            <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <button id="theme-btn" class="icon-btn" title="Đổi giao diện">
+                    <i class="fa-regular fa-sun" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO COVER SECTION (1920 x 1100 px) -->
+    <section class="article-hero">
+        <img src="assets/phantich/nhat_nhan_chi_ha.png" 
+             alt="Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện" 
+             class="article-hero-img">
+        
+        <!-- THẺ THÔNG TIN NỔI BẬT GÓC PHẢI -->
+        <div class="article-floating-card">
+            <span class="article-card-badge">Review & Phân tích</span>
+            <h1 class="article-card-title">Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện</h1>
+            <p class="article-card-sapo">Không đặt văn hóa truyền thống như lớp trang trí, Nhất Nhân Chi Hạ biến Đạo giáo, thuật số và tín ngưỡng dân gian thành nền móng cho cả một thế giới dị nhân.</p>
+            <div class="article-card-meta">
+                <span class="article-card-author">Hải Yến</span>
+                <span class="article-card-date">20/10/2026</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. NỘI DUNG CHÍNH CỦA BÀI VIẾT -->
+    <main class="article-main-wrapper">
+        
+        <!-- KHUNG SAPO NỀN XÁM -->
+        <div class="article-lead-box">
+            Không đặt văn hóa truyền thống như lớp trang trí, Nhất Nhân Chi Hạ biến Đạo giáo, thuật số và tín ngưỡng dân gian thành nền móng cho cả một thế giới dị nhân.
+        </div>
+
+        <article class="article-content">
+            <figure class="article-figure">
+                <div class="article-figure-img-box">
+                    <img src="assets/phantich/nhat_nhan_chi_ha_xay_dung_the_gioi_di_nhan_tu_nhieu_lop_chat_lieu_van_hoa_truyen_thong_trung_hoa.jpg" 
+                         alt="Nhất Nhân Chi Hạ xây dựng thế giới dị nhân">
+                </div>
+                <figcaption>Nhất Nhân Chi Hạ xây dựng thế giới dị nhân từ nhiều lớp chất liệu văn hóa truyền thống Trung Hoa. Nguồn ảnh: Sưu tầm</figcaption>
+            </figure>
+
+            <h2>“Khí” - điểm khởi đầu của một thế giới đậm màu phương Đông</h2>
+            <p>Một trong những khái niệm quan trọng nhất của Nhất Nhân Chi Hạ là “khí”. Trong tác phẩm, dị nhân thông qua việc vận dụng khí để hình thành các loại công pháp và năng lực khác nhau. Khái niệm này có nguồn gốc từ tư tưởng triết học Trung Hoa và đặc biệt gắn với hệ thống tư tưởng Đạo giáo.</p>
+            <p>Điều đáng chú ý là tác giả không sử dụng “khí” như một loại năng lượng chung chung. Từ một nền tảng duy nhất, truyện phát triển thành nhiều phương thức tu luyện khác nhau, tùy thuộc vào truyền thừa và quan niệm của từng môn phái.</p>
+            <p>Nhờ vậy, “khí” vừa đóng vai trò hệ thống sức mạnh, vừa trở thành sợi dây liên kết các lớp văn hóa trong truyện. Đạo giáo, võ thuật, thuật số hay tín ngưỡng dân gian không tồn tại tách biệt mà cùng được giải thích thông qua một cơ chế chung.</p>
+
+            <h2>Đạo giáo được biến thành hệ thống vận hành của thế giới</h2>
+            <p>Đạo giáo xuất hiện với mật độ dày đặc trong Nhất Nhân Chi Hạ. Long Hổ Sơn, Võ Đang, Toàn Chân, các loại phù lục, lôi pháp hay kim quang chú đều được chuyển hóa thành những yếu tố trực tiếp tham gia vào cốt truyện. Nhiều trong số đó có nguồn gốc từ truyền thống Đạo giáo ngoài đời thực.</p>
+            <p>Điểm đặc biệt nằm ở cách tác phẩm đưa những khái niệm vốn khá xa lạ với độc giả trẻ vào một thế giới hiện đại. Thay vì đặt nhân vật trong bối cảnh cổ trang, tác giả để các đạo sĩ, thuật pháp và truyền thừa tồn tại song song với xã hội đương đại.</p>
+            <p>Sự kết hợp này tạo nên một thế giới có hai tầng: bên ngoài là đời sống hiện đại quen thuộc, bên trong là một hệ thống dị nhân được duy trì qua nhiều thế hệ. Chính sự chồng lớp ấy khiến chất truyền thống trong truyện không bị tách khỏi đời sống hiện đại.</p>
+
+            <h2>Từ kỳ môn độn giáp đến Bát Kỳ Kỹ</h2>
+            <p>Nhất Nhân Chi Hạ còn đưa thuật số và tư tưởng âm dương, bát quái vào cấu trúc năng lực. Kỳ Môn Độn Giáp, chẳng hạn, không chỉ xuất hiện như một thuật pháp có hình thức kỳ bí mà trở thành cơ chế để nhân vật thao tác với không gian và trận thế.</p>
+            <p>Bát Kỳ Kỹ tiếp tục mở rộng cách tiếp cận này. Mỗi kỹ năng có một nguồn gốc, phương thức vận hành và triết lý riêng, khiến hệ thống sức mạnh không đơn thuần là cuộc cạnh tranh xem ai có năng lực lớn hơn. Một số nghiên cứu, bình luận về tác phẩm cũng ghi nhận việc truyện kết hợp thuật số, Đạo giáo và nhiều hình thức truyền thống khác để tạo nên hệ thống năng lực.</p>
+            <p>Nhờ vậy, kiến thức văn hóa được chuyển thành một phần của logic kể chuyện. Người đọc càng hiểu những khái niệm phía sau, càng có thêm cơ sở để đọc các trận đấu và năng lực của nhân vật ở nhiều tầng nghĩa khác nhau.</p>
+
+            <h2>Tín ngưỡng dân gian bước vào thế giới dị nhân</h2>
+            <p>Nếu Đạo giáo tạo nên phần khung lý thuyết thì tín ngưỡng dân gian khiến thế giới Nhất Nhân Chi Hạ trở nên đa dạng hơn. Tiêu biểu là hệ thống “Xuất Mã Tiên” và các tín ngưỡng liên quan đến linh vật, đồng cốt và quan niệm giao tiếp giữa con người với những thực thể siêu nhiên.</p>
+            <p>Những yếu tố này khác với hình ảnh đạo sĩ thường thấy trong văn hóa đại chúng. Chúng gắn với đời sống dân gian, truyền thuyết địa phương và những cách lý giải thế giới tồn tại ngoài hệ thống tôn giáo chính thống.</p>
+
+            <figure class="article-figure">
+                <div class="article-figure-img-box">
+                    <img src="assets/phantich/tin_nguong_dan_gian_buoc_vao_the_gioi_di_nhan.jpg" 
+                         alt="Tín ngưỡng dân gian bước vào thế giới dị nhân">
+                </div>
+                <figcaption>Tín ngưỡng dân gian bước vào thế giới dị nhân. Nguồn ảnh: Sưu tầm</figcaption>
+            </figure>
+
+            <p>Việc đưa chúng vào cùng một thế giới với Đạo giáo tạo nên một bức tranh văn hóa không đồng nhất. Nhất Nhân Chi Hạ không xây dựng truyền thống Trung Hoa như một hệ thống duy nhất, mà cho thấy sự tồn tại song song của nhiều dòng tín ngưỡng và thực hành dân gian.</p>
+
+            <h2>“Truyền thống” không đồng nghĩa với “cổ xưa”</h2>
+            <p>Một điểm đáng chú ý của tác phẩm là các yếu tố truyền thống không bị đóng khung trong quá khứ. Nhân vật sử dụng điện thoại, đi xe, làm việc trong các tổ chức hiện đại, trong khi những công pháp và tín ngưỡng lâu đời vẫn tồn tại bên cạnh họ.</p>
+            <p>Sự tương phản này giúp văn hóa truyền thống trở nên gần gũi hơn. Một đạo sĩ không nhất thiết phải xuất hiện trong đạo bào giữa núi sâu; một thế lực dị nhân cũng có thể hoạt động dưới vỏ bọc của một tổ chức hiện đại.</p>
+            <p>Qua đó, tác phẩm đặt truyền thống vào một bối cảnh mới thay vì chỉ tái hiện nó. Văn hóa trở thành thứ có khả năng thích nghi, biến đổi và tiếp tục tồn tại trong đời sống đương đại.</p>
+
+            <h2>Khi yếu tố dân gian không chỉ để tạo “chất Trung Hoa”</h2>
+            <p>Điểm quan trọng nhất trong cách xây dựng thế giới của Nhất Nhân Chi Hạ là các yếu tố văn hóa không tồn tại độc lập với nhân vật và cốt truyện. Mỗi truyền thừa, môn phái hay thuật pháp đều góp phần tạo nên cách nhân vật nhìn nhận sức mạnh, con người và thế giới.</p>
+            <p>Điều này giúp tác phẩm tránh được việc sử dụng văn hóa truyền thống như những chi tiết trang trí. Một lá bùa, trận pháp hay nghi thức xuất hiện trong truyện đều có thể trở thành một phần của hệ thống sức mạnh và câu chuyện.</p>
+            <p>Vì thế, sức hấp dẫn của Nhất Nhân Chi Hạ không chỉ nằm ở việc nó đưa nhiều yếu tố phương Đông vào manga. Điều đáng chú ý hơn là tác phẩm đã biến những chất liệu ấy thành ngôn ngữ xây dựng thế giới: từ “khí” tạo ra hệ thống sức mạnh, Đạo giáo hình thành các truyền thừa, thuật số tạo nên cơ chế năng lực, còn tín ngưỡng dân gian mở rộng chiều sâu văn hóa của thế giới dị nhân.</p>
+
+            <!-- CHỮ KÝ TÁC GIẢ -->
+            <div class="article-signoff">Hải Yến</div>
+        </article>
+
+        <!-- 4. KHU VỰC BÀI LIÊN QUAN (RENDER TỪ FILE JS RIÊNG) -->
+        <section class="related-posts-section">
+            <h3 class="related-posts-title">Bài liên quan</h3>
+            
+            <div class="related-posts-grid" id="related-posts-grid"></div>
+
+            <!-- THANH PHÂN TRANG -->
+            <div class="news-pagination related-pagination">
+                <button id="related-prev-btn" class="page-btn" aria-label="Trang trước">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <div class="page-numbers">
+                    <span id="related-page-curr">01</span>
+                    <span class="page-line"></span>
+                    <span id="related-page-next">02</span>
+                </div>
+                <button id="related-next-btn" class="page-btn" aria-label="Trang sau">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- KHU VỰC: ĐỌC NHIỀU -->
+        <section class="most-read-section">
+            <h3 class="most-read-heading">Đọc nhiều</h3>
+            
+            <div class="most-read-list">
+                <!-- BÀI 1: BÀN TRUYỆN -->
+                <article class="most-read-item">
+                    <a href="loid_x_yor_khi_vo_chong_gia_bat_dau_co_nhung_cam_xuc_that.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/bantruyen/soihint/manh_ghep_hoan_hao_cua_gia_dinh_forger.jpg" alt="Loid × Yor">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">BÀN TRUYỆN</span>
+                            <h4 class="most-read-title">Loid × Yor: Khi “vợ chồng giả” bắt đầu có những cảm xúc thật</h4>
+                            <span class="most-read-date">22/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 2: TIN TỨC -->
+                <article class="most-read-item">
+                    <a href="tougen_anki_2_tro_lai_voi_arc_thac_kegon_cuoc_chien_oni_va_momotaro_tiep_tuc_len_song.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/tintuc/truyenlensong/poster-anime.png" alt="TOUGEN ANKI 2">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">TIN TỨC</span>
+                            <h4 class="most-read-title">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</h4>
+                            <span class="most-read-date">22/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 3: REVIEW & PHÂN TÍCH -->
+                <article class="most-read-item">
+                    <a href="nhat_nhan_chi_ha_khi_van_hoa_truyen_thong_tro_thanh_chat_lieu_xay_dung_the_gioi_truyen.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/phantich/nhat_nhan_chi_ha_xay_dung_the_gioi_di_nhan_tu_nhieu_lop_chat_lieu_van_hoa_truyen_thong_trung_hoa.jpg" alt="Nhất Nhân Chi Hạ">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">REVIEW & PHÂN TÍCH</span>
+                            <h4 class="most-read-title">Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện</h4>
+                            <span class="most-read-date">20/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 4: BẢNG XẾP HẠNG -->
+                <article class="most-read-item">
+                    <a href="top_5_truyen_tranh_viet_nam_dang_duoc_doc_gia_chu_y.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="top_5_truyen_tranh_viet_nam_dang_duoc_doc_gia_chu_y.png" alt="Top 5 truyện tranh Việt Nam">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">BẢNG XẾP HẠNG</span>
+                            <h4 class="most-read-title">Top 5 truyện tranh Việt Nam đang được độc giả chú ý</h4>
+                            <span class="most-read-date">15/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 5: TÁC GIẢ NỔI BẬT -->
+                <article class="most-read-item">
+                    <a href="nguyen_thanh_phong_cung_hanh_trinh_dua_chat_lieu_viet_vao_truyen_tranh.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="nguyen_thanh_phong.jpg" alt="Nguyễn Thành Phong">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">TÁC GIẢ NỔI BẬT</span>
+                            <h4 class="most-read-title">Nguyễn Thành Phong cùng hành trình đưa chất liệu Việt vào truyện tranh</h4>
+                            <span class="most-read-date">14/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- BÀI 6: REVIEW & PHÂN TÍCH -->
+                <article class="most-read-item">
+                    <a href="the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/review/yotsuba_kham_pha_the_gioi_bang_su_to_mo_va_goc_nhin_trong_treo_cua_mot_dua_tre.JPG" alt="Yotsuba">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">REVIEW & PHÂN TÍCH</span>
+                            <h4 class="most-read-title">Thế giới rộng lớn qua đôi mắt cô bé 5 tuổi Yotsuba</h4>
+                            <span class="most-read-date">09/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 5. CHÂN TRANG FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col footer-col-left">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="assets/logo_trang.png" alt="Readie Logo" class="footer-logo-img">
+                </a>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/tung.tung.978310" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tf.tnguyen/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@lbppp" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col footer-col-nav">
+                <ul class="footer-nav-list">
+                    <li><a href="tintuc.html">Tin tức</a></li>
+                    <li><a href="reviewphantich.html">Review & Phân tích</a></li>
+                    <li><a href="bxh.html">Bảng xếp hạng</a></li>
+                    <li><a href="tacgianoibat.html">Tác giả nổi bật</a></li>
+                    <li><a href="bantruyen.html">Bàn truyện</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-policy">
+                <h4 class="policy-title">CHÍNH SÁCH & HỖ TRỢ</h4>
+                <ul class="policy-list">
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Bản quyền & DMCA</a></li>
+                    <li><span>Liên hệ: contact@readie.com</span></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-right">
+                <div class="footer-newsletter">
+                    <h3 class="newsletter-title">Cùng cập nhật</h3>
+                    <p class="newsletter-desc">Đăng ký nhận những thông tin mới nhất.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="newsletter-input-box">
+                            <input type="email" placeholder="Your Email" required class="newsletter-input" id="newsletter-email">
+                            <button type="submit" class="newsletter-submit-btn" aria-label="Gửi">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>© 2023 - 2026 Readie Comic, Inc. by Magazine House, Ltd. (Ha Noi). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT RIÊNG CHO CHUYÊN MỤC REVIEW & PHÂN TÍCH -->
+    <script src="article-review.js"></script>
+</body>
+</html>
