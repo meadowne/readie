@@ -1444,52 +1444,136 @@ html, body {
     }
 }
 
-/* ==========================================================================
-   BỘ SỬA LỖI RESPONSIVE TOÀN CẦU (GLOBAL FIX CHO MỌI TRANG TRÊN ĐIỆN THOẠI)
-   ========================================================================== */
-
-   @media (max-width: 768px) {
-    /* 1. KHỐI NỘI DUNG TRÊN BANNER: CÂN BẰNG ĐÚNG KHOẢNG TRỜI XANH */
-    .hero-content {
-        top: 32% !important; /* Đẩy cụm logo & slogan xuống khoảng giữa trời, không chạm mép navbar và không đè nhân vật */
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        width: 85% !important;
-    }
-
-    /* 2. KÍCH THƯỚC LOGO VỪA VẶN NHƯ BẢN DESKTOP THU NHỎ */
-    .hero-logo {
-        width: 175px !important; /* Kích thước vừa phải, cân đối với tỷ lệ màn hình điện thoại */
-        max-width: 75% !important;
-        height: auto !important;
-        margin-bottom: 0 !important;
-    }
-
-    /* 3. DÒNG SLOGAN ÉP SÁT DƯỚI LOGO TRÁNH ĐÈ VÀO TÓC NHÂN VẬT */
-    .hero-slogan {
-        font-size: 11px !important; /* Cỡ chữ thanh mảnh, sắc nét */
-        margin-top: -8px !important; /* Kéo chữ áp sát ngay dưới chân logo */
-        white-space: nowrap !important;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.5) !important;
-    }
-}
-
+/* =========================================================
+   FIX GIAO DIỆN DI ĐỘNG CHUẨN XÁC THEO TỶ LỆ MÁY TÍNH
+   ========================================================= */
 @media (max-width: 768px) {
-    /* Dải bài viết lướt ngang như carousel trên mobile */
+
+    /* 1. XỬ LÝ CHỐNG ĐÈ CHO THANH NAVBAR */
+    body {
+        padding-top: 105px !important; /* Đẩy toàn bộ trang xuống dưới, tránh bị navbar che mất tiêu đề và nút */
+    }
+
+    .navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 52px !important;
+        z-index: 9999 !important;
+        background-color: #ffd84d !important;
+        border-bottom: 2px solid #000000 !important;
+        padding: 8px 12px 6px !important;
+    }
+
+    .nav-container {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    /* Giữ menu cuộn ngang trên 1 dòng duy nhất - tuyệt đối không rớt dòng đè chữ */
+    .nav-links {
+        order: 3 !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        gap: 16px !important;
+        margin-top: 6px !important;
+        padding: 4px 2px 2px !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    .nav-links::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .nav-links a {
+        font-size: 13.5px !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+    }
+
+    /* 2. CHUYỂN CÁC LƯỚI BÀI VIẾT TỪ 3 CỘT SANG LƯỚT NGANG HOẶC 1 CỘT (HẾT MÉO ẢNH) */
+    /* Giữ ảnh bìa truyện theo đúng tỷ lệ chuẩn của máy tính, có thể lướt ngón tay xem tiếp */
     .news-grid,
-    .more-read-grid {
+    .review-grid,
+    .article-grid,
+    .more-read-grid,
+    .related-posts-grid {
         display: flex !important;
         flex-direction: row !important;
         overflow-x: auto !important;
-        scroll-snap-type: x mandatory;
-        gap: 16px !important;
-        padding-bottom: 12px !important;
-        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory !important;
+        gap: 18px !important;
+        padding: 10px 15px 25px !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    .news-grid::-webkit-scrollbar,
+    .more-read-grid::-webkit-scrollbar {
+        display: none !important;
     }
 
+    /* Mỗi thẻ bài viết hiển thị rộng 75% màn hình để giữ đúng tỷ lệ ảnh ngang/dọc chuẩn */
     .news-grid > *,
-    .more-read-grid > * {
-        flex: 0 0 82% !important; /* Mỗi thẻ hiển thị 82% màn hình để lộ mép thẻ tiếp theo */
-        scroll-snap-align: center;
+    .review-grid > *,
+    .article-grid > *,
+    .more-read-grid > *,
+    .related-posts-grid > * {
+        flex: 0 0 78% !important;
+        max-width: 78% !important;
+        scroll-snap-align: start !important;
+    }
+
+    /* Ảnh bìa bài viết giữ đúng tỷ lệ chuẩn */
+    .news-grid img,
+    .review-grid img,
+    .article-grid img,
+    .more-read-thumb img {
+        width: 100% !important;
+        height: 220px !important; /* Đặt chiều cao hợp lý thay vì bị kéo giãn dọc */
+        object-fit: cover !important;
+        border-radius: 0 !important;
+    }
+
+    /* 3. SỬA LỖI CHỮ NGÀY THÁNG ĐÈ LÊN CHUYÊN MỤC */
+    .related-card-meta,
+    .more-read-meta,
+    [class*="-meta"] {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 8px 0 6px 0 !important;
+        font-size: 12.5px !important;
+    }
+
+    /* 4. SỬA BẢNG XẾP HẠNG & NỘI DUNG 2 CỘT TỰ XẾP THÀNH 1 CỘT DỌC */
+    .author-layout-wrapper,
+    .bxh-layout,
+    .tintuc-layout,
+    .author-content-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        width: 100% !important;
+        padding: 0 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2 khung lớn của Bảng xếp hạng giãn 100% rộng rãi */
+    .bxh-layout > div,
+    .bxh-layout > aside,
+    .tintuc-sidebar,
+    .author-right-sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 1 1 100% !important;
     }
 }
