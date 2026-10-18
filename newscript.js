@@ -1,8 +1,14 @@
 /* ==========================================================================
    NEW POP-ART SCRIPT FOR INDEX (newscript.js)
+   - Tắt Autoplay trên Mobile (<= 768px)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Hàm kiểm tra màn hình máy tính
+    function isDesktop() {
+        return window.innerWidth > 768;
+    }
 
     // 1. TÌM KIẾM POPUP
     const searchBtn = document.getElementById('search-btn');
@@ -76,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    // 3. TOÀN BỘ 13 BÀI VIẾT REVIEW & PHÂN TÍCH (TỰ CHUYỂN 2 GIÂY + HOVER DỪNG)
+    // 3. TOÀN BỘ 13 BÀI VIẾT REVIEW & PHÂN TÍCH
     const reviewArticles = [
         { title: "Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện", category: "Phân tích", date: "22/10/2026", slug: "nhat_nhan_chi_ha_khi_van_hoa_truyen_thong_tro_thanh_chat_lieu_xay_dung_the_gioi_truyen.html", img: "assets/phantich/tin_nguong_dan_gian_buoc_vao_the_gioi_di_nhan.jpg" },
         { title: "Long Thần Tướng kể lịch sử Việt Nam bằng ngôn ngữ truyện tranh", category: "Review", date: "21/10/2026", slug: "long_than_tuong_ke_lich_su_viet_nam_bang_ngon_ngu_truyen_tranh.html", img: "assets/anh-long-than-tuong-ke-lich.webp" },
@@ -130,10 +136,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startReviewAuto() {
         stopReviewAuto();
+        if (!isDesktop()) return; // Tắt trên điện thoại
+
         reviewAutoTimer = setInterval(() => {
             reviewPage = reviewPage < totalReviewPages ? reviewPage + 1 : 1;
             renderReviewGrid(reviewPage);
-        }, 2000); // 2000ms = 2 giây
+        }, 2000);
     }
 
     function stopReviewAuto() {
@@ -163,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderReviewGrid(1);
     startReviewAuto();
 
-    // 4. BẢNG XẾP HẠNG: NẠP ĐỦ 7 BÀI VIẾT VÀO BOX CÓ THANH CUỘN VÀNG
+    // 4. BẢNG XẾP HẠNG: NẠP ĐỦ 7 BÀI VIẾT
     const bxhArticles = [
         { title: "Top 5 truyện tranh Việt Nam đang được độc giả chú ý", date: "22/10/2026", img: "assets/anh-top-5-truyen-tranh-viet.jfif", slug: "top-5-truyen-tranh-viet.html" },
         { title: "Top 5 manga đang được săn đón trên Bilibili Manga", date: "20/10/2026", img: "assets/anh-top-5-manga-dang-duoc.jpg", slug: "top-5-manga-dang-duoc.html" },
@@ -189,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    // 5. TOÀN BỘ 8 BÀI VIẾT TÁC GIẢ NỔI BẬT (ĐÓNG TRONG BOX TRẮNG + TỰ CHUYỂN 2 GIÂY)
+    // 5. TOÀN BỘ 8 BÀI VIẾT TÁC GIẢ NỔI BẬT
     const authorArticles = [
         { title: "Eiichiro Oda - Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece", date: "22/10/2026", slug: "eiichiro-oda-hanh-trinh.html", img: "assets/tac_gia_oda.webp" },
         { title: "Nguyễn Thành Phong cùng hành trình đưa chất liệu Việt vào truyện tranh", date: "14/10/2026", slug: "nguyen_thanh_phong_cung_hanh_trinh_dua_chat_lieu_viet_vao_truyen_tranh.html", img: "assets/tac_gia_thanh_phong.png" },
@@ -238,10 +246,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startAuthorAuto() {
         stopAuthorAuto();
+        if (!isDesktop()) return; // Tắt trên điện thoại
+
         authorAutoTimer = setInterval(() => {
             authorPage = authorPage < totalAuthorPages ? authorPage + 1 : 1;
             renderAuthorGrid(authorPage);
-        }, 2000); // 2000ms = 2 giây
+        }, 2000);
     }
 
     function stopAuthorAuto() {
@@ -271,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAuthorGrid(1);
     startAuthorAuto();
 
-    // 6. BÀN TRUYỆN: LƯỚI 2x2 ĐÓNG KHUNG TRẮNG
+    // 6. BÀN TRUYỆN: LƯỚI 2x2
     const discussionArticles = [
         { title: "Loid × Yor: Khi “vợ chồng giả” bắt đầu có những cảm xúc thật", date: "22/10/2026", img: "assets/bantruyen/soihint/manh_ghep_hoan_hao_cua_gia_dinh_forger.jpg", slug: "loid_x_yor_khi_vo_chong_gia_bat_dau_co_nhung_cam_xuc_that.html" },
         { title: "Long Thần Tướng: Khi khung tranh kể nhiều hơn lời thoại", date: "18/10/2026", img: "assets/long_than_tuong_khi_khung_tranh_ke_nhieu_hon_loi_thoai.jpg", slug: "long-than-tuong-khung-tranh.html" },
@@ -295,7 +305,18 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
-    // 7. HIỆU ỨNG CUỘN TRANG HIỆN DẦN (SCROLL REVEAL)
+    // 7. LẮNG NGHE SỰ KIỆN ĐỔI KÍCH THƯỚC MÀN HÌNH / XOAY ĐIỆN THOẠI
+    window.addEventListener('resize', () => {
+        if (!isDesktop()) {
+            stopReviewAuto();
+            stopAuthorAuto();
+        } else {
+            if (!reviewAutoTimer) startReviewAuto();
+            if (!authorAutoTimer) startAuthorAuto();
+        }
+    });
+
+    // 8. SCROLL REVEAL
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
     if ('IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
