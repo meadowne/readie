@@ -367,12 +367,90 @@ html, body {
     color: #000;
 }
 
-/* LƯỚI 3 BÀI VIẾT */
+/* KHÔI PHỤC LƯỚI 3 CỘT VÀ HIỆU ỨNG TRƯỢT */
 .news-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-    margin-bottom: 40px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 35px !important;
+    margin-bottom: 40px !important;
+    overflow: hidden;
+    transition: transform 0.35s ease-out, opacity 0.35s ease-out;
+}
+
+/* Animation lướt sang phải */
+.news-grid.slide-in-right {
+    animation: newsSlideInRight 0.35s ease-out forwards;
+}
+
+/* Animation lướt sang trái khi bấm lùi */
+.news-grid.slide-in-left {
+    animation: newsSlideInLeft 0.35s ease-out forwards;
+}
+
+@keyframes newsSlideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes newsSlideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Đảm bảo khung ảnh có chiều cao cố định chuẩn đẹp */
+.news-thumb-wrapper {
+    width: 100%;
+    height: 220px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.news-thumb-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Cố định chiều cao tiêu đề tin tức để 3 thẻ luôn thẳng hàng */
+.news-card-title {
+    font-size: 15px;
+    line-height: 1.4;
+    height: 42px;
+    min-height: 42px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Responsive khi thu nhỏ màn hình */
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .news-grid {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 /* THẺ BÀI VIẾT */
@@ -387,6 +465,17 @@ html, body {
     color: inherit;
     display: block;
     width: 100%;
+}
+
+/* Cố định chiều cao tiêu đề tin tức để các card luôn bằng nhau */
+.news-card-title {
+    height: 44px;
+    min-height: 44px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* KHUNG ẢNH & HIỆU ỨNG NGHIÊNG */
@@ -1575,5 +1664,259 @@ html, body {
         width: 100% !important;
         max-width: 100% !important;
         flex: 1 1 100% !important;
+    }
+}
+
+/* ===================================================
+   KHỐI GIỚI THIỆU TRANG CHỦ (ĐÃ BỎ KHOẢNG THỪA & SỬA RỚT DÒNG)
+   =================================================== */
+
+.intro-section {
+    padding: 10px 4% 5px !important; /* Giảm tối đa khoảng trống trên và dưới */
+    margin: 0 !important;
+    background-color: #fffdf0;
+    background-image: 
+        linear-gradient(to right, rgba(245, 212, 80, 0.25) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(245, 212, 80, 0.25) 1px, transparent 1px);
+    background-size: 30px 30px;
+    border-bottom: none !important;
+}
+
+.intro-container {
+    position: relative;
+    max-width: 1240px; /* Tăng độ rộng tổng thể để khung to và thoáng hơn */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-frame-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* VÙNG CHỮ CĂN CHÍNH GIỮA KHUNG HỒNG & PHÓNG TO */
+.intro-content {
+    position: absolute;
+    top: 55%; /* Dịch xuống để vào đúng tâm hình chữ nhật màu hồng */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52%; /* Độ rộng vừa vặn khoảng trống giữa 2 nhân vật */
+    text-align: center;
+    padding: 0 10px;
+    color: #111111;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+/* Tiêu đề: phóng to rõ ràng, giữ trên 1 dòng */
+.intro-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16.5px; /* Tăng cỡ chữ */
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0 0 12px 0;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.intro-heading strong {
+    font-weight: 800;
+}
+
+/* Đoạn mô tả: tăng cỡ chữ và khoảng cách dòng thoáng hơn */
+.intro-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px; /* Tăng cỡ chữ lên rõ nét */
+    font-weight: 500;
+    line-height: 1.65;
+    margin: 0;
+    color: #222222;
+}
+
+/* ===================================================
+   RESPONSIVE KHI THU NHỎ MÀN HÌNH
+   =================================================== */
+@media (max-width: 1200px) {
+    .intro-content {
+        top: 55%;
+        width: 53%;
+    }
+    .intro-heading {
+        font-size: 14.5px;
+        margin-bottom: 8px;
+    }
+    .intro-text {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 992px) {
+    .intro-content {
+        top: 54%;
+        width: 56%;
+    }
+    .intro-heading {
+        font-size: 12.5px;
+        white-space: normal;
+        margin-bottom: 6px;
+    }
+    .intro-text {
+        font-size: 10.5px;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-content {
+        top: 54%;
+        width: 58%;
+    }
+    .intro-heading {
+        font-size: 11px;
+    }
+    .intro-text {
+        font-size: 9.5px;
+        line-height: 1.35;
+    }
+}
+
+/* ===================================================
+   HIỆU ỨNG HIỆN DẦN KHI CUỘN TRANG (SCROLL REVEAL)
+   =================================================== */
+
+/* Trạng thái ban đầu: ẩn và dịch xuống 30px */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), 
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+/* Trạng thái khi cuộn màn hình tới: hiện rõ và về vị trí chuẩn */
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tùy chọn: Làm chậm hiệu ứng một chút cho các phần tử nối tiếp nhau (so le) */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ===================================================
+   CSS CHO KHỐI CÓ THỂ BẠN MUỐN ĐỌC
+   =================================================== */
+.maybe-read-section {
+    max-width: 1200px;
+    margin: 60px auto 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.maybe-read-heading {
+    font-family: 'Cucho', 'Montserrat', sans-serif;
+    font-size: 3.2rem;
+    text-align: center;
+    margin: 0 0 35px 0;
+    color: #000000;
+}
+
+.maybe-read-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.maybe-read-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.maybe-read-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.maybe-read-thumb {
+    width: 100%;
+    height: 200px;
+    border: 2px solid #000000;
+    box-shadow: 4px 4px 0px #000000;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    margin-bottom: 12px;
+}
+
+.maybe-read-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.25s ease;
+}
+
+.maybe-read-link:hover .maybe-read-thumb img {
+    transform: scale(1.04);
+}
+
+.maybe-read-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.maybe-read-cat {
+    font-weight: 700;
+    color: #111111;
+}
+
+.maybe-read-date {
+    font-weight: 500;
+    color: #666666;
+}
+
+.maybe-read-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #000000;
+    margin: 0;
+    height: 42px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.maybe-read-link:hover .maybe-read-title {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .maybe-read-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .maybe-read-grid {
+        grid-template-columns: 1fr;
+    }
+    .maybe-read-heading {
+        font-size: 2.2rem;
     }
 }

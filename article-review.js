@@ -56,92 +56,92 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện",
             category: "Phân tích",
             date: "20/10/2026",
-            slug: "nhat-nhan-chi-ha-khi.html",
-            img: "assets/anh-nhat-nhan-chi-ha-khi.jpg"
+            slug: "nhat_nhan_chi_ha_khi_van_hoa_truyen_thong_tro_thanh_chat_lieu_xay_dung_the_gioi_truyen.html",
+            img: "assets/phantich/nhat_nhan_chi_ha_xay_dung_the_gioi_di_nhan_tu_nhieu_lop_chat_lieu_van_hoa_truyen_thong_trung_hoa.jpg"
         },
         {
             title: "Long Thần Tướng kể lịch sử Việt Nam bằng ngôn ngữ truyện tranh",
             category: "Review",
             date: "13/10/2026",
-            slug: "long-than-tuong-ke-lich.html",
-            img: "assets/anh-long-than-tuong-ke-lich.jpg"
+            slug: "long_than_tuong_ke_lich_su_viet_nam_bang_ngon_ngu_truyen_tranh.html",
+            img: "assets/anh-long-than-tuong-ke-lich.webp"
         },
         {
             title: "Câu chuyện về con người được kể qua những trận đấu trong The Boxer",
             category: "Phân tích",
             date: "10/10/2026",
-            slug: "the-boxer-va-cau-chuyen.html",
+            slug: "https://bai4tieumucreview.my.canva.site/theboxer",
             img: "assets/anh-the-boxer-va-cau-chuyen.jpg"
         },
         {
             title: "Thế giới rộng lớn qua đôi mắt cô bé 5 tuổi Yotsuba",
             category: "Review",
             date: "09/10/2026",
-            slug: "the-gioi-rong-lon-qua.html",
+            slug: "the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.html",
             img: "assets/review/the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.png"
         },
         {
             title: "Cô đi mà lấy chồng tôi: Khi cơ hội thứ hai trở thành cuộc trả thù",
             category: "Review",
             date: "06/10/2026",
-            slug: "co-di-ma-lay-chong.html",
-            img: "assets/anh-co-di-ma-lay-chong.jpg"
+            slug: "co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.html",
+            img: "assets/review/co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.png"
         },
         {
             title: "Conan và nghệ thuật tạo nên một vụ án trinh thám",
             category: "Phân tích",
             date: "02/10/2026",
-            slug: "conan-va-nghe-thuat-tao.html",
-            img: "assets/anh-conan-va-nghe-thuat-tao.jpg"
+            slug: "https://preview.canva.site/393b154f-8c79-47a5-8910-6fa76db1c211/readie.com/",
+            img: "assets/phantich/conan_va_nghe_thuat_tao_nen_mot_vu_an_trinh_tham.jpg"
         },
         {
             title: "Frieren: Beyond Journey’s End và hành trình giả tưởng chậm rãi nhưng đầy cảm xúc",
             category: "Review",
             date: "27/09/2026",
-            slug: "frieren-beyond-journeys-end-va.html",
+            slug: "https://preview.canva.site/c1aee036-32a5-40e1-830b-39e1f8046995/readie.com/frieren",
             img: "assets/anh-frieren-beyond-journeys-end-va.jpg"
         },
         {
             title: "Naruto và hành trình từ đứa trẻ bị lãng quên đến người được công nhận",
             category: "Phân tích",
             date: "17/09/2026",
-            slug: "naruto-va-hanh-trinh-tu.html",
+            slug: "https://bai4tieumucreview.my.canva.site/naruto",
             img: "assets/anh-naruto-va-hanh-trinh-tu.jpg"
         },
         {
             title: "Hành trình trở thành người mạnh nhất của Solo Leveling",
             category: "Review",
             date: "14/09/2026",
-            slug: "hanh-trinh-tro-thanh-nguoi.html",
+            slug: "https://bai4tieumucreview.my.canva.site/bai6",
             img: "assets/review/hanh_trinh_tro_thanh_nguoi_manh_nhat_cua_solo_leveling.png"
         },
         {
             title: "Luffy và quan niệm về tự do trong One Piece",
             category: "Phân tích",
             date: "04/09/2026",
-            slug: "luffy-va-quan-niem-ve.html",
+            slug: "https://preview.canva.site/231c67ed-8746-4e41-89c0-ba5cdf2fd15e/readie.com/luffy ",
             img: "assets/anh-luffy-va-quan-niem-ve.jpg"
         },
         {
             title: "Haikyuu!! - Hành trình trưởng thành sau mỗi trận đấu",
             category: "Review",
             date: "31/08/2026",
-            slug: "haikyuu-hanh-trinh-truong-thanh.html",
-            img: "assets/anh-haikyuu-hanh-trinh-truong-thanh.jpg"
+            slug: "https://bai4tieumucreview.my.canva.site/bai6",
+            img: "assets/review/haikyuu_hanh_trinh_truong_thanh_sau_moi_tran_dau.webp"
         },
         {
             title: "Từ Đôrêmon đến Doraemon: Hành trình hơn 30 năm của chú mèo máy tại Việt Nam",
             category: "Review",
             date: "25/08/2026",
-            slug: "tu-doremon-den-doraemon-hanh.html",
-            img: "assets/anh-tu-doremon-den-doraemon-hanh.jpg"
+            slug: "https://bai4tieumucreview.my.canva.site/b-i-7-ti-u-m-c-review",
+            img: "assets/review/tu_doremon_den_doraemon_hanh_trinh_hon_30_nam_cua_chu_meo_may_tai_viet_nam.jpg"
         },
         {
             title: "Death Note và ranh giới mong manh giữa công lý với quyền lực",
             category: "Phân tích",
             date: "07/08/2026",
-            slug: "death-note-va-ranh-gioi.html",
-            img: "assets/anh-death-note-va-ranh-gioi.jpg"
+            slug: "https://walrus-cfdcbd.my.canva.site/deathnote",
+            img: "assets/anh-death-note-va-ranh-gioi.jfif"
         }
     ];
 

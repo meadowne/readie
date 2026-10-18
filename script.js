@@ -70,14 +70,24 @@ const newsArticles = [
     }
 ];
 
-// XỬ LÝ PHÂN TRANG (3 BÀI / TRANG)
+// ===================================================
+// XỬ LÝ PHÂN TRANG & TỰ ĐỘNG LƯỚT TIN TỨC (AUTOPLAY)
+// ===================================================
 let currentNewsPage = 1;
 const itemsPerPage = 3;
 const totalPages = Math.ceil(newsArticles.length / itemsPerPage);
+let autoNewsSlideInterval = null;
 
-function renderNewsPage(page) {
+function renderNewsPage(page, animationClass = 'slide-in-right') {
     const container = document.getElementById('news-container');
     if (!container) return;
+
+    // Reset và kích hoạt animation trượt
+    container.classList.remove('slide-in-right', 'slide-in-left');
+    void container.offsetWidth; // Trigger reflow
+    if (animationClass) {
+        container.classList.add(animationClass);
+    }
 
     container.innerHTML = '';
     const startIndex = (page - 1) * itemsPerPage;
@@ -89,7 +99,7 @@ function renderNewsPage(page) {
             <article class="news-card">
                 <a href="${item.slug}" class="news-card-link">
                     <div class="news-thumb-wrapper">
-                        <img src="${item.img}" alt="${item.title}">
+                        <img src="${item.img}" alt="${item.title}" onerror="this.src='assets/one_piece.jpg'">
                     </div>
                     <span class="news-badge">${item.category}</span>
                     <h3 class="news-card-title">${item.title}</h3>
@@ -100,35 +110,81 @@ function renderNewsPage(page) {
         container.innerHTML += cardHTML;
     });
 
-    // Cập nhật số trang hiển thị (01 - 02 -> 02 - 03)
+    // Cập nhật số trang hiển thị (01 - 02)
     const currStr = String(page).padStart(2, '0');
-    const nextStr = String(Math.min(page + 1, totalPages)).padStart(2, '0');
+    const nextStr = String(page < totalPages ? page + 1 : 1).padStart(2, '0');
     
-    document.getElementById('page-curr').textContent = currStr;
-    document.getElementById('page-next').textContent = nextStr;
+    const currElem = document.getElementById('page-curr');
+    const nextElem = document.getElementById('page-next');
+    if (currElem) currElem.textContent = currStr;
+    if (nextElem) nextElem.textContent = nextStr;
 }
 
-// KHỞI TẠO BẮT SỰ KIỆN NÚT NEXT / PREV
-document.addEventListener('DOMContentLoaded', () => {
-    renderNewsPage(currentNewsPage);
+// Chức năng chuyển sang trang tiếp theo (quay vòng tròn)
+function nextNewsPage() {
+    if (currentNewsPage < totalPages) {
+        currentNewsPage++;
+    } else {
+        currentNewsPage = 1;
+    }
+    renderNewsPage(currentNewsPage, 'slide-in-right');
+}
 
+// Chức năng lùi trang trước
+function prevNewsPage() {
+    if (currentNewsPage > 1) {
+        currentNewsPage--;
+    } else {
+        currentNewsPage = totalPages;
+    }
+    renderNewsPage(currentNewsPage, 'slide-in-left');
+}
+
+// Cơ chế tự động lướt (mỗi 3 giây chuyển 1 lần)
+function startAutoNewsSlide() {
+    stopAutoNewsSlide();
+    autoNewsSlideInterval = setInterval(() => {
+        nextNewsPage();
+    }, 1500); // 1500ms = 1.5 giây (bạn có thể đổi thành 2000 hoặc 2500 tùy ý)
+}
+
+function stopAutoNewsSlide() {
+    if (autoNewsSlideInterval) {
+        clearInterval(autoNewsSlideInterval);
+        autoNewsSlideInterval = null;
+    }
+}
+
+// KHỞI TẠO BẮT SỰ KIỆN CHO TIN TỨC
+document.addEventListener('DOMContentLoaded', () => {
+    const newsContainer = document.getElementById('news-container');
+    const newsSection = document.getElementById('tintuc');
     const prevBtn = document.getElementById('news-prev-btn');
     const nextBtn = document.getElementById('news-next-btn');
 
-    if (prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => {
-            if (currentNewsPage > 1) {
-                currentNewsPage--;
-                renderNewsPage(currentNewsPage);
-            }
-        });
+    if (newsContainer) {
+        renderNewsPage(currentNewsPage, null);
+        startAutoNewsSlide();
 
-        nextBtn.addEventListener('click', () => {
-            if (currentNewsPage < totalPages) {
-                currentNewsPage++;
-                renderNewsPage(currentNewsPage);
-            }
-        });
+        // Rê chuột vào vùng tin tức thì dừng, rời ra thì chạy tiếp
+        if (newsSection) {
+            newsSection.addEventListener('mouseenter', stopAutoNewsSlide);
+            newsSection.addEventListener('mouseleave', startAutoNewsSlide);
+        }
+
+        // Bấm nút chuyển trang thủ công
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextNewsPage();
+                startAutoNewsSlide();
+            });
+        }
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevNewsPage();
+                startAutoNewsSlide();
+            });
+        }
     }
 });
 
@@ -146,7 +202,7 @@ const reviewArticles = [
         title: "Long Thần Tướng kể lịch sử Việt Nam bằng ngôn ngữ truyện tranh",
         category: "Review",
         date: "21/10/2026",
-        slug: "long-than-tuong-ke-lich.html",
+        slug: "long_than_tuong_ke_lich_su_viet_nam_bang_ngon_ngu_truyen_tranh.html",
         img: "assets/anh-long-than-tuong-ke-lich.webp"
     },
     {
@@ -220,8 +276,8 @@ const reviewArticles = [
         title: "Death Note và ranh giới mong manh giữa công lý với quyền lực",
         category: "Phân tích",
         date: "07/10/2026",
-        slug: "https://preview.canva.site/17248440-ae6a-4a40-bd87-4318533eb237/readie.com/deathnote",
-        img: "assets/anh-death-note-va-ranh-gioi.jpg"
+        slug: "https://walrus-cfdcbd.my.canva.site/deathnote",
+        img: "assets/anh-death-note-va-ranh-gioi.jfif"
     },
 
     // Trang 4: (05/10)
@@ -462,40 +518,52 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const authorArticles = [
         {
-            title: "Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece",
+            title: "Eiichiro Oda - Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece",
             date: "22/10/2026",
             slug: "eiichiro-oda-hanh-trinh.html",
             img: "assets/tac_gia_oda.webp"
         },
         {
-            title: "Naoki Urasawa và những câu chuyện manga đi sâu vào tâm lý con người",
-            date: "20/10/2026",
-            slug: "naoki-urasawa-tam-ly.html",
-            img: "assets/tac_gia_urasawa.webp"
-        },
-        {
             title: "Nguyễn Thành Phong cùng hành trình đưa chất liệu Việt vào truyện tranh",
-            date: "18/10/2026",
-            slug: "nguyen-thanh-phong-chat-lieu-viet.html",
+            date: "14/10/2026",
+            slug: "nguyen_thanh_phong_cung_hanh_trinh_dua_chat_lieu_viet_vao_truyen_tranh.html",
             img: "assets/tac_gia_thanh_phong.png"
         },
         {
+            title: "Hành trình tạo nên những tượng đài manga của Rumiko Takahashi",
+            date: "10/10/2026",
+            slug: "rumiko-takahashi.html",
+            img: "assets/tac_gia_takahashi.jpg"
+        },
+        {
+            title: "Naoki Urasawa và những câu chuyện manga đi sâu vào tâm lý con người",
+            date: "24/09/2026",
+            slug: "https://walrus-cfdcbd.my.canva.site/t-c-gi-naoki-urasawa",
+            img: "assets/tac_gia_urasawa.webp"
+        },
+        {
             title: "SIU và thế giới khổng lồ được kiến tạo trong Tower of God",
-            date: "15/10/2026",
-            slug: "siu-tower-of-god.html",
+            date: "18/09/2026",
+            slug: "https://walrus-cfdcbd.my.canva.site/siu-v-th-gi-i-kh-ng-l-c-ki-n-t-o-trong-tower-of-god",
             img: "assets/tac_gia_siu.jpg"
         },
         {
             title: "Carnby Kim cùng hành trình tạo nên hiện tượng Sweet Home từ những câu chuyện kinh dị",
-            date: "12/10/2026",
-            slug: "carnby-kim-sweet-home.html",
+            date: "09/09/2026",
+            slug: "https://walrus-cfdcbd.my.canva.site/carnby-kim-c-ng-h-nh-tr-nh-t-o-n-n-hi-n-t-ng-sweet-home-t-nh-ng-c-u-chuy-n-kinh-d",
             img: "assets/tac_gia_carnby_kim.jfif"
         },
         {
             title: "ONE từ webcomic nét vẽ đơn giản đến những tác phẩm vươn ra toàn cầu",
-            date: "10/10/2026",
-            slug: "one-tu-webcomic.html",
+            date: "01/09/2026",
+            slug: "https://walrus-cfdcbd.my.canva.site/one-t-webcomic-n-t-v-n-gi-n-n-nh-ng-t-c-ph-m-v-n-ra-to-n-c-u",
             img: "assets/tac_gia_one.webp"
+        },
+        {
+            title: "Lê Linh và những nhân vật gắn liền với tuổi thơ qua Thần Đồng Đất Việt",
+            date: "26/08/2026",
+            slug: "https://walrus-cfdcbd.my.canva.site/one-t-webcomic-n-t-v-n-gi-n-n-nh-ng-t-c-ph-m-v-n-ra-to-n-c-u",
+            img: "assets/tac_gia_le_linh.webp"
         }
     ];
 
@@ -570,14 +638,50 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. DANH SÁCH BÀI VIẾT BÀN TRUYỆN
+// 1. DANH SÁCH BÀI VIẾT BÀN TRUYỆN (SẮP XẾP THEO THỜI GIAN)
     const discussionArticles = [
-        { title: "Loid × Yor: Khi “vợ chồng giả” bắt đầu có những cảm xúc thật", date: "22/10/2026", img: "assets/bantruyen/soihint/manh_ghep_hoan_hao_cua_gia_dinh_forger.jpg", slug: "loid_x_yor_khi_vo_chong_gia_bat_dau_co_nhung_cam_xuc_that.html" },
-        { title: "Kim Dokja biết trước tương lai, nhưng có thật sự hiểu câu chuyện?", date: "20/10/2026", img: "assets/ban_truyen_2.jpg", slug: "kim-dokja-tuong-lai.html" },
-        { title: "Long Thần Tướng: Khi khung tranh kể nhiều hơn lời thoại", date: "18/10/2026", img: "assets/ban_truyen_3.jpg", slug: "long-than-tuong-khung-tranh.html" },
-        { title: "Maomao không chỉ giải án bằng kiến thức: Hãy nhìn vào thứ mọi người bỏ qua", date: "15/10/2026", img: "assets/ban_truyen_4.jpg", slug: "maomao-giai-an.html" },
-        { title: "Khi tác giả giấu một lời giải trong cảnh truyện bình thường: Học cách soi hint từ Witch Watch", date: "12/10/2026", img: "assets/ban_truyen_5.jpg", slug: "witch-watch-soi-hint.html" },
-        { title: "Tác giả lỡ hé lộ? Những hint ngoài đời khiến fan Attack on Titan phải đọc lại từ đầu.", date: "10/10/2026", img: "assets/ban_truyen_6.jpg", slug: "aot-hint-ngoai-doi.html" }
+        { 
+            title: "Loid × Yor: Khi “vợ chồng giả” bắt đầu có những cảm xúc thật", 
+            date: "22/10/2026", 
+            img: "assets/bantruyen/soihint/manh_ghep_hoan_hao_cua_gia_dinh_forger.jpg", 
+            slug: "loid_x_yor_khi_vo_chong_gia_bat_dau_co_nhung_cam_xuc_that.html" 
+        },
+        { 
+            title: "Long Thần Tướng: Khi khung tranh kể nhiều hơn lời thoại", 
+            date: "18/10/2026", 
+            img: "assets/long_than_tuong_khi_khung_tranh_ke_nhieu_hon_loi_thoai.jpg", 
+            slug: "long-than-tuong-khung-tranh.html" 
+        },
+        { 
+            title: "Maomao không chỉ giải án bằng kiến thức: Hãy nhìn vào thứ mọi người bỏ qua", 
+            date: "11/10/2026", 
+            img: "assets/the_apothecary_diaries.jpg", 
+            slug: "maomao_khong_chi_giai_an_bang_kien_thuc.html" 
+        },
+        { 
+            title: "Khi tác giả giấu một lời giải trong cảnh truyện bình thường: Học cách soi hint từ Witch Watch", 
+            date: "05/10/2026", 
+            img: "assets/witch_watch.jpg", 
+            slug: "https://hoaiphuongnguyenportfolio.my.canva.site/khi-t-c-gi-gi-u-m-t-l-i-gi-i-trong-c-nh-truy-n-b-nh-th-ng-h-c-c-ch-soi-hint-t-witch-watch" 
+        },
+        { 
+            title: "Kim Dokja biết trước tương lai, nhưng có thật sự hiểu câu chuyện?", 
+            date: "25/09/2026", 
+            img: "assets/kim_dokja.jpg", 
+            slug: "https://hoaiphuongnguyenportfolio.my.canva.site/kim-dokja-bi-t-tr-c-t-ng-lai-nh-ng-c-th-t-s-hi-u-c-u-chuy-n" 
+        },
+        { 
+            title: "Tác giả lỡ hé lộ? Những hint ngoài đời khiến fan Attack on Titan phải đọc lại từ đầu.", 
+            date: "20/09/2026", 
+            img: "assets/aot.jpg", 
+            slug: "https://hoaiphuongnguyenportfolio.my.canva.site/t-c-gi-l-h-l-nh-ng-hint-ngo-i-i-khi-n-fan-attack-on-titan-ph-i-c-l-i-t-u" 
+        },
+        { 
+            title: "Vì sao hội mê manhua ngày càng bị cuốn vào kiểu nhân vật “phản diện chính”? Gu Changge của I Am the Fated Villain có gì đặc biệt?", 
+            date: "07/09/2026", 
+            img: "assets/i_am_the_fated_villain.jpg", 
+            slug: "https://hoaiphuongnguyenportfolio.my.canva.site/v-sao-h-i-m-manhua-ng-y-c-ng-b-cu-n-v-o-ki-u-nh-n-v-t-ph-n-di-n-ch-nh-gu-changge-c-a-i-am-the-fated-villain-c-g-c-bi-t" 
+        }
     ];
 
     // RENDER BÀI VIẾT BÀN TRUYỆN
@@ -789,8 +893,8 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!",
             category: "Truyện lên sóng",
             date: "22/10/2026",
-            slug: "tougen-anki-2-tro-lai.html",
-            img: "assets/anh-tougen-anki-2-tro-lai.jpg"
+            slug: "tougen_anki_2_tro_lai_voi_arc_thac_kegon_cuoc_chien_oni_va_momotaro_tiep_tuc_len_song.html",
+            img: "assets/tintuc/truyenlensong/poster-anime.png"
         },
         {
             title: "5 anime hè 2026 để lại dấu ấn ở những tập cuối",
@@ -1012,4 +1116,152 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderRelatedPage(currentRelatedPage);
+});
+
+// ===================================================
+// XỬ LÝ HIỆU ỨNG HIỆN DẦN KHI CUỘN XUỐNG (SCROLL REVEAL)
+// ===================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // Khi phần tử lọt vào tầm nhìn ít nhất 15%
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Hiện xong thì ngừng theo dõi để không bị chạy lại gây phiền
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.15, // Kích hoạt khi thấy 15% phần tử
+            rootMargin: "0px 0px -40px 0px" // Kích hoạt trước khi chạm đáy một chút cho mượt
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+        // Dự phòng cho trình duyệt quá cũ: hiện luôn không cần hiệu ứng
+        revealElements.forEach(el => el.classList.add('is-visible'));
+    }
+});
+
+/* ===================================================
+   XỬ LÝ KHỐI "CÓ THỂ BẠN MUỐN ĐỌC" (DÙNG CHUNG CÁC TRANG)
+   =================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    // Danh sách 6 bài viết chuẩn theo bảng dữ liệu
+    const maybeReadArticles = [
+        {
+            title: "Từ webtoon đến màn ảnh rộng: “Guardians of the Video Game” mở đường cho phim hoạt hình Hàn Quốc",
+            category: "Tin tức",
+            date: "12/10/2026",
+            slug: "tu_webtoon_den_man_anh_rong_guardians_of_the_video_game_mo_duong_cho_phim_hoat_hinh_han_quoc.html",
+            img: "assets/anh-tu-webtoon-den-man-anh-rong.jpg"
+        },
+        {
+            title: "Cô đi mà lấy chồng tôi: Khi cơ hội thứ hai trở thành cuộc trả thù",
+            category: "Review & Phân tích",
+            date: "06/10/2026",
+            slug: "co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.html",
+            img: "assets/review/co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.png"
+        },
+        {
+            title: "EIICHIRO ODA - Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece",
+            category: "Tác giả nổi bật",
+            date: "20/10/2026",
+            slug: "eiichiro-oda-hanh-trinh.html",
+            img: "assets/tacgia/Eiichiro_Oda.png"
+        },
+        {
+            title: "Top 5 manga và tác phẩm truyện minh họa giúp khám phá văn hóa Nhật Bản",
+            category: "Bảng xếp hạng",
+            date: "26/08/2026",
+            slug: "https://hoaiphuongnguyenportfolio.my.canva.site/top-5-manga-v-t-c-ph-m-truy-n-minh-h-a-gi-p-kh-m-ph-v-n-h-a-nh-t-b-n",
+            img: "assets/van-hoa-nhat-ban.avif"
+        },
+        {
+            title: "Maomao không chỉ giải án bằng kiến thức: Hãy nhìn vào thứ mọi người bỏ qua",
+            category: "Bàn truyện",
+            date: "11/10/2026",
+            slug: "maomao_khong_chi_giai_an_bang_kien_thuc.html",
+            img: "assets/bantruyen/maomao.webp"
+        },
+        {
+            title: "Từ Đôrêmon đến Doraemon: Hành trình hơn 30 năm của chú mèo máy tại Việt Nam",
+            category: "Review & Phân tích",
+            date: "25/08/2026",
+            slug: "https://bai4tieumucreview.my.canva.site/b-i-7-ti-u-m-c-review",
+            img: "assets/review/tu_doremon_den_doraemon_hanh_trinh_hon_30_nam_cua_chu_meo_may_tai_viet_nam.jpg"
+        }
+    ];
+
+    const grid = document.getElementById('maybe-read-grid') || document.querySelector('.maybe-read-grid');
+    const prevBtn = document.getElementById('maybe-prev-btn');
+    const nextBtn = document.getElementById('maybe-next-btn');
+    const currElem = document.getElementById('maybe-page-curr');
+    const nextElem = document.getElementById('maybe-page-next');
+
+    if (!grid) return;
+
+    let currentPage = 1;
+    const itemsPerPage = 3;
+    const totalPages = Math.ceil(maybeReadArticles.length / itemsPerPage);
+
+    function renderMaybePage(page) {
+        grid.innerHTML = '';
+        const start = (page - 1) * itemsPerPage;
+        const pageItems = maybeReadArticles.slice(start, start + itemsPerPage);
+
+        pageItems.forEach(item => {
+            const card = document.createElement('article');
+            card.className = 'maybe-read-card';
+            card.innerHTML = `
+                <a href="${item.slug}" class="maybe-read-link">
+                    <div class="maybe-read-thumb">
+                        <img src="${item.img}" alt="${item.title}" onerror="this.src='assets/one_piece.jpg'">
+                    </div>
+                    <div class="maybe-read-meta">
+                        <span class="maybe-read-cat">| ${item.category}</span>
+                        <span class="maybe-read-date">${item.date}</span>
+                    </div>
+                    <h4 class="maybe-read-title">${item.title}</h4>
+                </a>
+            `;
+            grid.appendChild(card);
+        });
+
+        if (currElem) currElem.textContent = String(page).padStart(2, '0');
+        if (nextElem) nextElem.textContent = String(page < totalPages ? page + 1 : 1).padStart(2, '0');
+
+        if (prevBtn) {
+            prevBtn.disabled = (page === 1);
+            prevBtn.style.opacity = page === 1 ? '0.4' : '1';
+        }
+        if (nextBtn) {
+            nextBtn.disabled = (page === totalPages);
+            nextBtn.style.opacity = page === totalPages ? '0.4' : '1';
+        }
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderMaybePage(currentPage);
+            }
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderMaybePage(currentPage);
+            }
+        });
+    }
+
+    renderMaybePage(1);
 });

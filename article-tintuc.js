@@ -64,42 +64,42 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Comic Buzz - Tin nóng",
             date: "16/10/2026",
             slug: "5-anime-he-2026-de-lai.html",
-            img: "assets/tintuc/comicbuzz/bia_5_anime_he_2026_de_lai_dau_an_o_nhung_tap_cuoi.png"
+            img: "assets/anh-5-anime-he-2026-de-lai.png"
         },
         {
             title: "Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới",
             category: "Comic Buzz - Tin nóng",
             date: "15/10/2026",
-            slug: "truyen-tranh-viet-sap-gop.html",
+            slug: "truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.html",
             img: "assets/tintuc/comicbuzz/truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.jpg"
         },
         {
             title: "Từ webtoon đến màn ảnh rộng: “Guardians of the Video Game” mở đường cho phim hoạt hình Hàn Quốc",
             category: "Truyện lên sóng",
             date: "12/10/2026",
-            slug: "tu-webtoon-den-man-anh-rong.html",
-            img: "assets/tintuc/truyenlensong/tu_webtoon_den_man_anh_rong_guardians_of_the_video_game_mo_duong_cho_phim_hoat_hinh_han_quoc.png"
+            slug: "tu_webtoon_den_man_anh_rong_guardians_of_the_video_game_mo_duong_cho_phim_hoat_hinh_han_quoc.html",
+            img: "assets/anh-tu-webtoon-den-man-anh-rong.jpg"
         },
         {
             title: "Đọc manga bằng 100 ngôn ngữ? Shueisha mở rộng thế giới truyện tranh với MANGA MILLION!",
             category: "Comic Buzz - Tin nóng",
             date: "07/10/2026",
-            slug: "doc-manga-bang-100-ngon-ngu.html",
-            img: "assets/tintuc/comicbuzz/bia_doc_manga_bang_100_ngon_ngu_shueisha_mo_rong_the_gioi_truyen_tranh_voi_manga_million.png"
+            slug: "https://hoaiphuongnguyenportfolio.my.canva.site/c-manga-b-ng-100-ng-n-ng-shueisha-m-r-ng-th-gi-i-truy-n-tranh-v-i-manga-million",
+            img: "assets/anh-doc-manga-bang-100-ngon-ngu.png"
         },
         {
             title: "Không cần là mangaka chuyên nghiệp: Cánh cửa xuất bản manga đang mở rộng cho nhà sáng tạo mới",
             category: "Comic Buzz - Tin nóng",
             date: "30/09/2026",
-            slug: "khong-can-la-mangaka-chuyen-nghiep.html",
-            img: "assets/tintuc/comicbuzz/bia_khong_can_la_mangaka_chuyen_nghiep_canh_cua_xuat_ban_manga_dang_mo_rong_cho_nha_sang_tao_moi.jpg"
+            slug: "https://hoaiphuongnguyenportfolio.my.canva.site/kh-ng-c-n-l-mangaka-chuy-n-nghi-p-c-nh-c-a-xu-t-b-n-manga-ang-m-r-ng-cho-nh-s-ng-t-o-m-i",
+            img: "assets/anh-khong-can-la-mangaka-chuyen-nghiep.jpg"
         },
         {
             title: "“Here U Are” chính thức được chuyển thể anime: Chuyện tình thanh xuân khiến fan manhua mong chờ",
             category: "Truyện lên sóng",
             date: "14/09/2026",
-            slug: "here-u-are-chinh-thuc.html",
-            img: "assets/tintuc/truyenlensong/bia_here_u_are_chinh_thuc_duoc_chuyen_the_anime.jpg"
+            slug: "https://hoaiphuongnguyenportfolio.my.canva.site/here-u-are-ch-nh-th-c-c-chuy-n-th-anime-chuy-n-t-nh-thanh-xu-n-khi-n-fan-manhua-mong-ch",
+            img: "assets/anh-here-u-are-chinh-thuc.jpg"
         }
     ];
 

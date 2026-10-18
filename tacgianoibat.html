@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tác giả nổi bật - Readie</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Thư viện FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- File CSS chung của toàn trang -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Tái sử dụng CSS layout của tin tức và bài viết -->
+    <link rel="stylesheet" href="tintuc.css">
+    <link rel="stylesheet" href="article.css">
+    <style>
+        /* Giảm khoảng cách phần đệm trên cùng của container */
+        .tintuc-main-container {
+            padding-top: 10px !important;
+        }
+
+        /* Header tiêu đề + mô tả chuyên mục */
+.category-header {
+    text-align: center;
+    margin: 20px auto 25px auto;
+    width: 100%;
+    clear: both;
+}
+
+/* Tiêu đề to ra giống 2 chuyên mục kia */
+.category-header .tintuc-heading-title {
+    font-size: 3.5rem !important; /* Tăng kích thước bằng với Tin tức & Review */
+    font-weight: 800;
+    text-transform: none !important; /* Để font chữ hiển thị tự nhiên như ảnh 2 trang kia */
+    letter-spacing: 0.5px;
+    color: #111;
+    margin: 0 0 6px 0 !important;
+    padding: 0 !important;
+    line-height: 1.15;
+}
+
+/* Dòng mô tả bên dưới */
+.category-subtitle {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #333;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .category-header .tintuc-heading-title {
+        font-size: 2.3rem !important;
+    }
+    .category-subtitle {
+        font-size: 1.05rem;
+    }
+}
+
+        /* Bài viết nổi bật đầu tiên */
+        .author-hero-card {
+            margin-top: 0;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        .author-hero-card .hero-thumb {
+            width: 100%;
+            max-height: 420px;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 4px;
+            background-color: #eee;
+        }
+
+        .author-hero-card .hero-thumb img {
+            width: 100%;
+            height: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .author-meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0 6px;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .author-meta-name {
+            font-weight: 700;
+        }
+
+        .author-meta-date {
+            color: #777;
+        }
+
+        .author-hero-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            line-height: 1.35;
+            color: #111;
+            margin: 0;
+        }
+
+        /* Lưới 2 cột cho các bài tiếp theo */
+        .author-sub-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px 20px;
+        }
+
+        .author-sub-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .author-sub-thumb {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            border-radius: 4px;
+            background-color: #eee;
+        }
+
+        .author-sub-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .author-sub-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: #111;
+            margin: 0;
+        }
+
+        /* Khống chế kích thước ảnh bên Sidebar không bị bung */
+        .tintuc-fav-item img {
+            width: 50px !important;
+            height: 70px !important;
+            object-fit: cover !important;
+            flex-shrink: 0;
+        }
+
+        .tintuc-sidebar-banner img {
+            width: 100% !important;
+            height: auto !important;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .category-header .tintuc-heading-title {
+                font-size: 1.8rem;
+            }
+            .category-subtitle {
+                font-size: 1rem;
+            }
+            .author-sub-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PHẦN 1: HEADER -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="readie logo">
+            </a>
+            <nav class="nav-links">
+                <a href="tintuc.html">Tin tức</a>
+                <a href="reviewphantich.html">Review & Phân tích</a>
+                <a href="bxh.html">Bảng xếp hạng</a>
+                <a href="tacgianoibat.html" class="active">Tác giả nổi bật</a>
+                <a href="bantruyen.html">Bàn truyện</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-wrapper">
+                    <button id="search-btn" class="icon-btn" title="Tìm kiếm">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <div id="search-box" class="search-box">
+                        <div class="search-input-wrapper">
+                            <input type="text" placeholder="Nhập từ khóa">
+                            <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <button id="theme-btn" class="icon-btn" title="Đổi giao diện">
+                    <i class="fa-regular fa-sun" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- TICKER BAR DẢI CHỮ CHẠY TỰ ĐỘNG -->
+    <div class="ticker-bar page-ticker">
+        <div class="ticker-track">
+            <a href="tu_webtoon_den_man_anh_rong_guardians_of_the_video_game_mo_duong_cho_phim_hoat_hinh_han_quoc.html" class="ticker-item">Từ Webtoon đến Manhwa: Rong Guardians of the Video Game mở đường cho phim hoạt hình Hàn Quốc</a>
+            <span class="ticker-dots">•</span>
+            <a href="truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.html" class="ticker-item">Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới</a>
+            <span class="ticker-dots">•</span>
+            <a href="nguyen_thanh_phong_cung_hanh_trinh_dua_chat_lieu_viet_vao_truyen_tranh.html" class="ticker-item">Nguyễn Thành Phong cùng hành trình đưa chất liệu Việt vào truyện tranh</a>
+            <span class="ticker-dots">•</span>
+            <a href="tougen-anki-2-tro-lai.html" class="ticker-item">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <main class="tintuc-main-container">
+
+        <!-- CỤM TIÊU ĐỀ VÀ DÒNG MÔ TẢ ĐÃ SÁT LÊN TRÊN -->
+        <div class="category-header">
+            <h1 class="tintuc-heading-title">Tác giả nổi bật</h1>
+            <p class="category-subtitle">Những cái tên bảo chứng cho chất lượng.</p>
+        </div>
+
+        <div class="tintuc-content-layout">
+            
+            <!-- CỘT TRÁI: DANH SÁCH BÀI VIẾT TÁC GIẢ -->
+            <div class="tintuc-article-list" style="display: block;">
+                
+                <!-- BÀI 1 (HERO LỚN TRÊN CÙNG): EIICHIRO ODA -->
+                <article class="author-hero-card">
+                    <a href="eiichiro-oda-hanh-trinh.html" style="text-decoration: none; color: inherit;">
+                        <div class="hero-thumb">
+                            <!-- Lưu ý: Thay đường dẫn ảnh chính xác của bạn vào thẻ src bên dưới -->
+                            <img src="assets/tacgia/Eiichiro_Oda.png" alt="EIICHIRO ODA" onerror="this.src='assets/one_piece.jpg'">
+                        </div>
+                        <div class="author-meta-row">
+                            <span class="author-meta-name">| Lam Giang</span>
+                            <span class="author-meta-date">20/10/2026</span>
+                        </div>
+                        <h2 class="author-hero-title">EIICHIRO ODA - Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece</h2>
+                    </a>
+                </article>
+
+                <!-- LƯỚI 2 CỘT CHO 7 BÀI TIẾP THEO -->
+                <div class="author-sub-grid">
+                    
+                    <!-- BÀI 2: NGUYỄN THÀNH PHONG -->
+                    <article class="author-sub-card">
+                        <a href="nguyen_thanh_phong_cung_hanh_trinh_dua_chat_lieu_viet_vao_truyen_tranh.html">
+                            <div class="author-sub-thumb">
+                                <img src="assets/tacgia/hoa_si_thanh_phong.png" alt="Nguyễn Thành Phong">
+                            </div>
+                            <div class="author-meta-row">
+                                <span class="author-meta-name">| Minh Long</span>
+                                <span class="author-meta-date">14/10/2026</span>
+                            </div>
+                            <h3 class="author-sub-title">Nguyễn Thành Phong cùng hành trình đưa chất liệu Việt vào truyện tranh</h3>
+                        </a>
+                    </article>
+
+                    <!-- BÀI 3: RUMIKO TAKAHASHI -->
+                    <article class="author-sub-card">
+                        <a href="rumiko-takahashi.html">
+                            <div class="author-sub-thumb">
+                                <img src="assets/tacgia/di_san_cua_rumiko_takahashi.png" alt="Rumiko Takahashi">
+                            </div>
+                            <div class="author-meta-row">
+                                <span class="author-meta-name">| Kim Ngân</span>
+                                <span class="author-meta-date">10/10/2026</span>
+                            </div>
+                            <h3 class="author-sub-title">Hành trình tạo nên những tượng đài manga của RUMIKO TAKAHASHI</h3>
+                        </a>
+                    </article>
+
+                    <!-- BÀI 4: NAOKI URASAWA -->
+                    <article class="author-sub-card">
+                        <a href="https://walrus-cfdcbd.my.canva.site/t-c-gi-naoki-urasawa">
+                            <div class="author-sub-thumb">
+                                <img src="assets/tacgia/naoki.jpg" alt="Naoki Urasawa">
+                            </div>
+                            <div class="author-meta-row">
+                                <span class="author-meta-name">| Thu Phương</span>
+                                <span class="author-meta-date">24/09/2026</span>
+                            </div>
+                            <h3 class="author-sub-title">Naoki Urasawa và những câu chuyện manga đi sâu vào tâm lý con người</h3>
+                        </a>
+                    </article>
+
+                    <!-- BÀI 5: SIU -->
+                    <article class="author-sub-card">
+                        <a href="https://walrus-cfdcbd.my.canva.site/siu-v-th-gi-i-kh-ng-l-c-ki-n-t-o-trong-tower-of-god">
+                            <div class="author-sub-thumb">
+                                <img src="assets/tacgia/siu.jpg" alt="SIU">
+                            </div>
+                            <div class="author-meta-row">
+                                <span class="author-meta-name">| Hải Anh</span>
+                                <span class="author-meta-date">18/09/2026</span>
+                            </div>
+                            <h3 class="author-sub-title">SIU và thế giới khổng lồ được kiến tạo trong Tower of God</h3>
+                        </a>
+                    </article>
+
+                    <!-- BÀI 6: CARNBY KIM -->
+                    <article class="author-sub-card">
+                        <a href="https://walrus-cfdcbd.my.canva.site/carnby-kim-c-ng-h-nh-tr-nh-t-o-n-n-hi-n-t-ng-sweet-home-t-nh-ng-c-u-chuy-n-kinh-d">
+                            <div class="author-sub-thumb">
+                                <img src="assets/tacgia/carnby_kim.jpg" alt="Carnby Kim">
+                            </div>
+                            <div class="author-meta-row">
+                                <span class="author-meta-name">| Mỹ Linh</span>
+                                <span class="author-meta-date">09/09/2026</span>
+                            </div>
+                            <h3 class="author-sub-title">Carnby Kim cùng hành trình tạo nên hiện tượng Sweet Home từ những câu chuyện kinh dị</h3>
+                        </a>
+                    </article>
+
+                    <!-- BÀI 7: ONE -->
+                    <article class="author-sub-card">
+                        <a href="https://walrus-cfdcbd.my.canva.site/one-t-webcomic-n-t-v-n-gi-n-n-nh-ng-t-c-ph-m-v-n-ra-to-n-c-u">
+                            <div class="author-sub-thumb">
+                                <img src="assets/tacgia/one.jpg" alt="ONE">
+                            </div>
+                            <div class="author-meta-row">
+                                <span class="author-meta-name">| Thùy Dương</span>
+                                <span class="author-meta-date">01/09/2026</span>
+                            </div>
+                            <h3 class="author-sub-title">ONE từ webcomic nét vẽ đơn giản đến những tác phẩm vươn ra toàn cầu</h3>
+                        </a>
+                    </article>
+
+                    <!-- BÀI 8: LÊ LINH -->
+                    <article class="author-sub-card">
+                        <a href="https://walrus-cfdcbd.my.canva.site/l-linh-v-nh-ng-nh-n-v-t-g-n-li-n-v-i-tu-i-th-qua-th-n-ng-t-vi-t">
+                            <div class="author-sub-thumb">
+                                <img src="assets/tacgia/le_linh.jpg" alt="Lê Linh">
+                            </div>
+                            <div class="author-meta-row">
+                                <span class="author-meta-name">| Hoàng Tùng</span>
+                                <span class="author-meta-date">26/08/2026</span>
+                            </div>
+                            <h3 class="author-sub-title">Lê Linh và những nhân vật gắn liền với tuổi thơ qua Thần Đồng Đất Việt</h3>
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI: SIDEBAR (GIỮ NGUYÊN CLASS CỦA TIN TỨC ĐỂ KHÔNG VỠ) -->
+            <aside class="tintuc-sidebar">
+                <!-- TOP TRUYỆN YÊU THÍCH -->
+                <div class="tintuc-fav-box">
+                    <h3 class="tintuc-fav-title">Top truyện yêu thích</h3>
+                    <ul class="tintuc-fav-list">
+                        <li class="tintuc-fav-item">
+                            <img src="assets/jojo_part7.png" alt="JoJo's Bizarre Adventure">
+                            <span>JoJo's Bizarre Adventure: Part 7—Steel Ball Run</span>
+                        </li>
+                        <li class="tintuc-fav-item">
+                            <img src="assets/berserk.jpg" alt="Berserk">
+                            <span>Berserk</span>
+                        </li>
+                        <li class="tintuc-fav-item">
+                            <img src="assets/one_piece.jpg" alt="One Piece">
+                            <span>One Piece</span>
+                        </li>
+                        <li class="tintuc-fav-item">
+                            <img src="assets/fullmetal_alchemist.jpg" alt="Fullmetal Alchemist: Brotherhood">
+                            <span>Fullmetal Alchemist: Brotherhood</span>
+                        </li>
+                        <li class="tintuc-fav-item">
+                            <img src="assets/grand_blue_dreaming.jpg" alt="Grand Blue Dreaming">
+                            <span>Grand Blue Dreaming</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="bantruyen.html" class="tintuc-vote-btn">Link bình chọn</a>
+
+                <!-- BANNER QUẢNG CÁO -->
+                <div class="tintuc-sidebar-banner">
+                    <img src="assets/Liên quân x One punch man.webp" alt="Quảng cáo thẻ bài One Piece">
+                </div>
+            </aside>
+        </div>
+
+        <!-- KHU VỰC: CÓ THỂ BẠN MUỐN ĐỌC -->
+<section class="maybe-read-section">
+    <h3 class="maybe-read-heading">Có thể bạn muốn đọc</h3>
+    
+    <div class="maybe-read-grid" id="maybe-read-grid"></div>
+
+    <!-- THANH PHÂN TRANG -->
+    <div class="news-pagination maybe-pagination">
+        <button id="maybe-prev-btn" class="page-btn" aria-label="Trang trước">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <div class="page-numbers">
+            <span id="maybe-page-curr">01</span>
+            <span class="page-line"></span>
+            <span id="maybe-page-next">02</span>
+        </div>
+        <button id="maybe-next-btn" class="page-btn" aria-label="Trang sau">
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+</section>
+
+        <!-- PHẦN: ĐỌC NHIỀU -->
+        <section class="most-read-section">
+            <h3 class="most-read-heading">Đọc nhiều</h3>
+            <div class="most-read-list">
+                <article class="most-read-item">
+                    <a href="loid_x_yor_khi_vo_chong_gia_bat_dau_co_nhung_cam_xuc_that.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/bantruyen/soihint/manh_ghep_hoan_hao_cua_gia_dinh_forger.jpg" alt="Loid × Yor">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">BÀN TRUYỆN</span>
+                            <h4 class="most-read-title">Loid × Yor: Khi “vợ chồng giả” bắt đầu có những cảm xúc thật</h4>
+                            <span class="most-read-date">22/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="most-read-item">
+                    <a href="tougen_anki_2_tro_lai_voi_arc_thac_kegon_cuoc_chien_oni_va_momotaro_tiep_tuc_len_song.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/tintuc/truyenlensong/poster-anime.png" alt="TOUGEN ANKI 2">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">TIN TỨC</span>
+                            <h4 class="most-read-title">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</h4>
+                            <span class="most-read-date">22/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="most-read-item">
+                    <a href="nhat_nhan_chi_ha_khi_van_hoa_truyen_thong_tro_thanh_chat_lieu_xay_dung_the_gioi_truyen.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/phantich/nhat_nhan_chi_ha_xay_dung_the_gioi_di_nhan_tu_nhieu_lop_chat_lieu_van_hoa_truyen_thong_trung_hoa.jpg" alt="Nhất Nhân Chi Hạ">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">REVIEW & PHÂN TÍCH</span>
+                            <h4 class="most-read-title">Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện</h4>
+                            <span class="most-read-date">20/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="most-read-item">
+                    <a href="top_5_truyen_tranh_viet_nam_dang_duoc_doc_gia_chu_y.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/anh-top-5-truyen-tranh-viet.jfif" alt="Top 5 truyện tranh Việt Nam">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">BẢNG XẾP HẠNG</span>
+                            <h4 class="most-read-title">Top 5 truyện tranh Việt Nam đang được độc giả chú ý</h4>
+                            <span class="most-read-date">15/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="most-read-item">
+                    <a href="nguyen_thanh_phong_cung_hanh_trinh_dua_chat_lieu_viet_vao_truyen_tranh.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/tacgia/hoa_si_thanh_phong.png" alt="Nguyễn Thành Phong">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">TÁC GIẢ NỔI BẬT</span>
+                            <h4 class="most-read-title">Nguyễn Thành Phong cùng hành trình đưa chất liệu Việt vào truyện tranh</h4>
+                            <span class="most-read-date">14/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="most-read-item">
+                    <a href="the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.html" class="most-read-link">
+                        <div class="most-read-thumb">
+                            <img src="assets/review/yotsuba_kham_pha_the_gioi_bang_su_to_mo_va_goc_nhin_trong_treo_cua_mot_dua_tre.JPG" alt="Yotsuba">
+                        </div>
+                        <div class="most-read-content">
+                            <span class="most-read-badge">REVIEW & PHÂN TÍCH</span>
+                            <h4 class="most-read-title">Thế giới rộng lớn qua đôi mắt cô bé 5 tuổi Yotsuba</h4>
+                            <span class="most-read-date">09/10/2026</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col footer-col-left">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="assets/logo_trang.png" alt="Readie Logo" class="footer-logo-img">
+                </a>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/tung.tung.978310" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/tf.tnguyen/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@lbppp" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-nav">
+                <ul class="footer-nav-list">
+                    <li><a href="tintuc.html">Tin tức</a></li>
+                    <li><a href="reviewphantich.html">Review & Phân tích</a></li>
+                    <li><a href="bxh.html">Bảng xếp hạng</a></li>
+                    <li><a href="tacgianoibat.html">Tác giả nổi bật</a></li>
+                    <li><a href="bantruyen.html">Bàn truyện</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-policy">
+                <h4 class="policy-title">CHÍNH SÁCH & HỖ TRỢ</h4>
+                <ul class="policy-list">
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Bản quyền & DMCA</a></li>
+                    <li><span>Liên hệ: contact@readie.com</span></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-right">
+                <div class="footer-newsletter">
+                    <h3 class="newsletter-title">Cùng cập nhật</h3>
+                    <p class="newsletter-desc">Đăng ký nhận những thông tin mới nhất.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="newsletter-input-box">
+                            <input type="email" placeholder="Your Email" required class="newsletter-input" id="newsletter-email">
+                            <button type="submit" class="newsletter-submit-btn" aria-label="Gửi"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <p>© 2023 - 2026 Readie Comic, Inc. by Magazine House, Ltd. (Ha Noi). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
