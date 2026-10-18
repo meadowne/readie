@@ -3,427 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Readie</title>
+    <title>Readie - Website dành cho người yêu truyện tranh</title>
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="newstyle.css">
 </head>
 <body>
-<!-- HEADER FIX TRÊN ĐẦU TRANG -->
-<header class="navbar">
-    <!-- Thư viện Icon FontAwesome (dùng cho kính lúp, mặt trời/mặt trăng) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Liên kết tệp style.css của bạn -->
-    <link rel="stylesheet" href="style.css">
-    <div class="nav-container">
-        <!-- Logo (Bấm vào quay về trang chủ) -->
-        <a href="index.html" class="logo">
-            <img src="assets/logo.png" alt="readie logo">
-        </a>
-
-        <!-- Các nút điều hướng -->
-        <nav class="nav-links">
-            <a href="tintuc.html">Tin tức</a>
-            <a href="reviewphantich.html">Review & Phân tích</a>
-            <a href="bxh.html">Bảng xếp hạng</a>
-            <a href="tacgianoibat.html">Tác giả nổi bật</a>
-            <a href="bantruyen.html">Bàn truyện</a>
-        </nav>
-
-        <!-- Nút Kính lúp & Nút Chế độ Sáng/Tối -->
-<div class="nav-actions">
-    <!-- Bọc nút kính lúp và popup search box vào chung 1 div -->
-    <div class="search-wrapper">
-        <button id="search-btn" class="icon-btn" title="Tìm kiếm">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-
-        <!-- Hộp tìm kiếm đặt ngay bên trong wrapper này -->
-        <div id="search-box" class="search-box">
-            <div class="search-input-wrapper">
-                <input type="text" placeholder="Nhập từ khóa">
-                <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <!-- 1. NAVBAR CỐ ĐỊNH -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="newindex.html" class="logo">
+                <img src="assets/logo.png" alt="Readie logo">
+            </a>
+            <nav class="nav-links">
+                <a href="tintuc.html">Tin tức</a>
+                <a href="reviewphantich.html">Review & Phân tích</a>
+                <a href="bxh.html">Bảng xếp hạng</a>
+                <a href="tacgianoibat.html">Tác giả nổi bật</a>
+                <a href="bantruyen.html">Bàn truyện</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-wrapper">
+                    <button id="search-btn" class="icon-btn" title="Tìm kiếm">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <div id="search-box" class="search-box">
+                        <div class="search-input-wrapper">
+                            <input type="text" placeholder="Nhập từ khóa">
+                            <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <button id="theme-btn" class="icon-btn" title="Đổi giao diện">
+                    <i class="fa-regular fa-sun" id="theme-icon"></i>
+                </button>
             </div>
         </div>
-    </div>
+    </header>
 
-    <button id="theme-btn" class="icon-btn" title="Đổi giao diện">
-        <i class="fa-regular fa-sun" id="theme-icon"></i>
-    </button>
-</div>
-    </div>
+    <!-- 2. BANNER HERO -->
+    <section class="hero-banner">
+        <img src="assets/hero-banner.png" alt="Readie Banner" class="hero-img">
+        <div class="hero-content">
+            <img src="assets/logo_trang.png" alt="Readie" class="hero-logo">
+            <p class="hero-slogan">Website dành cho người yêu truyện tranh</p>
+        </div>
+    </section>
 
-    <!-- Hộp tìm kiếm thả xuống (Ban đầu ẩn) -->
-    <div id="search-box" class="search-box">
-        <div class="search-input-wrapper">
-            <input type="text" placeholder="Nhập từ khóa">
-            <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <!-- 3. MARQUEE TICKER ĐỎ CAM (GIỮ NGUYÊN DANH SÁCH BÀI CŨ) -->
+    <div class="ticker-bar">
+        <div class="ticker-track">
+            <a href="tougen_anki_2_tro_lai_voi_arc_thac_kegon_cuoc_chien_oni_va_momotaro_tiep_tuc_len_song.html" class="ticker-item">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</a>
+            <span class="ticker-dots">•</span>
+            <a href="truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.html" class="ticker-item">Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới</a>
+            <span class="ticker-dots">•</span>
+            <a href="eiichiro-oda-hanh-trinh.html" class="ticker-item">Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece</a>
+            <span class="ticker-dots">•</span>
+            <a href="tu_webtoon_den_man_anh_rong_guardians_of_the_video_game_mo_duong_cho_phim_hoat_hinh_han_quoc.html" class="ticker-item">Từ webtoon đến màn ảnh rộng: “Guardians of the Video Game” mở đường cho phim hoạt hình Hàn Quốc</a>
+            <span class="ticker-dots">•</span>
+            <!-- Lặp lại để marquee chạy liên tục mượt mà -->
+            <a href="tougen_anki_2_tro_lai_voi_arc_thac_kegon_cuoc_chien_oni_va_momotaro_tiep_tuc_len_song.html" class="ticker-item">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</a>
+            <span class="ticker-dots">•</span>
+            <a href="truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.html" class="ticker-item">Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới</a>
+            <span class="ticker-dots">•</span>
+            <a href="eiichiro-oda-hanh-trinh.html" class="ticker-item">Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece</a>
+            <span class="ticker-dots">•</span>
+            <a href="tu_webtoon_den_man_anh_rong_guardians_of_the_video_game_mo_duong_cho_phim_hoat_hinh_han_quoc.html" class="ticker-item">Từ webtoon đến màn ảnh rộng: “Guardians of the Video Game” mở đường cho phim hoạt hình Hàn Quốc</a>
+            <span class="ticker-dots">•</span>
         </div>
     </div>
-</header>
-<script src="script.js"></script>
 
-<!-- BANNER HERO SECTION -->
-<section class="hero-banner">
-    <img src="assets/hero-banner.png" alt="Readie Banner" class="hero-img">
-    <div class="hero-content">
-        <img src="assets/logo_trang.png" alt="Readie" class="hero-logo">
-        <p class="hero-slogan">Website dành cho người yêu truyện tranh</p>
-    </div>
-</section>
+    <!-- 4. KHỐI GIỚI THIỆU (SAO TO + DÒNG CUỐI SIZE LỚN IN ĐẬM) -->
+    <section class="intro-pop-section reveal-on-scroll">
+        <div class="intro-pop-container">
+            <img src="assets/new/8canhcam.png" class="intro-star-big intro-star-left star-spin" alt="star decoration">
+            <img src="assets/new/4canhvang.png" class="intro-star-big intro-star-right star-float" alt="star decoration">
 
-<!-- THANH BÀI VIẾT NỔI BẬT (CHỮ CHẠY TỰ ĐỘNG) -->
-<div class="ticker-bar">
-    <div class="ticker-track">
-        <!-- Bài 1: "TOUGEN ANKI 2 trở lại với..." -> tougen-anki-2-tro-lai.html -->
-        <a href="tougen_anki_2_tro_lai_voi_arc_thac_kegon_cuoc_chien_oni_va_momotaro_tiep_tuc_len_song.html" class="ticker-item">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</a>
-        <span class="ticker-dots">•</span>
-
-        <!-- Bài 2: "Truyện tranh Việt sắp góp..." -> truyen-tranh-viet-sap-gop.html -->
-        <a href="truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.html" class="ticker-item">Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới</a>
-        <span class="ticker-dots">•</span>
-
-        <!-- Bài 3: "Hành trình từ cậu bé..." -> hanh-trinh-tu-cau-be.html -->
-        <a href="eiichiro-oda-hanh-trinh.html" class="ticker-item">Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece</a>
-        <span class="ticker-dots">•</span>
-
-        <!-- Bài 4: "Kim Dokja biết trước tương..." -> kim-dokja-biet-truoc-tuong.html -->
-        <a href="tu_webtoon_den_man_anh_rong_guardians_of_the_video_game_mo_duong_cho_phim_hoat_hinh_han_quoc.html" class="ticker-item">Từ webtoon đến màn ảnh rộng: “Guardians of the Video Game” mở đường cho phim hoạt hình Hàn Quốc</a>
-        <span class="ticker-dots">•</span>
-
-        <!-- Cụm lặp lại để tạo hiệu ứng chạy nối đuôi mượt mà -->
-        <a href="tougen_anki_2_tro_lai_voi_arc_thac_kegon_cuoc_chien_oni_va_momotaro_tiep_tuc_len_song.html" class="ticker-item">TOUGEN ANKI 2 trở lại với arc thác Kegon: Cuộc chiến Oni và Momotaro tiếp tục lên sóng!</a>
-        <span class="ticker-dots">•</span>
-        <a href="truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.html" class="ticker-item">Truyện tranh Việt sắp góp mặt tại Frankfurt 2026, đưa sáng tạo của tác giả Việt ra thế giới</a>
-        <span class="ticker-dots">•</span>
-        <a href="eiichiro-oda-hanh-trinh.html" class="ticker-item">Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece</a>
-        <span class="ticker-dots">•</span>
-        <a href="tu_webtoon_den_man_anh_rong_guardians_of_the_video_game_mo_duong_cho_phim_hoat_hinh_han_quoc.html" class="ticker-item">Từ webtoon đến màn ảnh rộng: “Guardians of the Video Game” mở đường cho phim hoạt hình Hàn Quốc</a>
-        <span class="ticker-dots">•</span>
-    </div>
-</div>
-
-<!-- KHỐI GIỚI THIỆU TRANG CHỦ -->
-<section class="intro-section reveal-on-scroll">
-    <div class="intro-container">
-        <!-- Ảnh khung kèm nhân vật 2 bên đã có sẵn trong assets -->
-        <img src="assets/gioithieu.png" alt="Giới thiệu Readie" class="intro-frame-img">
-        
-        <!-- Nội dung chữ nằm lọt lòng vào giữa khung -->
-        <div class="intro-content">
-            <h2 class="intro-heading">Chào mừng bạn đến với <strong>Readie</strong> – Không gian truyện tranh thế hệ mới</h2>
-            <p class="intro-text">
-                Được xây dựng từ tình yêu với nghệ thuật kể chuyện bằng hình ảnh, Readie là nền tảng tin tức, đánh giá và thảo luận chuyên sâu về Manga, Manhua, Webtoon và Truyện tranh Việt Nam. Tụi mình mang đến nguồn nội dung chọn lọc, góc nhìn mới mẻ và sân chơi mở cho cộng đồng. Tuyệt đối không spoil, đánh giá khách quan và luôn tôn trọng trọn vẹn cảm xúc đọc của bạn!
+            <div class="intro-badge-title">
+                <h2>Readie – Không gian truyện tranh thế hệ mới</h2>
+            </div>
+            <p class="intro-pop-desc">
+                Được xây dựng từ tình yêu với nghệ thuật kể chuyện bằng hình ảnh, Readie là nền tảng tin tức, đánh giá và thảo luận chuyên sâu về Manga, Manhua, Webtoon và Truyện tranh Việt Nam. Tụi mình mang đến nguồn nội dung chọn lọc, góc nhìn mới mẻ và sân chơi mở cho cộng đồng.
+            </p>
+            <p class="intro-pop-highlight-strong">
+                Tuyệt đối không spoil, đánh giá khách quan và luôn tôn trọng trọn vẹn cảm xúc đọc của bạn!
             </p>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CHUYÊN MỤC TIN TỨC -->
-<section id="tintuc" class="news-section">
-    <h2 class="news-title">Tin tức</h2>
-
-    <!-- Khung chứa danh sách bài viết (Hiển thị 3 bài qua JS) -->
-    <div id="news-container" class="news-grid"></div>
-
-    <!-- Thanh phân trang / chuyển bài -->
-    <div class="news-pagination">
-        <button id="news-prev-btn" class="page-btn"><i class="fa-solid fa-arrow-left"></i></button>
-        <div class="page-numbers">
-            <span id="page-curr">01</span>
-            <span class="page-line"></span>
-            <span id="page-next">02</span>
-        </div>
-        <button id="news-next-btn" class="page-btn"><i class="fa-solid fa-arrow-right"></i></button>
-    </div>
-</section>
-
-<!-- CHUYÊN MỤC REVIEW & PHÂN TÍCH -->
-<section id="review-phantich" class="review-section reveal-on-scroll">
-    <h2 class="review-title">Review & Phân tích</h2>
-
-    <!-- Lưới hiển thị 4 bài viết / trang -->
-    <div id="review-container" class="review-grid"></div>
-
-    <!-- Thanh phân trang -->
-    <div class="review-pagination">
-        <button id="review-prev-btn" class="page-btn"><i class="fa-solid fa-arrow-left"></i></button>
-        <div class="page-numbers">
-            <span id="review-page-curr">01</span>
-            <span class="page-line"></span>
-            <span id="review-page-next">02</span>
-        </div>
-        <button id="review-next-btn" class="page-btn"><i class="fa-solid fa-arrow-right"></i></button>
-    </div>
-</section>
-
-<!-- CHUYÊN MỤC BẢNG XẾP HẠNG -->
-<section id="bangxephang" class="bxh-section reveal-on-scroll">
-    <h2 class="bxh-title">Bảng xếp hạng</h2>
-    
-    <div class="bxh-btn-wrapper">
-        <a href="bantruyen.html" class="bxh-vote-btn">Link bình chọn</a>
-    </div>
-
-    <div class="bxh-grid">
-        <!-- BOX BÊN TRÁI: TOP 5 TRUYỆN YÊU THÍCH + BÓNG CHẠY NẢY -->
-        <div class="bxh-box bxh-box-left">
-            <h3 class="bxh-box-header">🔥 Truyện được yêu thích nhất tuần trước 🔥</h3>
-            <div class="bxh-content-left">
-                <!-- Vùng Canvas chứa 5 ảnh bóng nảy va đập -->
-                <div class="bxh-canvas-wrapper" id="canvas-container">
-                    <canvas id="bxh-canvas"></canvas>
+    <!-- 5. CHUYÊN MỤC TIN TỨC (ĐÓNG KHUNG TRẮNG BÀI VIẾT + NÚT ẢNH TRUY CẬP NGAY CHUẨN) -->
+    <section id="tintuc" class="section-tintuc-comic reveal-on-scroll">
+        <div class="tintuc-comic-container">
+            <!-- Cột trái: Cụm chữ + sao to + nút ảnh chuẩn vị trí -->
+            <div class="tintuc-art-col">
+                <div class="art-title-box">
+                    <img src="assets/new/tintuc.png" alt="Chuyên mục Tin tức" class="title-art-img">
+                    <img src="assets/new/8canhcam.png" class="star-cam-tin star-spin" alt="star">
+                    <img src="assets/new/4canhxanh.png" class="star-xanh-tin star-float" alt="star">
                 </div>
+                
+                <a href="tintuc.html" class="truycap-btn-wrapper" title="Truy cập ngay">
+                    <img src="assets/new/truycapngay.png" alt="Truy cập ngay" class="truycap-bg-img">
+                    <span class="truycap-text">Truy cập ngay</span>
+                </a>
+            </div>
 
-                <!-- Danh sách tên Top 1 - 5 -->
-                <div class="bxh-rank-list">
-                    <div class="bxh-rank-item">
-                        <span class="rank-num rank-1">1</span>
-                        <span class="rank-name">JoJo's Bizarre Adventure: Part 7—Steel Ball Run</span>
-                    </div>
-                    <div class="bxh-rank-item">
-                        <span class="rank-num rank-2">2</span>
-                        <span class="rank-name">Berserk</span>
-                    </div>
-                    <div class="bxh-rank-item">
-                        <span class="rank-num rank-3">3</span>
-                        <span class="rank-name">One Piece</span>
-                    </div>
-                    <div class="bxh-rank-item">
-                        <span class="rank-num rank-4">4</span>
-                        <span class="rank-name">Fullmetal Alchemist: Brotherhood</span>
-                    </div>
-                    <div class="bxh-rank-item">
-                        <span class="rank-num rank-5">5</span>
-                        <span class="rank-name">Grand Blue Dreaming</span>
-                    </div>
+            <!-- Cột phải: 1 bài to đóng hộp trắng + 2 bài nhỏ đóng hộp trắng -->
+            <div class="tintuc-feed-col" id="news-featured-container">
+                <!-- Javascript sẽ nạp 3 bài tin tức -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. REVIEW & PHÂN TÍCH (AUTOPLAY 2S + HOVER STOP + NÚT THỦ CÔNG) -->
+    <section id="review-phantich" class="section-review-comic reveal-on-scroll">
+        <div class="comic-header-wrapper">
+            <div class="comic-badge-wrapper badge-wiggle">
+                <img src="assets/new/8canhcam.png" class="badge-star-left star-spin" alt="star">
+                <img src="assets/new/rvpt.png" alt="Review & Phân tích" class="badge-title-img">
+                <img src="assets/new/8canhxanhngoc.png" class="badge-star-right star-float" alt="star">
+            </div>
+        </div>
+
+        <div class="carousel-container-outer" id="review-hover-zone">
+            <div class="review-carousel-viewport">
+                <div class="review-track-grid" id="review-container">
+                    <!-- Javascript nạp 4 bài / lượt -->
                 </div>
             </div>
         </div>
 
-        <!-- BOX BÊN PHẢI: DANH SÁCH BÀI VIẾT BXH (CÓ THANH CUỘN) -->
-        <div class="bxh-box bxh-box-right">
-            <div class="bxh-article-scroll">
-                <!-- Bài 1 -->
-                <article class="bxh-article-card">
-                    <a href="top-5-truyen-tranh-viet.html" class="bxh-article-link">
-                        <div class="bxh-art-thumb">
-                            <img src="assets/anh-top-5-truyen-tranh-viet.jfif" alt="Top 5 truyện tranh Việt Nam">
-                        </div>
-                        <div class="bxh-art-info">
-                            <h4 class="bxh-art-title">Top 5 truyện tranh Việt Nam đang được độc giả chú ý</h4>
-                            <span class="bxh-art-date">22/10/2026</span>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- Bài 2 -->
-                <article class="bxh-article-card">
-                    <a href="top-5-manga-dang-duoc.html" class="bxh-article-link">
-                        <div class="bxh-art-thumb">
-                            <img src="assets/anh-top-5-manga-dang-duoc.jpg" alt="Top 5 manga Bilibili">
-                        </div>
-                        <div class="bxh-art-info">
-                            <h4 class="bxh-art-title">Top 5 manga đang được săn đón trên Bilibili Manga</h4>
-                            <span class="bxh-art-date">20/10/2026</span>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- Bài 3 -->
-                <article class="bxh-article-card">
-                    <a href="top-5-manhua-trung-quoc.html" class="bxh-article-link">
-                        <div class="bxh-art-thumb">
-                            <img src="assets/anh-top-5-manhua-trung-quoc.avif" alt="Top 5 manhua Bilibili">
-                        </div>
-                        <div class="bxh-art-info">
-                            <h4 class="bxh-art-title">Top 5 manhua Trung Quốc đang được yêu thích trên Bilibili Manga</h4>
-                            <span class="bxh-art-date">17/10/2026</span>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- Bài 4 -->
-                <article class="bxh-article-card">
-                    <a href="https://hoaiphuongnguyenportfolio.my.canva.site/top-5-truy-n-tranh-h-n-qu-c-ang-n-i-b-t-tr-n-webtoon" class="bxh-article-link">
-                        <div class="bxh-art-thumb">
-                            <img src="assets/anh-top-5-webtoon-han-quoc.avif" alt="Top 5 webtoon Hàn Quốc">
-                        </div>
-                        <div class="bxh-art-info">
-                            <h4 class="bxh-art-title">Top 5 webtoon Hàn Quốc đang nổi bật trên WEBTOON</h4>
-                            <span class="bxh-art-date">12/10/2026</span>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- Bài 5 -->
-                <article class="bxh-article-card">
-                    <a href="https://hoaiphuongnguyenportfolio.my.canva.site/b-n-sao-c-a-10-b-truy-n-tranh-d-i-18-tu-i-n-n-c-t-nh-t-m-t-l-n" class="bxh-article-link">
-                        <div class="bxh-art-thumb">
-                            <img src="assets/anh-10-bo-truyen-tranh-duoi.jfif" alt="10 bộ truyện tranh nên đọc">
-                        </div>
-                        <div class="bxh-art-info">
-                            <h4 class="bxh-art-title">10 bộ truyện tranh dưới 18 tuổi nên đọc ít nhất một lần</h4>
-                            <span class="bxh-art-date">05/10/2026</span>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- Bài 6 -->
-                <article class="bxh-article-card">
-                    <a href="https://hoaiphuongnguyenportfolio.my.canva.site/b-n-sao-c-a-10-b-truy-n-tranh-d-i-18-tu-i-n-n-c-t-nh-t-m-t-l-n" class="bxh-article-link">
-                        <div class="bxh-art-thumb">
-                            <img src="assets/thoi-quen-genz.avif" alt="10 bộ truyện tranh nên đọc">
-                        </div>
-                        <div class="bxh-art-info">
-                            <h4 class="bxh-art-title"> 5 điều thú vị về thói quen đọc manga và webtoon của Gen Z năm 2026</h4>
-                            <span class="bxh-art-date">03/09/2026</span>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- Bài 7 -->
-                <article class="bxh-article-card">
-                    <a href="https://hoaiphuongnguyenportfolio.my.canva.site/b-n-sao-c-a-10-b-truy-n-tranh-d-i-18-tu-i-n-n-c-t-nh-t-m-t-l-n" class="bxh-article-link">
-                        <div class="bxh-art-thumb">
-                            <img src="assets/van-hoa-nhat-ban.avif" alt="10 bộ truyện tranh nên đọc">
-                        </div>
-                        <div class="bxh-art-info">
-                            <h4 class="bxh-art-title">Top 5 manga và tác phẩm truyện minh họa giúp khám phá văn hóa Nhật Bản</h4>
-                            <span class="bxh-art-date">26/08/2026</span>
-                        </div>
-                    </a>
-                </article>
-            </div>
+        <div class="comic-pagination">
+            <button id="review-prev-btn" class="comic-arrow-btn" aria-label="Lùi"><i class="fa-solid fa-arrow-left"></i></button>
+            <button id="review-next-btn" class="comic-arrow-btn" aria-label="Tiến"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CHUYÊN MỤC TÁC GIẢ NỔI BẬT -->
-<section id="tacgianoibat" class="author-section reveal-on-scroll">
-    <h2 class="author-title">Tác giả nổi bật</h2>
-
-    <!-- LƯỚI 3 CỘT THẺ TÁC GIẢ -->
-    <div class="author-grid" id="author-grid">
-        <!-- JavaScript sẽ render dữ liệu vào đây -->
-    </div>
-
-    <!-- THANH CHUYỂN TRANG ĐỒNG BỘ CẤU TRÚC PHẦN TRÊN -->
-    <div class="author-pagination">
-        <button id="author-prev-btn" class="page-btn" aria-label="Trang trước">
-            <i class="fa-solid fa-arrow-left"></i>
-        </button>
-        <div class="page-numbers">
-            <span id="author-page-curr">01</span>
-            <span class="page-line"></span>
-            <span id="author-page-next">02</span>
-        </div>
-        <button id="author-next-btn" class="page-btn" aria-label="Trang sau">
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
-    </div>
-</section>
-
-<!-- SECTION BÀN TRUYỆN -->
-<section id="ban-truyen-section" class="discussion-section reveal-on-scroll">
-    <h2 class="discussion-title">Bàn truyện</h2>
-
-    <!-- PHẦN 1: BÀI VIẾT NỔI BẬT (3 CỘT + PHÂN TRANG) -->
-    <div class="discussion-grid" id="discussion-grid">
-        <!-- JavaScript sẽ render danh sách 6 bài viết vào đây -->
-    </div>
-
-    <!-- THANH PHÂN TRANG BÀI VIẾT -->
-    <div class="discussion-pagination">
-        <button id="discussion-prev-btn" class="page-btn" aria-label="Trang trước">
-            <i class="fa-solid fa-arrow-left"></i>
-        </button>
-        <div class="page-numbers">
-            <span id="discussion-page-curr">01</span>
-            <span class="page-line"></span>
-            <span id="discussion-page-next">02</span>
-        </div>
-        <button id="discussion-next-btn" class="page-btn" aria-label="Trang sau">
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
-    </div>
-
-</section>
-
-<!-- BỔ SUNG LINK NÀY VÀO THẺ <head> CỦA WEBSITE ĐỂ HIỆN DỦ ICON -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<!-- BỔ SUNG LINK NÀY VÀO THẺ <head> CỦA WEBSITE ĐỂ HIỆN DỦ ICON -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<!-- FOOTER CHÂN TRANG -->
-<footer class="site-footer">
-    <div class="footer-container">
-        
-        <!-- CỘT 1: LOGO TRẮNG + MẠNG XÃ HỘI -->
-        <div class="footer-col footer-col-left">
-            <a href="#" class="footer-logo-link">
-                <img src="assets/logo_trang.png" alt="Readie Logo" class="footer-logo-img">
-            </a>
-            <div class="footer-socials">
-                <a href="https://www.facebook.com/tung.tung.978310" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/tf.tnguyen/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.tiktok.com/@lbppp" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                    <i class="fa-brands fa-tiktok"></i>
+    <!-- 7. BẢNG XẾP HẠNG (NÚT TOP TRUYỆN + BOX 7 BÀI CUỘN THANH VÀNG) -->
+    <section id="bangxephang" class="section-bxh-comic reveal-on-scroll">
+        <div class="bxh-comic-container">
+            <!-- Cột trái: Cụm tiêu đề BXH + nút toptruyen to rõ có chữ -->
+            <div class="bxh-left-promo">
+                <div class="bxh-art-group">
+                    <img src="assets/new/bxh.png" alt="Bảng xếp hạng" class="bxh-title-art">
+                    <img src="assets/new/8canhxanhla.png" class="bxh-star-floating star-spin" alt="star">
+                </div>
+                <!-- NÚT TOP TRUYỆN PHÓNG TO + CHỮ NẰM GIỮA KHUNG -->
+                <a href="bxh.html" class="bxh-pill-btn" title="Truyện được yêu thích nhất tuần trước">
+                    <img src="assets/new/toptruyen.png" alt="Truyện được yêu thích nhất tuần trước" class="pill-frame-bg">
+                    <span class="pill-label-text">Truyện được yêu thích nhất tuần trước</span>
                 </a>
             </div>
-        </div>
 
-        <!-- CỘT 2: ĐIỀU HƯỚNG CHUYÊN MỤC -->
-        <div class="footer-col footer-col-nav">
-            <ul class="footer-nav-list">
-                <li><a href="tintuc.html">Tin tức</a></li>
-                <li><a href="review.html">Review & Phân tích</a></li>
-                <li><a href="bxh.html">Bảng xếp hạng</a></li>
-                <li><a href="tacgianoibat.html">Tác giả nổi bật</a></li>
-                <li><a href="bantruyen.html">Bàn truyện</a></li>
-            </ul>
-        </div>
-
-        <!-- CỘT 3: CHÍNH SÁCH & HỖ TRỢ -->
-        <div class="footer-col footer-col-policy">
-            <h4 class="policy-title">CHÍNH SÁCH & HỖ TRỢ</h4>
-            <ul class="policy-list">
-                <li><a href="#">Điều khoản dịch vụ</a></li>
-                <li><a href="#">Chính sách bảo mật</a></li>
-                <li><a href="#">Bản quyền & DMCA</a></li>
-                <li><span>Liên hệ: contact@readie.com</span></li>
-            </ul>
-        </div>
-
-        <!-- CỘT 4: CÙNG CẬP NHẬT -->
-        <div class="footer-col footer-col-right">
-            <div class="footer-newsletter">
-                <h3 class="newsletter-title">Cùng cập nhật</h3>
-                <p class="newsletter-desc">Đăng ký nhận những thông tin mới nhất.</p>
-                <form class="newsletter-form" id="newsletter-form">
-                    <div class="newsletter-input-box">
-                        <input type="email" placeholder="Your Email" required class="newsletter-input" id="newsletter-email">
-                        <button type="submit" class="newsletter-submit-btn" aria-label="Gửi">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+            <!-- Cột phải: Box chứa đủ 7 bài viết với thanh cuộn vàng -->
+            <div class="bxh-right-cards">
+                <div class="bxh-comic-box">
+                    <div class="bxh-scroll-yellow" id="bxh-articles-list">
+                        <!-- Javascript nạp đủ 7 bài viết BXH cũ -->
                     </div>
-                </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. TÁC GIẢ NỔI BẬT (AUTOPLAY 2S + HOVER STOP + THẺ ĐÓNG TRONG BOX TRẮNG) -->
+    <section id="tacgianoibat" class="section-author-comic reveal-on-scroll">
+        <div class="comic-header-wrapper">
+            <div class="comic-badge-wrapper badge-wiggle">
+                <img src="assets/new/8canhxanhla.png" class="badge-star-left star-spin" alt="star">
+                <img src="assets/new/tacgia.png" alt="Tác giả nổi bật" class="badge-title-img">
+                <img src="assets/new/8canhxanhngoc.png" class="badge-star-right star-float" alt="star">
             </div>
         </div>
 
-    </div>
+        <div class="carousel-container-outer" id="author-hover-zone">
+            <div class="author-carousel-viewport">
+                <div class="author-track-grid" id="author-container">
+                    <!-- Javascript nạp 4 bài / lượt (đóng trong box) -->
+                </div>
+            </div>
+        </div>
 
-    <!-- DÒNG BẢN QUYỀN CHẠY NGANG FULL CHIỀU RỘNG DƯỚI CÙNG -->
-    <div class="footer-bottom-bar">
-        <p>© 2023 - 2026 Readie Comic, Inc. by Magazine House, Ltd. (Ha Noi). All rights reserved.</p>
-    </div>
-</footer>
+        <div class="comic-pagination">
+            <button id="author-prev-btn" class="comic-arrow-btn" aria-label="Lùi"><i class="fa-solid fa-arrow-left"></i></button>
+            <button id="author-next-btn" class="comic-arrow-btn" aria-label="Tiến"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </section>
 
+    <!-- 9. BÀN TRUYỆN (NÚT LINK BÌNH CHỌN CHUẨN + LƯỚI 2x2 ĐÓNG KHUNG TRẮNG) -->
+    <section id="ban-truyen-section" class="section-bantruyen-comic reveal-on-scroll">
+        <div class="bantruyen-comic-container">
+            <!-- Cột trái: Chữ Bàn truyện + sao to + nút link bình chọn có chữ -->
+            <div class="bantruyen-art-col">
+                <div class="bantruyen-title-box">
+                    <img src="assets/new/bantruyen.png" alt="Bàn truyện" class="bantruyen-title-img">
+                    <img src="assets/new/8canhcam.png" class="bantruyen-deco-star star-spin" alt="star">
+                </div>
+                <!-- NÚT LINK BÌNH CHỌN PHÓNG TO + CHỮ NẰM GIỮA KHUNG -->
+                <a href="bantruyen.html" class="bantruyen-pill-btn" title="Link bình chọn">
+                    <img src="assets/new/linkbinhchon.png" alt="Link bình chọn" class="pill-frame-bg">
+                    <span class="pill-label-text">Link bình chọn</span>
+                </a>
+            </div>
+
+            <!-- Cột phải: Lưới 2x2 đóng khung trắng chuẩn -->
+            <div class="bantruyen-grid-2x2" id="bantruyen-container">
+                <!-- Javascript nạp 4 bài viết Bàn truyện -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. CHÂN TRANG FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col footer-col-left">
+                <a href="newindex.html" class="footer-logo-link">
+                    <img src="assets/logo_trang.png" alt="Readie Logo" class="footer-logo-img">
+                </a>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/tung.tung.978310" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/tf.tnguyen/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@lbppp" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-nav">
+                <ul class="footer-nav-list">
+                    <li><a href="tintuc.html">Tin tức</a></li>
+                    <li><a href="reviewphantich.html">Review & Phân tích</a></li>
+                    <li><a href="bxh.html">Bảng xếp hạng</a></li>
+                    <li><a href="tacgianoibat.html">Tác giả nổi bật</a></li>
+                    <li><a href="bantruyen.html">Bàn truyện</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-policy">
+                <h4 class="policy-title">CHÍNH SÁCH & HỖ TRỢ</h4>
+                <ul class="policy-list">
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Bản quyền & DMCA</a></li>
+                    <li><span>Liên hệ: contact@readie.com</span></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-right">
+                <div class="footer-newsletter">
+                    <h3 class="newsletter-title">Cùng cập nhật</h3>
+                    <p class="newsletter-desc">Đăng ký nhận những thông tin mới nhất.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="newsletter-input-box">
+                            <input type="email" placeholder="Your Email" required class="newsletter-input" id="newsletter-email">
+                            <button type="submit" class="newsletter-submit-btn" aria-label="Gửi"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <p>© 2023 - 2026 Readie Comic, Inc. by Magazine House, Ltd. (Ha Noi). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="newscript.js"></script>
 </body>
 </html>
