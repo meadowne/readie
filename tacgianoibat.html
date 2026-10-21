@@ -191,13 +191,16 @@
                     </button>
                     <div id="search-box" class="search-box">
                         <div class="search-input-wrapper">
-                            <input type="text" placeholder="Nhập từ khóa">
-                            <button class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
+                            <input type="text" id="search-input" placeholder="Nhập từ khóa...">
+                        <button id="search-submit-btn" class="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
+                    <!-- Khung hiển thị kết quả tìm kiếm tự động xổ xuống -->
+                    <div id="search-results" class="search-results-dropdown"></div>
                 </div>
-                <button id="theme-btn" class="icon-btn" title="Đổi giao diện">
-                    <i class="fa-regular fa-sun" id="theme-icon"></i>
+                </div>
+                <!-- Nút 3 gạch bấm mở menu trên cả PC và Mobile -->
+                <button id="menu-toggle-btn" class="icon-btn" title="Menu" aria-label="Menu điều hướng">
+                    <i class="fa-solid fa-bars" id="menu-icon"></i>
                 </button>
             </div>
         </div>

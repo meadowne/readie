@@ -1,39 +1,112 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Xử lý Bật/Tắt Search Box
-// 1. TÌM KIẾM POPUP & MENU 3 GẠCH (BẤM ĐƯỢC TRÊN CẢ PC VÀ MOBILE)
+
+    // Hàm kiểm tra màn hình máy tính
+    function isDesktop() {
+        return window.innerWidth > 768;
+    }
+
+    // 1. CHỨC NĂNG TÌM KIẾM TOÀN TRANG
     const searchBtn = document.getElementById('search-btn');
     const searchBox = document.getElementById('search-box');
+    const searchInput = document.getElementById('search-input');
+    const searchSubmitBtn = document.getElementById('search-submit-btn');
+    const searchResults = document.getElementById('search-results');
     const menuToggleBtn = document.getElementById('menu-toggle-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    // Mở / Đóng khung tìm kiếm
+    const searchableDatabase = [
+        { title: "TOUGEN ANKI 2 trở lại với arc thác Kegon", category: "Tin tức", slug: "tougen_anki_2_tro_lai_voi_arc_thac_kegon_cuoc_chien_oni_va_momotaro_tiep_tuc_len_song.html", img: "assets/tintuc/truyenlensong/poster-anime.png" },
+        { title: "Truyện tranh Việt sắp góp mặt tại Frankfurt 2026", category: "Tin tức", slug: "truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.html", img: "assets/tintuc/comicbuzz/truyen_tranh_viet_sap_gop_mat_tai_frankfurt_2026_dua_sang_tao_cua_tac_gia_viet_ra_the_gioi.jpg" },
+        { title: "Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện", category: "Phân tích", slug: "nhat_nhan_chi_ha_khi_van_hoa_truyen_thong_tro_thanh_chat_lieu_xay_dung_the_gioi_truyen.html", img: "assets/phantich/tin_nguong_dan_gian_buoc_vao_the_gioi_di_nhan.jpg" },
+        { title: "Long Thần Tướng kể lịch sử Việt Nam bằng ngôn ngữ truyện tranh", category: "Review", slug: "long_than_tuong_ke_lich_su_viet_nam_bang_ngon_ngu_truyen_tranh.html", img: "assets/anh-long-than-tuong-ke-lich.webp" },
+        { title: "Thế giới rộng lớn qua đôi mắt cô bé 5 tuổi Yotsuba", category: "Review", slug: "the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.html", img: "assets/review/the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.png" },
+        { title: "Frieren: Beyond Journey’s End và hành trình giả tưởng chậm rãi nhưng đầy cảm xúc", category: "Review", slug: "frieren-beyond-journeys-end-va.html", img: "assets/anh-frieren-beyond-journeys-end-va.jpg" },
+        { title: "Top 5 truyện tranh Việt Nam đang được độc giả chú ý", category: "Bảng xếp hạng", slug: "top_5_truyen_tranh_viet_nam_dang_duoc_doc_gia_chu_y.html", img: "assets/anh-top-5-truyen-tranh-viet.jfif" },
+        { title: "Top 5 manga đang được săn đón trên Bilibili Manga", category: "Bảng xếp hạng", slug: "top-5-manga-dang-duoc.html", img: "assets/anh-top-5-manga-dang-duoc.jpg" },
+        { title: "Top 5 manhua Trung Quốc đang được yêu thích trên Bilibili Manga", category: "Bảng xếp hạng", slug: "top-5-manhua-trung-quoc.html", img: "assets/anh-top-5-manhua-trung-quoc.avif" },
+        { title: "Eiichiro Oda - Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece", category: "Tác giả", slug: "eiichiro-oda-hanh-trinh.html", img: "assets/tac_gia_oda.webp" },
+        { title: "Loid × Yor: Khi “vợ chồng giả” bắt đầu có những cảm xúc thật", category: "Bàn truyện", slug: "loid_x_yor_khi_vo_chong_gia_bat_dau_co_nhung_cam_xuc_that.html", img: "assets/bantruyen/soihint/manh_ghep_hoan_hao_cua_gia_dinh_forger.jpg" }
+    ];
+
+    function removeVietnameseTones(str) {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
+    }
+
+    function performSearch() {
+        if (!searchInput || !searchResults) return;
+        const query = removeVietnameseTones(searchInput.value.trim());
+
+        if (query === '') {
+            searchResults.innerHTML = '';
+            searchResults.classList.remove('has-results');
+            return;
+        }
+
+        const filtered = searchableDatabase.filter(item => 
+            removeVietnameseTones(item.title).includes(query) || 
+            removeVietnameseTones(item.category).includes(query)
+        );
+
+        if (filtered.length > 0) {
+            searchResults.innerHTML = filtered.map(item => `
+                <a href="${item.slug}" class="search-result-item">
+                    <div class="search-result-thumb">
+                        <img src="${item.img}" alt="${item.title}" onerror="this.src='assets/logo.png'">
+                    </div>
+                    <div class="search-result-info">
+                        <div class="search-result-title">${item.title}</div>
+                        <div class="search-result-meta">${item.category}</div>
+                    </div>
+                </a>
+            `).join('');
+            searchResults.classList.add('has-results');
+        } else {
+            searchResults.innerHTML = `<div class="search-no-result">Không tìm thấy bài viết</div>`;
+            searchResults.classList.add('has-results');
+        }
+    }
+
     if (searchBtn && searchBox) {
         searchBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             searchBox.classList.toggle('active');
             if (mobileMenu) mobileMenu.classList.remove('active');
+            if (searchBox.classList.contains('active') && searchInput) {
+                searchInput.focus();
+            }
         });
     }
 
-    // Bấm nút 3 gạch để trượt mở menu (gồm Trang chủ + 5 chuyên mục)
-    if (menuToggleBtn && mobileMenu) {
-        menuToggleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('active');
-            if (searchBox) searchBox.classList.remove('active');
+    if (searchInput) {
+        searchInput.addEventListener('input', performSearch);
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performSearch();
+            }
         });
     }
 
-    // Bấm ra ngoài khoảng trống bất kỳ để tự đóng popup và menu
+    if (searchSubmitBtn) {
+        searchSubmitBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            performSearch();
+        });
+    }
+
+    // Bấm ra ngoài khoảng trống bất kỳ: Tự đóng popup và menu
     document.addEventListener('click', (e) => {
-        if (searchBox && !searchBox.contains(e.target) && e.target !== searchBtn) {
-            searchBox.classList.remove('active');
+        if (searchBox && searchBox.classList.contains('active')) {
+            if (!searchBox.contains(e.target) && !e.target.closest('#search-btn')) {
+                searchBox.classList.remove('active');
+            }
         }
-        if (mobileMenu && !mobileMenu.contains(e.target) && e.target !== menuToggleBtn) {
-            mobileMenu.classList.remove('active');
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+            if (!mobileMenu.contains(e.target) && !e.target.closest('#menu-toggle-btn')) {
+                mobileMenu.classList.remove('active');
+            }
         }
     });
-});
 
 // DANH SÁCH DỮ LIỆU CÁC BÀI VIẾT TIN TỨC (SẮP XẾP THEO THỜI GIAN MỚI NHẤT GIẢM DẦN)
 const newsArticles = [
@@ -243,14 +316,14 @@ const reviewArticles = [
         title: "Conan và nghệ thuật tạo nên một vụ án trinh thám",
         category: "Phân tích",
         date: "18/10/2026",
-        slug: "https://preview.canva.site/393b154f-8c79-47a5-8910-6fa76db1c211/readie.com/",
+        slug: "https://walrus-cfdcbd.my.canva.site/conan?fbclid=IwY2xjawVFvi5leHRuA2FlbQIxMQBwZG9mA3NydGMGYXBwX2lkATAAAR7Q_BZmp5Cm8LdnqbTiO6j9hjlJS6vsgiPnPRFOerm02LVxfI7VnE5WdmN1EQ_aem_4QtZNyW-u9yv42PvjM5DDw",
         img: "assets/phantich/conan_va_nghe_thuat_tao_nen_mot_vu_an_trinh_tham.jpg"
     },
     {
         title: "Frieren: Beyond Journey’s End và hành trình giả tưởng chậm rãi nhưng đầy cảm xúc",
         category: "Review",
         date: "17/10/2026",
-        slug: "https://preview.canva.site/c1aee036-32a5-40e1-830b-39e1f8046995/readie.com/frieren",
+        slug: "frieren-beyond-journeys-end.html",
         img: "assets/anh-frieren-beyond-journeys-end-va.jpg"
     },
     {
@@ -280,7 +353,7 @@ const reviewArticles = [
         title: "Luffy và quan niệm về tự do trong One Piece",
         category: "Phân tích",
         date: "12/10/2026",
-        slug: "https://preview.canva.site/231c67ed-8746-4e41-89c0-ba5cdf2fd15e/readie.com/luffy",
+        slug: "https://walrus-cfdcbd.my.canva.site/luffy?fbclid=IwY2xjawVFvgJleHRuA2FlbQIxMQBwZG9mA3NydGMGYXBwX2lkATAAAR7u-JW_yp8LA0uqwt021LZ81othDC2Amlo9ukxYGz3TAIskCs3gMkIhjulBCw_aem_idK75H05_yw89Sps8ECQqQ",
         img: "assets/anh-luffy-va-quan-niem-ve.jpg"
     },
     {
@@ -1283,4 +1356,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderMaybePage(1);
 });
-
+});
