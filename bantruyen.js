@@ -30,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 21, name: "Jungle Juice", img: "assets/poll_jungle_juice.jpg" },
         { id: 22, name: "The Boxer", img: "assets/poll_the_boxer.jpg" },
         { id: 23, name: "I'm Really Not the Demon God's Lackey", img: "assets/poll_demon_god_lackey.jpg" },
-        { id: 24, name: "Keep a Low Profile, Sect Leader", img: "assets/poll_sect_leader.jpg" },
-        { id: 25, name: "Ngầu", img: "assets/poll_ngau.jfif" }
+        { id: 24, name: "Keep a Low Profile, Sect Leader", img: "assets/poll_sect_leader.jpg" }
     ];
 
     const pollContainer = document.querySelector('.bantruyen-poll-container');

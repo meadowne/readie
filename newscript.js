@@ -10,20 +10,43 @@ document.addEventListener('DOMContentLoaded', () => {
         return window.innerWidth > 768;
     }
 
-    // 1. TÌM KIẾM POPUP
+    // 1. TÌM KIẾM POPUP & MENU 3 GẠCH
     const searchBtn = document.getElementById('search-btn');
     const searchBox = document.getElementById('search-box');
+    const menuToggleBtn = document.getElementById('menu-toggle-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Bấm kính lúp: Mở/đóng ô tìm kiếm
     if (searchBtn && searchBox) {
         searchBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             searchBox.classList.toggle('active');
-        });
-        document.addEventListener('click', (e) => {
-            if (!searchBox.contains(e.target) && e.target !== searchBtn) {
-                searchBox.classList.remove('active');
-            }
+            if (mobileMenu) mobileMenu.classList.remove('active');
         });
     }
+
+    // Bấm nút 3 gạch: Mở/đóng Menu (Hoạt động trên cả PC lẫn Mobile)
+    if (menuToggleBtn && mobileMenu) {
+        menuToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('active');
+            if (searchBox) searchBox.classList.remove('active');
+        });
+    }
+
+    // Bấm ra ngoài khoảng trống bất kỳ: Tự đóng popup và menu
+    document.addEventListener('click', (e) => {
+        if (searchBox && searchBox.classList.contains('active')) {
+            if (!searchBox.contains(e.target) && !e.target.closest('#search-btn')) {
+                searchBox.classList.remove('active');
+            }
+        }
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+            if (!mobileMenu.contains(e.target) && !e.target.closest('#menu-toggle-btn')) {
+                mobileMenu.classList.remove('active');
+            }
+        }
+    });
 
     // 2. DỮ LIỆU TIN TỨC (RENDER 1 LỚN + 2 NHỎ TRONG HỘP TRẮNG)
     const newsArticles = [
@@ -84,16 +107,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. TOÀN BỘ 13 BÀI VIẾT REVIEW & PHÂN TÍCH
     const reviewArticles = [
-        { title: "Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện", category: "Phân tích", date: "22/10/2026", slug: "nhat_nhan_chi_ha_khi_van_hoa_truyen_thong_tro_thanh_chat_lieu_xay_dung_the_gioi_truyen.html", img: "assets/phantich/tin_nguong_dan_gian_buoc_vao_the_gioi_di_nhan.jpg" },
-        { title: "Long Thần Tướng kể lịch sử Việt Nam bằng ngôn ngữ truyện tranh", category: "Review", date: "21/10/2026", slug: "long_than_tuong_ke_lich_su_viet_nam_bang_ngon_ngu_truyen_tranh.html", img: "assets/anh-long-than-tuong-ke-lich.webp" },
-        { title: "Thế giới rộng lớn qua đôi mắt cô bé 5 tuổi Yotsuba", category: "Review", date: "20/10/2026", slug: "the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.html", img: "assets/review/the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.png" },
-        { title: "Cô đi mà lấy chồng tôi: Khi cơ hội thứ hai trở thành cuộc trả thù", category: "Review", date: "19/10/2026", slug: "co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.html", img: "assets/review/co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.png" },
-        { title: "Conan và nghệ thuật tạo nên một vụ án trinh thám", category: "Phân tích", date: "18/10/2026", slug: "https://preview.canva.site/393b154f-8c79-47a5-8910-6fa76db1c211/readie.com/", img: "assets/phantich/conan_va_nghe_thuat_tao_nen_mot_vu_an_trinh_tham.jpg" },
-        { title: "Frieren: Beyond Journey’s End và hành trình giả tưởng chậm rãi nhưng đầy cảm xúc", category: "Review", date: "17/10/2026", slug: "https://preview.canva.site/c1aee036-32a5-40e1-830b-39e1f8046995/readie.com/frieren", img: "assets/anh-frieren-beyond-journeys-end-va.jpg" },
+        { title: "Nhất Nhân Chi Hạ - Khi văn hóa truyền thống trở thành chất liệu xây dựng thế giới truyện", category: "Phân tích", date: "20/10/2026", slug: "nhat_nhan_chi_ha_khi_van_hoa_truyen_thong_tro_thanh_chat_lieu_xay_dung_the_gioi_truyen.html", img: "assets/phantich/tin_nguong_dan_gian_buoc_vao_the_gioi_di_nhan.jpg" },
+        { title: "Long Thần Tướng kể lịch sử Việt Nam bằng ngôn ngữ truyện tranh", category: "Review", date: "13/10/2026", slug: "long_than_tuong_ke_lich_su_viet_nam_bang_ngon_ngu_truyen_tranh.html", img: "assets/anh-long-than-tuong-ke-lich.webp" },
+        { title: "Thế giới rộng lớn qua đôi mắt cô bé 5 tuổi Yotsuba", category: "Review", date: "09/10/2026", slug: "the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.html", img: "assets/review/the_gioi_rong_lon_qua_doi_mat_co_be_5_tuoi_yotsuba.png" },
+        { title: "Cô đi mà lấy chồng tôi: Khi cơ hội thứ hai trở thành cuộc trả thù", category: "Review", date: "06/10/2026", slug: "co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.html", img: "assets/review/co_di_ma_lay_chong_toi_khi_co_hoi_thu_hai_tro_thanh_cuoc_tra_thu.png" },
+        { title: "Conan và nghệ thuật tạo nên một vụ án trinh thám", category: "Phân tích", date: "18/10/2026", slug: "https://walrus-cfdcbd.my.canva.site/conan?fbclid=IwY2xjawVFvi5leHRuA2FlbQIxMQBwZG9mA3NydGMGYXBwX2lkATAAAR7Q_BZmp5Cm8LdnqbTiO6j9hjlJS6vsgiPnPRFOerm02LVxfI7VnE5WdmN1EQ_aem_4QtZNyW-u9yv42PvjM5DDw", img: "assets/phantich/conan_va_nghe_thuat_tao_nen_mot_vu_an_trinh_tham.jpg" },
+        { title: "Frieren: Beyond Journey’s End và hành trình giả tưởng chậm rãi nhưng đầy cảm xúc", category: "Review", date: "27/09/2026", slug: "frieren-beyond-journeys-end.html", img: "assets/anh-frieren-beyond-journeys-end-va.jpg" },
         { title: "Naruto và hành trình từ đứa trẻ bị lãng quên đến người được công nhận", category: "Phân tích", date: "15/10/2026", slug: "https://bai4tieumucreview.my.canva.site/naruto", img: "assets/anh-naruto-va-hanh-trinh-tu.jpg" },
         { title: "Hành trình trở thành người mạnh nhất của Solo Leveling", category: "Review", date: "14/10/2026", slug: "https://bai4tieumucreview.my.canva.site/", img: "assets/review/hanh_trinh_tro_thanh_nguoi_manh_nhat_cua_solo_leveling.png" },
-        { title: "The Boxer và câu chuyện về con người được kể qua những trận đấu", category: "Phân tích", date: "13/10/2026", slug: "the-boxer-va-cau-chuyen.html", img: "assets/anh-the-boxer-va-cau-chuyen.jpg" },
-        { title: "Luffy và quan niệm về tự do trong One Piece", category: "Phân tích", date: "12/10/2026", slug: "https://preview.canva.site/231c67ed-8746-4e41-89c0-ba5cdf2fd15e/readie.com/luffy", img: "assets/anh-luffy-va-quan-niem-ve.jpg" },
+        { title: "The Boxer và câu chuyện về con người được kể qua những trận đấu", category: "Phân tích", date: "13/10/2026", slug: "https://bai4tieumucreview.my.canva.site/theboxer", img: "assets/anh-the-boxer-va-cau-chuyen.jpg" },
+        { title: "Luffy và quan niệm về tự do trong One Piece", category: "Phân tích", date: "12/10/2026", slug: "https://walrus-cfdcbd.my.canva.site/luffy?fbclid=IwY2xjawVFvgJleHRuA2FlbQIxMQBwZG9mA3NydGMGYXBwX2lkATAAAR7u-JW_yp8LA0uqwt021LZ81othDC2Amlo9ukxYGz3TAIskCs3gMkIhjulBCw_aem_idK75H05_yw89Sps8ECQqQ", img: "assets/anh-luffy-va-quan-niem-ve.jpg" },
         { title: "Haikyuu!! - Hành trình trưởng thành sau mỗi trận đấu", category: "Review", date: "11/10/2026", slug: "https://bai4tieumucreview.my.canva.site/bai6", img: "assets/review/haikyuu_hanh_trinh_truong_thanh_sau_moi_tran_dau.webp" },
         { title: "Death Note và ranh giới mong manh giữa công lý với quyền lực", category: "Phân tích", date: "07/10/2026", slug: "https://walrus-cfdcbd.my.canva.site/deathnote", img: "assets/anh-death-note-va-ranh-gioi.jfif" },
         { title: "Từ Đôrêmon đến Doraemon: Hành trình hơn 30 năm của chú mèo máy tại Việt Nam", category: "Review", date: "05/10/2026", slug: "https://bai4tieumucreview.my.canva.site/b-i-7-ti-u-m-c-review", img: "assets/review/tu_doremon_den_doraemon_hanh_trinh_hon_30_nam_cua_chu_meo_may_tai_viet_nam.jpg" }
@@ -173,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. BẢNG XẾP HẠNG: NẠP ĐỦ 7 BÀI VIẾT
     const bxhArticles = [
-        { title: "Top 5 truyện tranh Việt Nam đang được độc giả chú ý", date: "22/10/2026", img: "assets/anh-top-5-truyen-tranh-viet.jfif", slug: "top-5-truyen-tranh-viet.html" },
+        { title: "Top 5 truyện tranh Việt Nam đang được độc giả chú ý", date: "22/10/2026", img: "assets/anh-top-5-truyen-tranh-viet.jfif", slug: "top_5_truyen_tranh_viet_nam_dang_duoc_doc_gia_chu_y.html" },
         { title: "Top 5 manga đang được săn đón trên Bilibili Manga", date: "20/10/2026", img: "assets/anh-top-5-manga-dang-duoc.jpg", slug: "top-5-manga-dang-duoc.html" },
         { title: "Top 5 manhua Trung Quốc đang được yêu thích trên Bilibili Manga", date: "17/10/2026", img: "assets/anh-top-5-manhua-trung-quoc.avif", slug: "top-5-manhua-trung-quoc.html" },
         { title: "Top 5 webtoon Hàn Quốc đang nổi bật trên WEBTOON", date: "12/10/2026", img: "assets/anh-top-5-webtoon-han-quoc.avif", slug: "https://hoaiphuongnguyenportfolio.my.canva.site/top-5-truy-n-tranh-h-n-qu-c-ang-n-i-b-t-tr-n-webtoon" },
@@ -199,14 +222,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. TOÀN BỘ 8 BÀI VIẾT TÁC GIẢ NỔI BẬT
     const authorArticles = [
-        { title: "Eiichiro Oda - Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece", date: "22/10/2026", slug: "eiichiro-oda-hanh-trinh.html", img: "assets/tac_gia_oda.webp" },
-        { title: "Nguyễn Thành Phong cùng hành trình đưa chất liệu Việt vào truyện tranh", date: "14/10/2026", slug: "nguyen_thanh_phong_cung_hanh_trinh_dua_chat_lieu_viet_vao_truyen_tranh.html", img: "assets/tac_gia_thanh_phong.png" },
-        { title: "Hành trình tạo nên những tượng đài manga của Rumiko Takahashi", date: "10/10/2026", slug: "rumiko-takahashi.html", img: "assets/tac_gia_takahashi.jpg" },
+        { title: "Eiichiro Oda - Hành trình từ cậu bé mê hải tặc đến cha đẻ của One Piece", date: "22/10/2026", slug: "eiichiro-oda-hanh-trinh.html", img: "assets/tacgia/Eiichiro_Oda.png" },
+        { title: "Nguyễn Thành Phong cùng hành trình đưa chất liệu Việt vào truyện tranh", date: "14/10/2026", slug: "nguyen_thanh_phong_cung_hanh_trinh_dua_chat_lieu_viet_vao_truyen_tranh.html", img: "assets/tacgia/hoa_si_thanh_phong.png" },
+        { title: "Hành trình tạo nên những tượng đài manga của Rumiko Takahashi", date: "10/10/2026", slug: "rumiko-takahashi.html", img: "assets/tacgia/di_san_cua_rumiko_takahashi.png" },
         { title: "Naoki Urasawa và những câu chuyện manga đi sâu vào tâm lý con người", date: "24/09/2026", slug: "https://walrus-cfdcbd.my.canva.site/t-c-gi-naoki-urasawa", img: "assets/tac_gia_urasawa.webp" },
-        { title: "SIU và thế giới khổng lồ được kiến tạo trong Tower of God", date: "18/09/2026", slug: "https://walrus-cfdcbd.my.canva.site/siu-v-th-gi-i-kh-ng-l-c-ki-n-t-o-trong-tower-of-god", img: "assets/tac_gia_siu.jpg" },
-        { title: "Carnby Kim cùng hành trình tạo nên hiện tượng Sweet Home từ những câu chuyện kinh dị", date: "09/09/2026", slug: "https://walrus-cfdcbd.my.canva.site/carnby-kim-c-ng-h-nh-tr-nh-t-o-n-n-hi-n-t-ng-sweet-home-t-nh-ng-c-u-chuy-n-kinh-d", img: "assets/tac_gia_carnby_kim.jfif" },
-        { title: "ONE từ webcomic nét vẽ đơn giản đến những tác phẩm vươn ra toàn cầu", date: "01/09/2026", slug: "https://walrus-cfdcbd.my.canva.site/one-t-webcomic-n-t-v-n-gi-n-n-nh-ng-t-c-ph-m-v-n-ra-to-n-c-u", img: "assets/tac_gia_one.webp" },
-        { title: "Lê Linh và những nhân vật gắn liền với tuổi thơ qua Thần Đồng Đất Việt", date: "26/08/2026", slug: "https://walrus-cfdcbd.my.canva.site/one-t-webcomic-n-t-v-n-gi-n-n-nh-ng-t-c-ph-m-v-n-ra-to-n-c-u", img: "assets/tac_gia_le_linh.webp" }
+        { title: "SIU và thế giới khổng lồ được kiến tạo trong Tower of God", date: "18/09/2026", slug: "https://walrus-cfdcbd.my.canva.site/siu-v-th-gi-i-kh-ng-l-c-ki-n-t-o-trong-tower-of-god", img: "assets/tacgia/siu.jpg" },
+        { title: "Carnby Kim cùng hành trình tạo nên hiện tượng Sweet Home từ những câu chuyện kinh dị", date: "09/09/2026", slug: "https://walrus-cfdcbd.my.canva.site/carnby-kim-c-ng-h-nh-tr-nh-t-o-n-n-hi-n-t-ng-sweet-home-t-nh-ng-c-u-chuy-n-kinh-d", img: "assets/tacgia/carnby_kim.jpg" },
+        { title: "ONE từ webcomic nét vẽ đơn giản đến những tác phẩm vươn ra toàn cầu", date: "01/09/2026", slug: "https://walrus-cfdcbd.my.canva.site/one-t-webcomic-n-t-v-n-gi-n-n-nh-ng-t-c-ph-m-v-n-ra-to-n-c-u", img: "assets/tacgia/one.jpg" },
+        { title: "Lê Linh và những nhân vật gắn liền với tuổi thơ qua Thần Đồng Đất Việt", date: "26/08/2026", slug: "https://walrus-cfdcbd.my.canva.site/one-t-webcomic-n-t-v-n-gi-n-n-nh-ng-t-c-ph-m-v-n-ra-to-n-c-u", img: "assets/tacgia/le_linh.jpg" }
     ];
 
     const authorContainer = document.getElementById('author-container');
@@ -285,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const discussionArticles = [
         { title: "Loid × Yor: Khi “vợ chồng giả” bắt đầu có những cảm xúc thật", date: "22/10/2026", img: "assets/bantruyen/soihint/manh_ghep_hoan_hao_cua_gia_dinh_forger.jpg", slug: "loid_x_yor_khi_vo_chong_gia_bat_dau_co_nhung_cam_xuc_that.html" },
         { title: "Long Thần Tướng: Khi khung tranh kể nhiều hơn lời thoại", date: "18/10/2026", img: "assets/long_than_tuong_khi_khung_tranh_ke_nhieu_hon_loi_thoai.jpg", slug: "long-than-tuong-khung-tranh.html" },
-        { title: "Maomao không chỉ giải án bằng kiến thức: Hãy nhìn vào thứ mọi người bỏ qua", date: "11/10/2026", img: "assets/the_apothecary_diaries.jpg", slug: "maomao-giai-an.html" },
+        { title: "Maomao không chỉ giải án bằng kiến thức: Hãy nhìn vào thứ mọi người bỏ qua", date: "11/10/2026", img: "assets/the_apothecary_diaries.jpg", slug: "maomao_khong_chi_giai_an_bang_kien_thuc.html" },
         { title: "Khi tác giả giấu một lời giải trong cảnh truyện bình thường: Học cách soi hint từ Witch Watch", date: "05/10/2026", img: "assets/witch_watch.jpg", slug: "https://hoaiphuongnguyenportfolio.my.canva.site/khi-t-c-gi-gi-u-m-t-l-i-gi-i-trong-c-nh-truy-n-b-nh-th-ng-h-c-c-ch-soi-hint-t-witch-watch" }
     ];
 

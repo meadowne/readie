@@ -1,20 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Xử lý Bật/Tắt Search Box
+// 1. TÌM KIẾM POPUP & MENU 3 GẠCH (BẤM ĐƯỢC TRÊN CẢ PC VÀ MOBILE)
     const searchBtn = document.getElementById('search-btn');
     const searchBox = document.getElementById('search-box');
+    const menuToggleBtn = document.getElementById('menu-toggle-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    searchBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        searchBox.classList.toggle('active');
-    });
+    // Mở / Đóng khung tìm kiếm
+    if (searchBtn && searchBox) {
+        searchBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            searchBox.classList.toggle('active');
+            if (mobileMenu) mobileMenu.classList.remove('active');
+        });
+    }
 
-    // Bấm ra ngoài vùng search thì tự đóng search box
+    // Bấm nút 3 gạch để trượt mở menu (gồm Trang chủ + 5 chuyên mục)
+    if (menuToggleBtn && mobileMenu) {
+        menuToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('active');
+            if (searchBox) searchBox.classList.remove('active');
+        });
+    }
+
+    // Bấm ra ngoài khoảng trống bất kỳ để tự đóng popup và menu
     document.addEventListener('click', (e) => {
-        if (!searchBox.contains(e.target) && e.target !== searchBtn) {
+        if (searchBox && !searchBox.contains(e.target) && e.target !== searchBtn) {
             searchBox.classList.remove('active');
         }
+        if (mobileMenu && !mobileMenu.contains(e.target) && e.target !== menuToggleBtn) {
+            mobileMenu.classList.remove('active');
+        }
     });
-
 });
 
 // DANH SÁCH DỮ LIỆU CÁC BÀI VIẾT TIN TỨC (SẮP XẾP THEO THỜI GIAN MỚI NHẤT GIẢM DẦN)
@@ -1265,3 +1283,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderMaybePage(1);
 });
+

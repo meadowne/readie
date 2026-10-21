@@ -91,14 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Conan và nghệ thuật tạo nên một vụ án trinh thám",
             category: "Phân tích",
             date: "02/10/2026",
-            slug: "https://preview.canva.site/393b154f-8c79-47a5-8910-6fa76db1c211/readie.com/",
+            slug: "https://walrus-cfdcbd.my.canva.site/conan?fbclid=IwY2xjawVFvi5leHRuA2FlbQIxMQBwZG9mA3NydGMGYXBwX2lkATAAAR7Q_BZmp5Cm8LdnqbTiO6j9hjlJS6vsgiPnPRFOerm02LVxfI7VnE5WdmN1EQ_aem_4QtZNyW-u9yv42PvjM5DDw",
             img: "assets/phantich/conan_va_nghe_thuat_tao_nen_mot_vu_an_trinh_tham.jpg"
         },
         {
             title: "Frieren: Beyond Journey’s End và hành trình giả tưởng chậm rãi nhưng đầy cảm xúc",
             category: "Review",
             date: "27/09/2026",
-            slug: "https://preview.canva.site/c1aee036-32a5-40e1-830b-39e1f8046995/readie.com/frieren",
+            slug: "frieren-beyond-journeys-end.html",
             img: "assets/anh-frieren-beyond-journeys-end-va.jpg"
         },
         {
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Luffy và quan niệm về tự do trong One Piece",
             category: "Phân tích",
             date: "04/09/2026",
-            slug: "https://preview.canva.site/231c67ed-8746-4e41-89c0-ba5cdf2fd15e/readie.com/luffy ",
+            slug: "https://walrus-cfdcbd.my.canva.site/luffy?fbclid=IwY2xjawVFvgJleHRuA2FlbQIxMQBwZG9mA3NydGMGYXBwX2lkATAAAR7u-JW_yp8LA0uqwt021LZ81othDC2Amlo9ukxYGz3TAIskCs3gMkIhjulBCw_aem_idK75H05_yw89Sps8ECQqQ",
             img: "assets/anh-luffy-va-quan-niem-ve.jpg"
         },
         {
